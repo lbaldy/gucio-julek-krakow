@@ -74,6 +74,8 @@ type Approach = "walk" | "run" | "jump" | "free";
 const SPEED = 380;
 /** A mini-game can be skipped (skip hint / Esc) after this long. */
 const MINIGAME_SKIP_MS = 10_000;
+/** A companion whose spot behind the hero is nearer the screen edge than this stands in front. */
+const COMPANION_EDGE = 110;
 /** A companion starts following once it's this far from its spot behind the hero. */
 const FOLLOW_SLACK = 90;
 /** Speed and walk-cycle multiplier for a double-click walk. */
@@ -261,8 +263,10 @@ export class Game {
     const spot = (d: number): Pt => [h.x + d * back * k, h.y - up * k];
     const behind = spot(dir);
     const clamped = this.walk.clamp(behind);
-    // Squeezed against a wall (e.g. right after coming in through a side door): stand in front instead.
-    if (Math.abs(clamped[0] - behind[0]) > back * k * 0.4) return this.walk.clamp(spot(-dir));
+    // Squeezed against a wall (e.g. right after coming in through a side door), or so close to the
+    // screen edge that the sprite would be cut off (floors often run to the edge): stand in front.
+    const offScreen = clamped[0] < COMPANION_EDGE || clamped[0] > 1920 - COMPANION_EDGE;
+    if (Math.abs(clamped[0] - behind[0]) > back * k * 0.4 || offScreen) return this.walk.clamp(spot(-dir));
     return clamped;
   }
 
