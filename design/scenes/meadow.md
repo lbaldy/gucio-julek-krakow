@@ -109,3 +109,16 @@ No people, no sheep, no ram, no sack, no text.
 - `meadow.end.1`: shepherd: "Kłębuszek lubił tu skakać…" `[quietly]`
 - `meadow.end.2`: gucio: "Przyprowadzimy go. Obiecuję."
 - `meadow.end.3`: julek: "Beee!" `[determined]`
+
+## Build status
+- [x] Greybox and walkthroughs
+- [x] Background (1K draft → border cropped → 2K final, full-bleed)
+- [x] Geometry: walkable keeps behind-fence areas off-limits; scale 0.62 @1060 → 0.32 @600
+- [x] Ram: idle (ref cut), butt, soft (lying, chewing a dandelion)
+- [x] Sheep: standing (`chars/sheep`) and grazing (`chars/sheep_graze`)
+- [x] Sack world sprite; icons: sack, straw, dandelion, sheepskin (from workshop fake_1)
+- [x] Julek `offer_r` pose
+- [x] Chrome pass: butt → Julek calms Bodzio → sack on haystack → sheepskin → end beat
+- [ ] Optional: Julek toddles up to Bodzio during the offer (now he offers from beside Gucio)
+- [ ] Lines locked → VO
+- [ ] Music and ambience

@@ -337,7 +337,7 @@
   },
   "sheep_a": {
     "name": "Owca",
-    "height_px": 300,
+    "height_px": 240,
     "text_color": "#ffffff",
     "speed": 260,
     "anims": {
@@ -353,7 +353,7 @@
   },
   "sheep_b": {
     "name": "Owca",
-    "height_px": 300,
+    "height_px": 240,
     "text_color": "#ffffff",
     "speed": 260,
     "anims": {
@@ -369,7 +369,7 @@
   },
   "sheep_c": {
     "name": "Owca",
-    "height_px": 300,
+    "height_px": 240,
     "text_color": "#ffffff",
     "speed": 260,
     "anims": {

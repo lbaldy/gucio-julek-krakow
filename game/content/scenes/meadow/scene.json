@@ -3,36 +3,454 @@
   "background": "scenes/meadow/bg.png",
   "music": "music/town.mp3",
   "ambience": "amb/meadow_loop.mp3",
-  "walkable": [[[0, 1075], [1500, 1075], [1500, 700], [1100, 650], [500, 640], [0, 680]]],
-  "scale": {"near_y": 1050, "near": 1.0, "far_y": 650, "far": 0.7},
+  "walkable": [
+    [
+      [
+        0,
+        1075
+      ],
+      [
+        1910,
+        1075
+      ],
+      [
+        1890,
+        960
+      ],
+      [
+        1720,
+        850
+      ],
+      [
+        1560,
+        750
+      ],
+      [
+        1460,
+        690
+      ],
+      [
+        1440,
+        655
+      ],
+      [
+        1215,
+        722
+      ],
+      [
+        915,
+        812
+      ],
+      [
+        800,
+        800
+      ],
+      [
+        770,
+        700
+      ],
+      [
+        740,
+        612
+      ],
+      [
+        470,
+        608
+      ],
+      [
+        460,
+        930
+      ],
+      [
+        300,
+        960
+      ],
+      [
+        90,
+        1000
+      ],
+      [
+        0,
+        1000
+      ]
+    ]
+  ],
+  "scale": {
+    "near_y": 1060,
+    "near": 0.62,
+    "far_y": 600,
+    "far": 0.32
+  },
   "spawns": {
-    "default": {"x": 140, "y": 900, "facing": "right"}
+    "default": {
+      "x": 110,
+      "y": 1025,
+      "facing": "right"
+    }
   },
   "hotspots": [
-    {"id": "fold", "name": "zagroda", "polygon": [[0, 330], [560, 330], [560, 600], [0, 600]], "walk_to": [360, 700], "face": "up"},
-    {"id": "dandelions", "name": "mlecze", "polygon": [[90, 860], [420, 860], [420, 1040], [90, 1040]], "walk_to": [300, 960], "face": "down"},
-    {"id": "haystack", "name": "stóg siana", "polygon": [[980, 230], [1400, 230], [1400, 620], [980, 620]], "walk_to": [1200, 690], "face": "up"},
-    {"id": "footprints", "name": "ślady smoka", "polygon": [[1520, 760], [1900, 820], [1900, 1060], [1500, 1060]], "walk_to": [1460, 920], "face": "right"},
-    {"id": "river", "name": "Wisła", "polygon": [[1560, 320], [1920, 320], [1920, 700], [1560, 700]], "walk_to": [1460, 760], "face": "right"},
-    {"id": "hill", "name": "wzgórze Wawel", "polygon": [[420, 140], [900, 140], [900, 380], [420, 380]], "walk_to": [700, 680], "face": "up"}
+    {
+      "id": "fold",
+      "name": "zagroda",
+      "polygon": [
+        [
+          0,
+          420
+        ],
+        [
+          290,
+          420
+        ],
+        [
+          480,
+          470
+        ],
+        [
+          500,
+          410
+        ],
+        [
+          690,
+          400
+        ],
+        [
+          690,
+          560
+        ],
+        [
+          480,
+          585
+        ],
+        [
+          0,
+          600
+        ]
+      ],
+      "walk_to": [
+        600,
+        640
+      ],
+      "face": "left"
+    },
+    {
+      "id": "dandelions",
+      "name": "mlecze",
+      "polygon": [
+        [
+          100,
+          830
+        ],
+        [
+          380,
+          830
+        ],
+        [
+          400,
+          920
+        ],
+        [
+          330,
+          1000
+        ],
+        [
+          110,
+          1010
+        ],
+        [
+          90,
+          930
+        ]
+      ],
+      "walk_to": [
+        260,
+        1035
+      ],
+      "face": "up"
+    },
+    {
+      "id": "haystack",
+      "name": "stóg siana",
+      "polygon": [
+        [
+          985,
+          560
+        ],
+        [
+          1000,
+          380
+        ],
+        [
+          1100,
+          260
+        ],
+        [
+          1170,
+          190
+        ],
+        [
+          1190,
+          250
+        ],
+        [
+          1280,
+          320
+        ],
+        [
+          1340,
+          450
+        ],
+        [
+          1350,
+          580
+        ],
+        [
+          1200,
+          600
+        ],
+        [
+          1000,
+          600
+        ]
+      ],
+      "walk_to": [
+        700,
+        640
+      ],
+      "face": "right"
+    },
+    {
+      "id": "footprints",
+      "name": "ślady smoka",
+      "polygon": [
+        [
+          1540,
+          680
+        ],
+        [
+          1640,
+          700
+        ],
+        [
+          1760,
+          800
+        ],
+        [
+          1900,
+          900
+        ],
+        [
+          1920,
+          1000
+        ],
+        [
+          1830,
+          990
+        ],
+        [
+          1620,
+          900
+        ],
+        [
+          1560,
+          760
+        ]
+      ],
+      "walk_to": [
+        1600,
+        880
+      ],
+      "face": "right"
+    },
+    {
+      "id": "river",
+      "name": "Wisła",
+      "polygon": [
+        [
+          1640,
+          330
+        ],
+        [
+          1920,
+          330
+        ],
+        [
+          1920,
+          700
+        ],
+        [
+          1760,
+          720
+        ],
+        [
+          1700,
+          640
+        ],
+        [
+          1720,
+          460
+        ]
+      ],
+      "walk_to": [
+        1690,
+        860
+      ],
+      "face": "right"
+    },
+    {
+      "id": "hill",
+      "name": "wzgórze Wawel",
+      "polygon": [
+        [
+          420,
+          150
+        ],
+        [
+          760,
+          140
+        ],
+        [
+          880,
+          300
+        ],
+        [
+          900,
+          360
+        ],
+        [
+          700,
+          370
+        ],
+        [
+          300,
+          330
+        ]
+      ],
+      "walk_to": [
+        620,
+        650
+      ],
+      "face": "up"
+    }
   ],
   "objects": [
-    {"id": "sack", "name": "pusty worek", "sprite": "items/sack_world.png", "x": 560, "y": 720, "walk_to": [600, 760], "visible_if": "!taken:sack", "pickup": true},
-    {"id": "wool_meadow_gate", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 330, "y": 590, "walk_to": [360, 700], "visible_if": "!wool_meadow_gate", "pickup": true},
-    {"id": "wool_meadow_reeds", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 1470, "y": 780, "walk_to": [1430, 820], "visible_if": "!wool_meadow_reeds", "pickup": true},
-    {"id": "wool_meadow_willow", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 1330, "y": 680, "walk_to": [1300, 720], "visible_if": "!wool_meadow_willow"}
+    {
+      "id": "sack",
+      "name": "pusty worek",
+      "sprite": "items/sack_world.png",
+      "x": 630,
+      "y": 528,
+      "walk_to": [
+        650,
+        640
+      ],
+      "visible_if": "!taken:sack",
+      "pickup": true
+    },
+    {
+      "id": "wool_meadow_gate",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 330,
+      "y": 470,
+      "walk_to": [
+        560,
+        640
+      ],
+      "visible_if": "!wool_meadow_gate",
+      "pickup": true
+    },
+    {
+      "id": "wool_meadow_reeds",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 1740,
+      "y": 760,
+      "walk_to": [
+        1700,
+        870
+      ],
+      "visible_if": "!wool_meadow_reeds",
+      "pickup": true
+    },
+    {
+      "id": "wool_meadow_willow",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 1540,
+      "y": 620,
+      "walk_to": [
+        1500,
+        740
+      ],
+      "visible_if": "!wool_meadow_willow"
+    }
   ],
   "exits": [
-    {"id": "path_town", "name": "do osady", "polygon": [[0, 600], [70, 600], [70, 1000], [0, 1000]], "walk_to": [80, 900], "target": "town", "spawn": "from_meadow"}
+    {
+      "id": "path_town",
+      "name": "do osady",
+      "polygon": [
+        [
+          0,
+          940
+        ],
+        [
+          90,
+          940
+        ],
+        [
+          90,
+          1080
+        ],
+        [
+          0,
+          1080
+        ]
+      ],
+      "walk_to": [
+        60,
+        1035
+      ],
+      "target": "town",
+      "spawn": "from_meadow"
+    }
   ],
   "actors": [
-    {"id": "shepherd", "x": 760, "y": 820, "facing": "left"},
-    {"id": "ram", "x": 1060, "y": 730, "facing": "left"},
-    {"id": "sheep_a", "x": 560, "y": 680, "facing": "right", "look": "sheep"},
-    {"id": "sheep_b", "x": 860, "y": 670, "facing": "left", "look": "sheep"}
+    {
+      "id": "shepherd",
+      "x": 495,
+      "y": 700,
+      "facing": "right"
+    },
+    {
+      "id": "ram",
+      "x": 730,
+      "y": 800,
+      "facing": "left"
+    },
+    {
+      "id": "sheep_a",
+      "x": 1110,
+      "y": 880,
+      "facing": "left",
+      "look": "sheep_graze"
+    },
+    {
+      "id": "sheep_b",
+      "x": 1320,
+      "y": 800,
+      "facing": "left",
+      "look": "sheep"
+    }
   ],
   "points": {
-    "ram_side": [930, 760],
-    "butt_back": [820, 860]
+    "ram_side": [
+      620,
+      830
+    ],
+    "butt_back": [
+      520,
+      965
+    ]
   }
 }
