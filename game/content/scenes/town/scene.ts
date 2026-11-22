@@ -80,8 +80,12 @@ export default defineScene("town", {
       use: (g) => g.say("town.helmet.use"),
       items: {
         julek: async (g) => {
+          g.set("helmet_worn");
+          g.pose("julek", "helmet");
           await g.say("town.helmet.julek.1");
           await g.say("town.helmet.julek.2");
+          g.pose("julek", null);
+          g.unset("helmet_worn");
         },
       },
     },

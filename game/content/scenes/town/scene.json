@@ -3,43 +3,460 @@
   "background": "scenes/town/bg.png",
   "music": "music/town.mp3",
   "ambience": "amb/town_loop.mp3",
-  "walkable": [[[0, 1075], [1920, 1075], [1920, 800], [1300, 700], [700, 690], [200, 760], [0, 800]]],
-  "scale": {"near_y": 1050, "near": 1.0, "far_y": 700, "far": 0.7},
+  "walkable": [
+    [
+      [
+        0,
+        1075
+      ],
+      [
+        1920,
+        1075
+      ],
+      [
+        1920,
+        880
+      ],
+      [
+        1780,
+        800
+      ],
+      [
+        1640,
+        760
+      ],
+      [
+        1570,
+        705
+      ],
+      [
+        1500,
+        692
+      ],
+      [
+        1215,
+        700
+      ],
+      [
+        1215,
+        750
+      ],
+      [
+        1050,
+        750
+      ],
+      [
+        995,
+        742
+      ],
+      [
+        920,
+        772
+      ],
+      [
+        800,
+        792
+      ],
+      [
+        600,
+        802
+      ],
+      [
+        430,
+        788
+      ],
+      [
+        330,
+        748
+      ],
+      [
+        250,
+        762
+      ],
+      [
+        150,
+        822
+      ],
+      [
+        0,
+        852
+      ]
+    ]
+  ],
+  "scale": {
+    "near_y": 1060,
+    "near": 0.7,
+    "far_y": 765,
+    "far": 0.32
+  },
   "spawns": {
-    "default": {"x": 260, "y": 930, "facing": "right"},
-    "from_workshop": {"x": 560, "y": 760, "facing": "right"},
-    "from_meadow": {"x": 140, "y": 930, "facing": "right"},
-    "from_market": {"x": 1760, "y": 900, "facing": "left"}
+    "default": {
+      "x": 480,
+      "y": 930,
+      "facing": "right"
+    },
+    "from_workshop": {
+      "x": 845,
+      "y": 815,
+      "facing": "right"
+    },
+    "from_meadow": {
+      "x": 110,
+      "y": 900,
+      "facing": "right"
+    },
+    "from_market": {
+      "x": 1780,
+      "y": 890,
+      "facing": "left"
+    }
   },
   "hotspots": [
-    {"id": "workshop_window", "name": "okno warsztatu", "polygon": [[400, 470], [500, 470], [500, 590], [400, 590]], "walk_to": [450, 760], "face": "up"},
-    {"id": "houses", "name": "zamknięte domy", "polygon": [[1000, 300], [1580, 300], [1580, 640], [1000, 640]], "walk_to": [1250, 760], "face": "up"},
-    {"id": "hill", "name": "wzgórze Wawel", "polygon": [[1480, 120], [1920, 100], [1920, 520], [1500, 520]], "walk_to": [1500, 780], "face": "up"}
+    {
+      "id": "workshop_window",
+      "name": "okno warsztatu",
+      "polygon": [
+        [
+          668,
+          565
+        ],
+        [
+          752,
+          565
+        ],
+        [
+          752,
+          668
+        ],
+        [
+          668,
+          668
+        ]
+      ],
+      "walk_to": [
+        710,
+        815
+      ],
+      "face": "up"
+    },
+    {
+      "id": "houses",
+      "name": "zamknięte domy",
+      "polygon": [
+        [
+          975,
+          560
+        ],
+        [
+          1160,
+          470
+        ],
+        [
+          1290,
+          370
+        ],
+        [
+          1400,
+          420
+        ],
+        [
+          1530,
+          560
+        ],
+        [
+          1500,
+          665
+        ],
+        [
+          1210,
+          690
+        ],
+        [
+          1205,
+          690
+        ],
+        [
+          975,
+          680
+        ]
+      ],
+      "walk_to": [
+        1300,
+        760
+      ],
+      "face": "up"
+    },
+    {
+      "id": "hill",
+      "name": "wzgórze Wawel",
+      "polygon": [
+        [
+          1310,
+          330
+        ],
+        [
+          1450,
+          170
+        ],
+        [
+          1920,
+          190
+        ],
+        [
+          1920,
+          480
+        ],
+        [
+          1700,
+          500
+        ],
+        [
+          1520,
+          505
+        ],
+        [
+          1330,
+          440
+        ]
+      ],
+      "walk_to": [
+        1500,
+        730
+      ],
+      "face": "up"
+    }
   ],
   "objects": [
-    {"id": "helmet", "name": "hełm rycerza", "sprite": "scenes/town/helmet.png", "x": 640, "y": 960, "walk_to": [560, 980], "visible_if": "helmet_dropped"},
-    {"id": "wool_town_bench", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 1080, "y": 860, "walk_to": [1000, 880], "visible_if": "!wool_town_bench", "pickup": true},
-    {"id": "wool_town_shutter", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 1380, "y": 600, "walk_to": [1380, 760], "visible_if": "!wool_town_shutter", "pickup": true},
-    {"id": "wool_town_flowerbox", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 520, "y": 740, "walk_to": [560, 800], "visible_if": "!wool_town_flowerbox"}
+    {
+      "id": "helmet",
+      "name": "hełm rycerza",
+      "sprite": "scenes/town/helmet.png",
+      "x": 700,
+      "y": 965,
+      "walk_to": [
+        620,
+        985
+      ],
+      "visible_if": "helmet_dropped && !helmet_worn"
+    },
+    {
+      "id": "wool_town_bench",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 1195,
+      "y": 735,
+      "walk_to": [
+        1180,
+        790
+      ],
+      "visible_if": "!wool_town_bench",
+      "pickup": true
+    },
+    {
+      "id": "wool_town_shutter",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 1322,
+      "y": 610,
+      "walk_to": [
+        1300,
+        760
+      ],
+      "visible_if": "!wool_town_shutter",
+      "pickup": true
+    },
+    {
+      "id": "wool_town_flowerbox",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 722,
+      "y": 775,
+      "walk_to": [
+        700,
+        830
+      ],
+      "visible_if": "!wool_town_flowerbox"
+    }
   ],
   "exits": [
-    {"id": "workshop_door", "name": "warsztat Dratewki", "polygon": [[560, 450], [680, 450], [680, 690], [560, 690]], "walk_to": [610, 740], "target": "workshop", "spawn": "default"},
-    {"id": "path_meadow", "name": "ścieżka nad rzekę", "polygon": [[0, 560], [110, 560], [110, 1000], [0, 1000]], "walk_to": [90, 900], "target": "meadow", "spawn": "default"},
-    {"id": "path_market", "name": "droga na targ", "polygon": [[1800, 520], [1920, 520], [1920, 1000], [1800, 1000]], "walk_to": [1820, 880], "target": "market", "spawn": "default"},
-    {"id": "path_hill", "name": "ścieżka pod wzgórze", "polygon": [[1640, 520], [1760, 520], [1760, 680], [1640, 680]], "walk_to": [1680, 760], "target": "town", "spawn": "default"}
+    {
+      "id": "workshop_door",
+      "name": "warsztat Dratewki",
+      "polygon": [
+        [
+          800,
+          555
+        ],
+        [
+          892,
+          555
+        ],
+        [
+          892,
+          752
+        ],
+        [
+          800,
+          752
+        ]
+      ],
+      "walk_to": [
+        845,
+        800
+      ],
+      "target": "workshop",
+      "spawn": "default"
+    },
+    {
+      "id": "path_meadow",
+      "name": "ścieżka nad rzekę",
+      "polygon": [
+        [
+          0,
+          700
+        ],
+        [
+          150,
+          700
+        ],
+        [
+          170,
+          930
+        ],
+        [
+          0,
+          930
+        ]
+      ],
+      "walk_to": [
+        60,
+        890
+      ],
+      "target": "meadow",
+      "spawn": "default"
+    },
+    {
+      "id": "path_market",
+      "name": "droga na targ",
+      "polygon": [
+        [
+          1790,
+          620
+        ],
+        [
+          1920,
+          620
+        ],
+        [
+          1920,
+          930
+        ],
+        [
+          1790,
+          930
+        ]
+      ],
+      "walk_to": [
+        1850,
+        890
+      ],
+      "target": "market",
+      "spawn": "default"
+    },
+    {
+      "id": "path_hill",
+      "name": "ścieżka pod wzgórze",
+      "polygon": [
+        [
+          1505,
+          515
+        ],
+        [
+          1620,
+          515
+        ],
+        [
+          1645,
+          700
+        ],
+        [
+          1530,
+          700
+        ]
+      ],
+      "walk_to": [
+        1580,
+        725
+      ],
+      "target": "town",
+      "spawn": "default"
+    }
   ],
   "actors": [
-    {"id": "krak", "x": 1080, "y": 820, "facing": "left", "visible_if": "!sheep_sewn"},
-    {"id": "shepherd", "x": 120, "y": 940, "facing": "right", "visible_if": "shepherd_here"},
-    {"id": "knight", "x": 1880, "y": 880, "facing": "left", "visible_if": "knight_running"},
-    {"id": "merchant", "x": 420, "y": 640, "facing": "right", "visible_if": "laughing", "scale": 0.5, "look": "merchant_window"},
-    {"id": "baker", "x": 480, "y": 640, "facing": "right", "visible_if": "laughing", "scale": 0.5, "look": "baker_window"}
+    {
+      "id": "krak",
+      "x": 1135,
+      "y": 748,
+      "facing": "left",
+      "visible_if": "!sheep_sewn",
+      "look": "krak_bench",
+      "height_px": 530
+    },
+    {
+      "id": "shepherd",
+      "x": -60,
+      "y": 905,
+      "facing": "right",
+      "visible_if": "shepherd_here"
+    },
+    {
+      "id": "knight",
+      "x": 1980,
+      "y": 905,
+      "facing": "left",
+      "visible_if": "knight_running"
+    },
+    {
+      "id": "merchant",
+      "x": 688,
+      "y": 672,
+      "facing": "right",
+      "visible_if": "laughing",
+      "scale": 0.3,
+      "look": "merchant_window",
+      "height_px": 280
+    },
+    {
+      "id": "baker",
+      "x": 742,
+      "y": 672,
+      "facing": "right",
+      "visible_if": "laughing",
+      "scale": 0.3,
+      "look": "baker_window",
+      "height_px": 280
+    }
   ],
   "points": {
-    "knight_from": [1900, 880],
-    "knight_to": [20, 900],
-    "helmet_spot": [640, 960],
-    "shepherd_from": [60, 940],
-    "shepherd_to": [420, 930]
+    "knight_from": [
+      1980,
+      905
+    ],
+    "knight_to": [
+      -80,
+      925
+    ],
+    "helmet_spot": [
+      700,
+      965
+    ],
+    "shepherd_from": [
+      -60,
+      905
+    ],
+    "shepherd_to": [
+      250,
+      900
+    ]
   }
 }

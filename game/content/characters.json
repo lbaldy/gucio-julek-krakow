@@ -5,13 +5,42 @@
     "text_color": "#ffe08a",
     "speed": 410,
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "walk_r": {"frames": 16, "fps": 14},
-      "talk_r": {"frames": 3, "fps": 8},
-      "pickup_r": {"frames": 1, "fps": 1, "hold_ms": 400, "offset": [24, 0]},
-      "cheer_r": {"frames": 1, "fps": 1, "hold_ms": 1400},
-      "push_r": {"frames": 1, "fps": 1, "hold_ms": 1200},
-      "lift_r": {"frames": 1, "fps": 1, "hold_ms": 1200}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "walk_r": {
+        "frames": 16,
+        "fps": 14
+      },
+      "talk_r": {
+        "frames": 3,
+        "fps": 8
+      },
+      "pickup_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 400,
+        "offset": [
+          24,
+          0
+        ]
+      },
+      "cheer_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1400
+      },
+      "push_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1200
+      },
+      "lift_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1200
+      }
     }
   },
   "julek": {
@@ -20,18 +49,68 @@
     "text_color": "#9fe0ff",
     "speed": 200,
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "walk_r": {"frames": 16, "fps": 20},
-      "talk_r": {"frames": 3, "fps": 8},
-      "crawl_r": {"frames": 1, "fps": 1, "hold_ms": 900},
-      "cheer_r": {"frames": 1, "fps": 1, "hold_ms": 1400},
-      "shout_r": {"frames": 1, "fps": 1, "hold_ms": 1200},
-      "bounce_r": {"frames": 1, "fps": 1, "hold_ms": 1600},
-      "offer_r": {"frames": 1, "fps": 1, "hold_ms": 1400},
-      "peekaboo_r": {"frames": 1, "fps": 1, "hold_ms": 1200},
-      "fuj_r": {"frames": 1, "fps": 1, "hold_ms": 1400},
-      "hug_r": {"frames": 1, "fps": 1, "hold_ms": 1500},
-      "wool_r": {"frames": 1, "fps": 1, "hold_ms": 1500}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "walk_r": {
+        "frames": 16,
+        "fps": 20
+      },
+      "talk_r": {
+        "frames": 3,
+        "fps": 8
+      },
+      "crawl_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 900
+      },
+      "cheer_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1400
+      },
+      "shout_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1200
+      },
+      "bounce_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1600
+      },
+      "offer_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1400
+      },
+      "peekaboo_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1200
+      },
+      "fuj_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1400
+      },
+      "hug_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1500
+      },
+      "wool_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1500
+      },
+      "helmet_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1600
+      }
     }
   },
   "mama": {
@@ -39,45 +118,104 @@
     "height_px": 650,
     "text_color": "#ffb3c7",
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      }
     }
   },
   "krak": {
     "name": "Król Krak",
     "height_px": 660,
     "text_color": "#f2c14e",
-    "pose_if": {"sad": "!sheep_sewn"},
+    "pose_if": {
+      "sad": "!sheep_sewn"
+    },
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "talk_r": {"frames": 3, "fps": 7},
-      "sad_r": {"frames": 1, "fps": 1},
-      "proud_r": {"frames": 1, "fps": 1, "hold_ms": 1500}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "talk_r": {
+        "frames": 3,
+        "fps": 7
+      },
+      "sad_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "proud_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1500
+      },
+      "sad_talk_r": {
+        "frames": 2,
+        "fps": 6
+      }
     }
   },
   "shepherd": {
     "name": "Pasterz",
     "height_px": 560,
     "text_color": "#e8d9a8",
-    "pose_if": {"sad": "!klebuszek_found"},
-    "speed": 140,
+    "pose_if": {
+      "sad": "!klebuszek_found"
+    },
+    "speed": 240,
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "talk_r": {"frames": 3, "fps": 7},
-      "walk_r": {"frames": 1, "fps": 1},
-      "sad_r": {"frames": 1, "fps": 1}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "talk_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "walk_r": {
+        "frames": 6,
+        "fps": 4
+      },
+      "sad_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "sad_talk_r": {
+        "frames": 2,
+        "fps": 6
+      }
     }
   },
   "dratewka": {
     "name": "Dratewka",
     "height_px": 620,
     "text_color": "#f0b08a",
-    "pose_if": {"scared": "cart_pushed && !beee_done"},
+    "pose_if": {
+      "scared": "cart_pushed && !beee_done"
+    },
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "talk_r": {"frames": 3, "fps": 7},
-      "sew_r": {"frames": 1, "fps": 1, "hold_ms": 1600},
-      "scared_r": {"frames": 1, "fps": 1},
-      "cheer_r": {"frames": 1, "fps": 1, "hold_ms": 1400}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "talk_r": {
+        "frames": 3,
+        "fps": 7
+      },
+      "sew_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1600
+      },
+      "scared_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "cheer_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1400
+      }
     }
   },
   "dragon": {
@@ -85,11 +223,27 @@
     "height_px": 1100,
     "text_color": "#a8e07a",
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "talk_r": {"frames": 3, "fps": 7},
-      "sniff_r": {"frames": 1, "fps": 1},
-      "doubt_r": {"frames": 1, "fps": 1},
-      "happy_r": {"frames": 1, "fps": 1, "hold_ms": 1200}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "talk_r": {
+        "frames": 3,
+        "fps": 7
+      },
+      "sniff_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "doubt_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "happy_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1200
+      }
     }
   },
   "merchant": {
@@ -97,9 +251,19 @@
     "height_px": 620,
     "text_color": "#e0c060",
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "talk_r": {"frames": 3, "fps": 7},
-      "eat_r": {"frames": 1, "fps": 1, "hold_ms": 1400}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "talk_r": {
+        "frames": 3,
+        "fps": 7
+      },
+      "eat_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1400
+      }
     }
   },
   "baker": {
@@ -107,9 +271,19 @@
     "height_px": 570,
     "text_color": "#ffb3a0",
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "talk_r": {"frames": 3, "fps": 7},
-      "give_r": {"frames": 1, "fps": 1, "hold_ms": 1200}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "talk_r": {
+        "frames": 3,
+        "fps": 7
+      },
+      "give_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 1200
+      }
     }
   },
   "knight": {
@@ -119,20 +293,41 @@
     "speed": 500,
     "run_speed": 900,
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "walk_r": {"frames": 1, "fps": 1},
-      "run_r": {"frames": 1, "fps": 1}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "walk_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "run_r": {
+        "frames": 6,
+        "fps": 8
+      }
     }
   },
   "ram": {
     "name": "Baran Bodzio",
     "height_px": 330,
     "text_color": "#e0e0e0",
-    "pose_if": {"soft": "ram_calm"},
+    "pose_if": {
+      "soft": "ram_calm"
+    },
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "soft_r": {"frames": 1, "fps": 1},
-      "butt_r": {"frames": 1, "fps": 1, "hold_ms": 700}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "soft_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "butt_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 700
+      }
     }
   },
   "sheep_a": {
@@ -141,8 +336,14 @@
     "text_color": "#ffffff",
     "speed": 260,
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "walk_r": {"frames": 1, "fps": 1}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "walk_r": {
+        "frames": 1,
+        "fps": 1
+      }
     }
   },
   "sheep_b": {
@@ -151,8 +352,14 @@
     "text_color": "#ffffff",
     "speed": 260,
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "walk_r": {"frames": 1, "fps": 1}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "walk_r": {
+        "frames": 1,
+        "fps": 1
+      }
     }
   },
   "sheep_c": {
@@ -161,8 +368,14 @@
     "text_color": "#ffffff",
     "speed": 260,
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1},
-      "walk_r": {"frames": 1, "fps": 1}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      },
+      "walk_r": {
+        "frames": 1,
+        "fps": 1
+      }
     }
   },
   "klebuszek": {
@@ -170,7 +383,10 @@
     "height_px": 160,
     "text_color": "#ffffff",
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      }
     }
   },
   "crowd": {
@@ -178,7 +394,10 @@
     "height_px": 600,
     "text_color": "#ffe08a",
     "anims": {
-      "idle_r": {"frames": 1, "fps": 1}
+      "idle_r": {
+        "frames": 1,
+        "fps": 1
+      }
     }
   }
 }

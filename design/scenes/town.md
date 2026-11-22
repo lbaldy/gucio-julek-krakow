@@ -122,3 +122,13 @@ paths open).
 - `town.helmet.julek.2`: gucio: "Ciemno? Julcio, hełm zasłania ci oczy!"
 - `town.wool.look`: gucio: "Kłębek wełny! Smok tędy niósł owce."
 - `town.wool.low`: gucio: "Za nisko dla mnie… Julek?"
+
+## Build status
+- [x] Greybox + walkthrough (full.json)
+- [x] Background: outpaint of the town anchor (bg_v2) → 2K final (cave smoke only) → `scenes/town/bg.png`
+- [x] Geometry: walkable, hotspots, exits, scale (0.32 at y765 → 0.70 at y1060), spawns, points
+- [x] Sprites: helmet, wool tuft (world + counter icon), Krak on the bench (`krak_bench`, idle/talk),
+      shepherd (idle, sad, sad_talk, 6-frame walk), knight (idle, 6-frame run), merchant/baker
+      window busts, Julek in the helmet (`helmet_r`)
+- [ ] Lines locked with the user → VO
+- [ ] Music `town.mp3`, ambience `town_loop.mp3`
