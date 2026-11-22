@@ -134,7 +134,7 @@ Optional extras (all off unless set):
 - `"companions": [{"id": "dog", "offset": [150, 10]}, {"id": "ghost", "if": "ghost_awake", "offset": [-110, 40]}]`:
   characters that follow the hero. `offset` is [px behind, px up] at scale 1; if the spot
   behind is against a wall, they stand in front. They are re-placed on scene entry and load,
-  and added or removed whenever their `if` changes. A scene that places the same id as an
+  and added or removed whenever their `if` changes (at once, when a script sets the flag). A scene that places the same id as an
   actor keeps its own actor; `"no_companions": true` on a scene (or `no_hero`) drops them.
   Companion ids are valid targets in every scene that has them (handlers live in `globals.ts`).
   `"stay_if": "julek_hiding"` keeps a companion where a script placed it (hiding behind a prop) while

@@ -89,11 +89,20 @@ for (const [id, it] of Object.entries(items)) {
   if (!asset(it.icon)) warn(`item ${id}: icon ${it.icon} missing`);
   if (!lines[`item.${id}.look`]) warn(`item ${id}: no look line item.${id}.look`);
 }
+// A character's frames may live in its own folder or in an actor's `look` folder (another outfit,
+// a shared animal); a frame counts as present if any folder the character is drawn from has it.
+const folders = new Map<string, Set<string>>();
+for (const s of Object.values(scenes))
+  for (const a of s.actors ?? []) {
+    if (!folders.has(a.id)) folders.set(a.id, new Set());
+    folders.get(a.id)!.add(a.look ?? a.id);
+  }
 for (const [id, ch] of Object.entries(chars)) {
+  const from = new Set([id, ...(folders.get(id) ?? [])]);
   for (const [anim, a] of Object.entries(ch.anims)) {
     for (let f = 0; f < a.frames; f++) {
-      const p = `chars/${id}/${anim}/${String(f).padStart(2, "0")}.png`;
-      if (!asset(p)) warn(`character ${id}: frame ${p} missing`);
+      const file = `${anim}/${String(f).padStart(2, "0")}.png`;
+      if (![...from].some((d) => asset(`chars/${d}/${file}`))) warn(`character ${id}: frame chars/${id}/${file} missing`);
     }
   }
 }

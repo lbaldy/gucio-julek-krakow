@@ -76,11 +76,6 @@
         "fps": 1,
         "hold_ms": 1200
       },
-      "bounce_r": {
-        "frames": 1,
-        "fps": 1,
-        "hold_ms": 1600
-      },
       "offer_r": {
         "frames": 1,
         "fps": 1,
@@ -101,11 +96,6 @@
         "fps": 1,
         "hold_ms": 1500
       },
-      "wool_r": {
-        "frames": 1,
-        "fps": 1,
-        "hold_ms": 1500
-      },
       "helmet_r": {
         "frames": 1,
         "fps": 1,
@@ -117,19 +107,14 @@
     "name": "Mama",
     "height_px": 650,
     "text_color": "#ffb3c7",
-    "anims": {
-      "idle_r": {
-        "frames": 1,
-        "fps": 1
-      }
-    }
+    "anims": {}
   },
   "krak": {
     "name": "Król Krak",
     "height_px": 660,
     "text_color": "#f2c14e",
     "pose_if": {
-      "sad": "!sheep_sewn"
+      "sad": "!sheep_sewn && scene:town"
     },
     "anims": {
       "idle_r": {
@@ -143,11 +128,6 @@
       "sad_r": {
         "frames": 1,
         "fps": 1
-      },
-      "proud_r": {
-        "frames": 1,
-        "fps": 1,
-        "hold_ms": 1500
       },
       "sad_talk_r": {
         "frames": 2,
@@ -170,10 +150,6 @@
     "speed": 240,
     "anims": {
       "idle_r": {
-        "frames": 1,
-        "fps": 1
-      },
-      "talk_r": {
         "frames": 1,
         "fps": 1
       },
@@ -227,29 +203,7 @@
     "name": "Smok",
     "height_px": 1100,
     "text_color": "#a8e07a",
-    "anims": {
-      "idle_r": {
-        "frames": 1,
-        "fps": 1
-      },
-      "talk_r": {
-        "frames": 3,
-        "fps": 7
-      },
-      "sniff_r": {
-        "frames": 1,
-        "fps": 1
-      },
-      "doubt_r": {
-        "frames": 1,
-        "fps": 1
-      },
-      "happy_r": {
-        "frames": 1,
-        "fps": 1,
-        "hold_ms": 1200
-      }
-    }
+    "anims": {}
   },
   "merchant": {
     "name": "Kupiec",
@@ -302,10 +256,6 @@
         "frames": 1,
         "fps": 1
       },
-      "walk_r": {
-        "frames": 1,
-        "fps": 1
-      },
       "run_r": {
         "frames": 6,
         "fps": 8
@@ -344,10 +294,6 @@
       "idle_r": {
         "frames": 1,
         "fps": 1
-      },
-      "walk_r": {
-        "frames": 1,
-        "fps": 1
       }
     }
   },
@@ -360,10 +306,6 @@
       "idle_r": {
         "frames": 1,
         "fps": 1
-      },
-      "walk_r": {
-        "frames": 1,
-        "fps": 1
       }
     }
   },
@@ -374,10 +316,6 @@
     "speed": 260,
     "anims": {
       "idle_r": {
-        "frames": 1,
-        "fps": 1
-      },
-      "walk_r": {
         "frames": 1,
         "fps": 1
       }
@@ -398,11 +336,6 @@
     "name": "Ludzie",
     "height_px": 600,
     "text_color": "#ffe08a",
-    "anims": {
-      "idle_r": {
-        "frames": 1,
-        "fps": 1
-      }
-    }
+    "anims": {}
   }
 }

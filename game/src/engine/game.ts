@@ -725,6 +725,9 @@ export class Game {
     const setFlag = (name: string, value: boolean) => {
       g.state.flags[name] = value;
       g.log({ t: "flag", name, value });
+      // A companion's `if` may hinge on this flag (Julek steps into a painted crib): update at once,
+      // not only when the script ends.
+      if (g.scene && g.content.config.companions?.some((c) => c.if)) g.placeCompanions();
     };
 
     const api: GameAPI = {

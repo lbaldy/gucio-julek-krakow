@@ -7,7 +7,8 @@ import { defineScene, type GameAPI } from "../../../src/engine/api";
 async function bounce(g: GameAPI) {
   if (g.flag("book_down")) return g.say("bedroom.crib.julek.after");
   await g.cutscene(async () => {
-    void g.anim("julek", "bounce");
+    // Julek is painted into the crib (a patch) while he bounces; the companion steps out meanwhile
+    g.set("julek_bouncing");
     await g.say("bedroom.crib.julek.1");
     g.sfx("boing");
     await g.say("bedroom.crib.julek.2");
@@ -15,6 +16,7 @@ async function bounce(g: GameAPI) {
     g.sfx("pop");
     await g.say("bedroom.crib.julek.3");
     await g.say("bedroom.crib.julek.4");
+    g.unset("julek_bouncing");
   });
 }
 

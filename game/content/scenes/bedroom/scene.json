@@ -2,29 +2,341 @@
   "id": "bedroom",
   "background": "scenes/bedroom/bg.png",
   "ambience": "amb/spring_evening_loop.mp3",
-  "walkable": [[[20, 1075], [1890, 1075], [1780, 1000], [1690, 955], [1385, 950], [1370, 800], [1110, 780], [1060, 752], [800, 745], [720, 742], [505, 965], [95, 972], [20, 1010]]],
-  "scale": {"near_y": 1050, "near": 1.2, "far_y": 745, "far": 0.8},
+  "walkable": [
+    [
+      [
+        20,
+        1075
+      ],
+      [
+        1890,
+        1075
+      ],
+      [
+        1780,
+        1000
+      ],
+      [
+        1690,
+        955
+      ],
+      [
+        1385,
+        950
+      ],
+      [
+        1370,
+        800
+      ],
+      [
+        1110,
+        780
+      ],
+      [
+        1060,
+        752
+      ],
+      [
+        800,
+        745
+      ],
+      [
+        720,
+        742
+      ],
+      [
+        505,
+        965
+      ],
+      [
+        95,
+        972
+      ],
+      [
+        20,
+        1010
+      ]
+    ]
+  ],
+  "scale": {
+    "near_y": 1050,
+    "near": 1.2,
+    "far_y": 745,
+    "far": 0.8
+  },
   "spawns": {
-    "default": {"x": 860, "y": 930, "facing": "left"}
+    "default": {
+      "x": 860,
+      "y": 930,
+      "facing": "left"
+    }
   },
   "hotspots": [
-    {"id": "crib", "name": "łóżeczko Julka", "polygon": [[1080, 480], [1470, 480], [1470, 770], [1080, 770]], "walk_to": [1240, 800], "face": "up"},
-    {"id": "bed", "name": "łóżko Gucia", "polygon": [[50, 680], [395, 465], [690, 465], [690, 700], [475, 940], [440, 857], [95, 857], [50, 940]], "walk_to": [600, 985], "face": "left"},
-    {"id": "window", "name": "okno", "polygon": [[785, 130], [1140, 130], [1140, 520], [785, 520]], "walk_to": [930, 790], "face": "up"},
-    {"id": "lamp", "name": "lampka", "polygon": [[700, 495], [785, 495], [790, 740], [695, 740]], "walk_to": [800, 790], "face": "left"},
-    {"id": "toy_chest", "name": "skrzynia z zabawkami", "polygon": [[1375, 690], [1500, 545], [1650, 560], [1700, 650], [1660, 930], [1390, 930]], "walk_to": [1520, 990], "face": "right"},
-    {"id": "shelf", "name": "półka z książkami", "polygon": [[1430, 230], [1680, 230], [1680, 425], [1430, 425]], "walk_to": [1540, 985], "face": "up"},
-    {"id": "door", "name": "drzwi", "polygon": [[1745, 60], [1920, 20], [1920, 1000], [1755, 960]], "walk_to": [1700, 1000], "face": "right"}
+    {
+      "id": "crib",
+      "name": "łóżeczko Julka",
+      "polygon": [
+        [
+          1080,
+          480
+        ],
+        [
+          1470,
+          480
+        ],
+        [
+          1470,
+          770
+        ],
+        [
+          1080,
+          770
+        ]
+      ],
+      "walk_to": [
+        990,
+        830
+      ],
+      "face": "right"
+    },
+    {
+      "id": "bed",
+      "name": "łóżko Gucia",
+      "polygon": [
+        [
+          50,
+          680
+        ],
+        [
+          395,
+          465
+        ],
+        [
+          690,
+          465
+        ],
+        [
+          690,
+          700
+        ],
+        [
+          475,
+          940
+        ],
+        [
+          440,
+          857
+        ],
+        [
+          95,
+          857
+        ],
+        [
+          50,
+          940
+        ]
+      ],
+      "walk_to": [
+        600,
+        985
+      ],
+      "face": "left"
+    },
+    {
+      "id": "window",
+      "name": "okno",
+      "polygon": [
+        [
+          785,
+          130
+        ],
+        [
+          1140,
+          130
+        ],
+        [
+          1140,
+          520
+        ],
+        [
+          785,
+          520
+        ]
+      ],
+      "walk_to": [
+        930,
+        790
+      ],
+      "face": "up"
+    },
+    {
+      "id": "lamp",
+      "name": "lampka",
+      "polygon": [
+        [
+          700,
+          495
+        ],
+        [
+          785,
+          495
+        ],
+        [
+          790,
+          740
+        ],
+        [
+          695,
+          740
+        ]
+      ],
+      "walk_to": [
+        800,
+        790
+      ],
+      "face": "left"
+    },
+    {
+      "id": "toy_chest",
+      "name": "skrzynia z zabawkami",
+      "polygon": [
+        [
+          1375,
+          690
+        ],
+        [
+          1500,
+          545
+        ],
+        [
+          1650,
+          560
+        ],
+        [
+          1700,
+          650
+        ],
+        [
+          1660,
+          930
+        ],
+        [
+          1390,
+          930
+        ]
+      ],
+      "walk_to": [
+        1520,
+        990
+      ],
+      "face": "right"
+    },
+    {
+      "id": "shelf",
+      "name": "półka z książkami",
+      "polygon": [
+        [
+          1430,
+          230
+        ],
+        [
+          1680,
+          230
+        ],
+        [
+          1680,
+          425
+        ],
+        [
+          1430,
+          425
+        ]
+      ],
+      "walk_to": [
+        1540,
+        985
+      ],
+      "face": "up"
+    },
+    {
+      "id": "door",
+      "name": "drzwi",
+      "polygon": [
+        [
+          1745,
+          60
+        ],
+        [
+          1920,
+          20
+        ],
+        [
+          1920,
+          1000
+        ],
+        [
+          1755,
+          960
+        ]
+      ],
+      "walk_to": [
+        1700,
+        1000
+      ],
+      "face": "right"
+    }
   ],
   "objects": [
-    {"id": "book_shelf", "name": "książka o Polsce", "sprite": "scenes/bedroom/book_shelf.png", "x": 1490, "y": 330, "walk_to": [1540, 985], "visible_if": "!book_down"},
-    {"id": "book", "name": "książka o Polsce", "sprite": "scenes/bedroom/book_world.png", "x": 1180, "y": 960, "walk_to": [1100, 990], "visible_if": "book_down && !book_read"}
+    {
+      "id": "book_shelf",
+      "name": "książka o Polsce",
+      "sprite": "scenes/bedroom/book_shelf.png",
+      "x": 1443,
+      "y": 267,
+      "walk_to": [
+        1540,
+        985
+      ],
+      "visible_if": "!book_down"
+    },
+    {
+      "id": "book",
+      "name": "książka o Polsce",
+      "sprite": "scenes/bedroom/book_world.png",
+      "x": 1180,
+      "y": 960,
+      "walk_to": [
+        1100,
+        990
+      ],
+      "visible_if": "book_down && !book_read"
+    }
   ],
   "patches": [
-    {"id": "book_page", "image": "scenes/bedroom/book_page.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "reading_book", "fade_in_ms": 600, "baseline": 9999}
+    {
+      "id": "crib_bounce",
+      "image": "scenes/bedroom/crib_bounce.png",
+      "x": 1050,
+      "y": 430,
+      "visible_if": "julek_bouncing"
+    },
+    {
+      "id": "book_page",
+      "image": "scenes/bedroom/book_page.png",
+      "x": 0,
+      "y": 0,
+      "w": 1920,
+      "h": 1080,
+      "visible_if": "reading_book",
+      "fade_in_ms": 600,
+      "baseline": 9999
+    }
   ],
   "points": {
-    "gucio_bed": [600, 985]
+    "gucio_bed": [
+      600,
+      985
+    ]
   },
   "music": "music/home.mp3"
 }
