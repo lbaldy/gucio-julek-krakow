@@ -1,35 +1,150 @@
 {
-  "bedroom.enter.1": {"speaker": "julek", "text": "Beee! Beee!", "direction": "[giggles]", "model": "eleven_v3"},
-  "bedroom.enter.2": {"speaker": "gucio", "text": "Julek jest dziś owieczką. Mama zaraz przyjdzie poczytać!"},
-  "bedroom.enter.3": {"speaker": "gucio", "text": "Moja książka o Polsce… jest na półce."},
-  "bedroom.shelf.look": {"speaker": "gucio", "text": "Moja książka o Polsce jest na półce. Za wysoko…"},
-  "bedroom.shelf.look.after": {"speaker": "gucio", "text": "Półka z książkami i moją rakietą."},
-  "bedroom.shelf.use": {"speaker": "gucio", "text": "Nie sięgnę. Nawet na palcach."},
-  "bedroom.shelf.julek": {"speaker": "julek", "text": "Hop? Nie ma.", "model": "eleven_v3"},
-  "bedroom.crib.look": {"speaker": "gucio", "text": "Łóżeczko Julka stoi tuż pod półką. Julek uwielbia w nim skakać!"},
-  "bedroom.crib.use": {"speaker": "gucio", "text": "Za małe dla mnie."},
-  "bedroom.crib.julek.1": {"speaker": "julek", "text": "Beee! Beee! Hop!", "direction": "[excited]", "model": "eleven_v3"},
-  "bedroom.crib.julek.2": {"speaker": "gucio", "text": "Uwaga! Półka się trzęsie!"},
-  "bedroom.crib.julek.3": {"speaker": "julek", "text": "Bum!", "direction": "[laughs]", "model": "eleven_v3"},
-  "bedroom.crib.julek.4": {"speaker": "mama", "text": "Julek! Owieczki nie skaczą po łóżeczku!"},
-  "bedroom.crib.julek.after": {"speaker": "gucio", "text": "Już nie skaczemy, Julcio. Mama by się gniewała."},
-  "bedroom.book.look": {"speaker": "gucio", "text": "Moja książka o Polsce! Jest w niej smok!"},
-  "bedroom.book.read.1": {"speaker": "mama", "text": "No dobrze, przeczytam wam legendę. Dawno, dawno temu, pod wzgórzem Wawel…"},
-  "bedroom.book.read.2": {"speaker": "julek", "text": "Smok!", "direction": "[pointing, excited]", "model": "eleven_v3"},
-  "bedroom.book.read.3": {"speaker": "mama", "text": "Tak, smok. Zabierał owce. I nikt nie wiedział, jak go pokonać."},
-  "bedroom.book.read.4": {"speaker": "mama", "text": "Dokończymy jutro."},
-  "bedroom.book.read.5": {"speaker": "gucio", "text": "Mamo! Jeszcze trochę!"},
-  "bedroom.book.read.6": {"speaker": "mama", "text": "Jutro. Dobranoc, owieczki."},
-  "bedroom.book.read.7": {"speaker": "julek", "text": "Beee…", "direction": "[sleepy]", "model": "eleven_v3"},
-  "bedroom.bed.look": {"speaker": "gucio", "text": "Moje łóżko z dinozaurami."},
-  "bedroom.bed.use.early": {"speaker": "gucio", "text": "Najpierw bajka!"},
-  "bedroom.bed.use": {"speaker": "gucio", "text": "Ja bym coś wymyślił… na tego smoka…", "direction": "[sleepy]"},
-  "bedroom.window.look": {"speaker": "gucio", "text": "Lato! Słychać świerszcze."},
-  "bedroom.window.use": {"speaker": "gucio", "text": "Niech będzie otwarte. Jest ciepło."},
-  "bedroom.lamp.look": {"speaker": "gucio", "text": "Moja lampka. Do czytania."},
-  "bedroom.lamp.use": {"speaker": "gucio", "text": "Niech jeszcze świeci."},
-  "bedroom.toy_chest.look": {"speaker": "gucio", "text": "Klocki i piłka. Jutro się pobawimy."},
-  "bedroom.toy_chest.julek": {"speaker": "julek", "text": "Hop! Hihi!", "model": "eleven_v3"},
-  "bedroom.door.look": {"speaker": "gucio", "text": "Mama zaraz przyjdzie poczytać."},
-  "bedroom.door.use": {"speaker": "gucio", "text": "Nie wychodzimy. Już wieczór."}
+  "bedroom.enter.1": {
+    "speaker": "julek",
+    "text": "Beee! Beee!",
+    "direction": "[giggles]",
+    "model": "eleven_v3"
+  },
+  "bedroom.enter.2": {
+    "speaker": "gucio",
+    "text": "Julek jest dziś owieczką. Mama zaraz przyjdzie poczytać!"
+  },
+  "bedroom.enter.3": {
+    "speaker": "gucio",
+    "text": "Moja książka o Polsce… jest na półce."
+  },
+  "bedroom.shelf.look": {
+    "speaker": "gucio",
+    "text": "Moja książka o Polsce jest na półce. Za wysoko…"
+  },
+  "bedroom.shelf.look.after": {
+    "speaker": "gucio",
+    "text": "Półka z książkami i moją rakietą."
+  },
+  "bedroom.shelf.use": {
+    "speaker": "gucio",
+    "text": "Nie sięgnę. Nawet na palcach."
+  },
+  "bedroom.shelf.julek": {
+    "speaker": "julek",
+    "text": "Hop? Nie ma.",
+    "model": "eleven_v3"
+  },
+  "bedroom.crib.look": {
+    "speaker": "gucio",
+    "text": "Łóżeczko Julka stoi tuż pod półką. Julek uwielbia w nim skakać!"
+  },
+  "bedroom.crib.use": {
+    "speaker": "gucio",
+    "text": "Za małe dla mnie."
+  },
+  "bedroom.crib.julek.1": {
+    "speaker": "julek",
+    "text": "Beee! Beee! Hop!",
+    "direction": "[excited]",
+    "model": "eleven_v3"
+  },
+  "bedroom.crib.julek.2": {
+    "speaker": "gucio",
+    "text": "Uwaga! Półka się trzęsie!"
+  },
+  "bedroom.crib.julek.3": {
+    "speaker": "julek",
+    "text": "Bum!",
+    "direction": "[laughs]",
+    "model": "eleven_v3"
+  },
+  "bedroom.crib.julek.4": {
+    "speaker": "mama",
+    "text": "Julek! Owieczki nie skaczą po łóżeczku!"
+  },
+  "bedroom.crib.julek.after": {
+    "speaker": "gucio",
+    "text": "Już nie skaczemy, Julcio. Mama by się gniewała."
+  },
+  "bedroom.book.look": {
+    "speaker": "gucio",
+    "text": "Moja książka o Polsce! Jest w niej smok!"
+  },
+  "bedroom.book.read.1": {
+    "speaker": "mama",
+    "text": "No dobrze, przeczytam wam legendę. Dawno, dawno temu, pod wzgórzem Wawel…"
+  },
+  "bedroom.book.read.2": {
+    "speaker": "julek",
+    "text": "Smok!",
+    "direction": "[pointing, excited]",
+    "model": "eleven_v3"
+  },
+  "bedroom.book.read.3": {
+    "speaker": "mama",
+    "text": "Tak, smok. Zabierał owce. I nikt nie wiedział, jak go pokonać."
+  },
+  "bedroom.book.read.4": {
+    "speaker": "mama",
+    "text": "Dokończymy jutro."
+  },
+  "bedroom.book.read.5": {
+    "speaker": "gucio",
+    "text": "Mamo! Jeszcze trochę!"
+  },
+  "bedroom.book.read.6": {
+    "speaker": "mama",
+    "text": "Jutro. Dobranoc, owieczki.",
+    "model": "eleven_v3",
+    "direction": "[whispers]",
+    "spoken": "Jutro. [whispers] Dobranoc, owieczki."
+  },
+  "bedroom.book.read.7": {
+    "speaker": "julek",
+    "text": "Beee…",
+    "direction": "[sleepy]",
+    "model": "eleven_v3"
+  },
+  "bedroom.bed.look": {
+    "speaker": "gucio",
+    "text": "Moje łóżko z dinozaurami."
+  },
+  "bedroom.bed.use.early": {
+    "speaker": "gucio",
+    "text": "Najpierw bajka!"
+  },
+  "bedroom.bed.use": {
+    "speaker": "gucio",
+    "text": "Ja bym coś wymyślił… na tego smoka…",
+    "direction": "[sleepy]"
+  },
+  "bedroom.window.look": {
+    "speaker": "gucio",
+    "text": "Lato! Słychać świerszcze."
+  },
+  "bedroom.window.use": {
+    "speaker": "gucio",
+    "text": "Niech będzie otwarte. Jest ciepło."
+  },
+  "bedroom.lamp.look": {
+    "speaker": "gucio",
+    "text": "Moja lampka. Do czytania."
+  },
+  "bedroom.lamp.use": {
+    "speaker": "gucio",
+    "text": "Niech jeszcze świeci."
+  },
+  "bedroom.toy_chest.look": {
+    "speaker": "gucio",
+    "text": "Klocki i piłka. Jutro się pobawimy."
+  },
+  "bedroom.toy_chest.julek": {
+    "speaker": "julek",
+    "text": "Hop! Hihi!",
+    "model": "eleven_v3"
+  },
+  "bedroom.door.look": {
+    "speaker": "gucio",
+    "text": "Mama zaraz przyjdzie poczytać."
+  },
+  "bedroom.door.use": {
+    "speaker": "gucio",
+    "text": "Nie wychodzimy. Już wieczór."
+  }
 }

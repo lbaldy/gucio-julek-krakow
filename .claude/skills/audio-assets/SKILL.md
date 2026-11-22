@@ -94,6 +94,13 @@ python -m tools.voice sfx "quiet harbor at night, gentle waves, distant gulls, r
 
 ## Loudness
 
+**Voiceover is levelled automatically.** `vo_batch` saves each raw take in `assets/raw/audio/vo/`
+and writes a two-pass loudnorm copy at **−18 LUFS** (true peak −1.5) to `game/audio/vo/`.
+Voices differ by up to 12 dB: the narrator came out at −30 LUFS next to Gucio's −18, and the
+user found the narrator too quiet in every earlier game. `python -m tools.vo_batch --renorm`
+re-levels everything already recorded (free). Never copy a TTS file into `vo/` by hand without
+levelling it.
+
 ElevenLabs output volume varies wildly (ambience came out anywhere from −24 to −49
 LUFS). Normalize every music and ambience file before use, keeping the original in
 `assets/raw/audio/`: music to **−20 LUFS** (the VO level), in-scene music (a radio,

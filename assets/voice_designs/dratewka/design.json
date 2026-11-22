@@ -1,0 +1,21 @@
+{
+  "description": "A young Polish man in his twenties speaking Polish with a natural standard Polish accent: bright, friendly and warm, quick-witted with a little nervous energy, an eager young cobbler's apprentice. Natural, not a cartoon voice, clear for children.",
+  "text": "Zrobimy owc\u0119, kt\u00f3ra nie jest owc\u0105! Szewc zawsze ma ko\u0142ek, a ja mam pomys\u0142. Sam bym nie da\u0142 rady, to oni mi pomogli. Cicho, cicho, smok \u015bpi tu\u017c obok!",
+  "previews": [
+    {
+      "n": 1,
+      "generated_voice_id": "wAeEOx1Kuz6koerILA1U",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/dratewka/preview_1.mp3"
+    },
+    {
+      "n": 2,
+      "generated_voice_id": "7NJ4l1ubkhFzi2t28Acf",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/dratewka/preview_2.mp3"
+    },
+    {
+      "n": 3,
+      "generated_voice_id": "QCck6YPUFcnyqeYcPXJb",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/dratewka/preview_3.mp3"
+    }
+  ]
+}

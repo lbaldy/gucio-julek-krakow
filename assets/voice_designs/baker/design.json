@@ -1,0 +1,21 @@
+{
+  "description": "A warm, slightly frazzled young Polish woman in her late twenties speaking Polish with a natural standard Polish accent: a friendly, bright village baker, quick and lively, clearly younger and lighter than a mother's voice.",
+  "text": "M\u00f3j maluszek p\u0142acze i p\u0142acze. Nie mog\u0119 piec! Cisza! \u015amieje si\u0119! Masz, maluchu, obwarzanek za to! \u015awie\u017ce obwarzanki, ciep\u0142e, prosto z pieca!",
+  "previews": [
+    {
+      "n": 1,
+      "generated_voice_id": "5jVBCJnoaxtb0RnNl4ho",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/baker/preview_1.mp3"
+    },
+    {
+      "n": 2,
+      "generated_voice_id": "zxhLQ41ngr0bBraqbQ9c",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/baker/preview_2.mp3"
+    },
+    {
+      "n": 3,
+      "generated_voice_id": "u4V3jXwsMBbgKna2ZUAP",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/baker/preview_3.mp3"
+    }
+  ]
+}

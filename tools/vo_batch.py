@@ -11,10 +11,16 @@ them. Without --go it only prints the plan and total cost.
   python -m tools.vo_batch --scene attic --go # record missing lines
   python -m tools.vo_batch --go --stale       # also re-record lines whose text changed
   python -m tools.vo_batch --only a.b.look,a.c.use --go   # just these lines
+  python -m tools.vo_batch --renorm           # re-level every recorded line (free, local)
+
+Every take is levelled to VO_LUFS (ElevenLabs voices differ by up to 12 dB: the narrator came
+out at -30 LUFS next to Gucio's -18). The untouched take is kept in assets/raw/audio/vo/.
 """
 import argparse
 import hashlib
 import json
+import re
+import shutil
 import subprocess
 import sys
 
@@ -25,6 +31,9 @@ from tools.voice import DEFAULT_TTS_MODEL, load_voices
 LINES_DIR = ROOT / "game" / "content" / "lines"
 VO_DIR = ASSETS / "game" / "audio" / "vo"
 INDEX = VO_DIR / ".index.json"
+RAW_DIR = ASSETS / "raw" / "audio" / "vo"
+# Every line ends up at the same loudness, so no voice is quieter than another.
+VO_LUFS, VO_TP = -18.0, -1.5
 # The game's spoken language ("language" in game.json, e.g. "pl"); passed to v3, which otherwise guesses.
 LANGUAGE = json.loads((ROOT / "game" / "content" / "game.json").read_text()).get("language")
 
@@ -39,6 +48,27 @@ def line_hash(line: dict) -> str:
     return hashlib.sha1(key.encode()).hexdigest()[:12]
 
 
+def level(line_id: str) -> str:
+    """Two-pass EBU R128 loudnorm of the raw take into the game's VO folder. Returns a summary."""
+    raw, out = RAW_DIR / f"{line_id}.mp3", VO_DIR / f"{line_id}.mp3"
+    if not raw.exists():  # first run on an older recording: the current file is the raw take
+        RAW_DIR.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(out, raw)
+    target = f"I={VO_LUFS}:TP={VO_TP}:LRA=11"
+    probe = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(raw), "-af", f"loudnorm={target}:print_format=json",
+                            "-f", "null", "-"], capture_output=True, text=True).stderr
+    m = json.loads(probe[probe.rindex("{"):probe.rindex("}") + 1])
+    if float(m["input_i"]) < -70:  # silence: nothing to level
+        return "silent?"
+    af = (f"loudnorm={target}:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
+          f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
+    tmp = out.with_suffix(".tmp.mp3")
+    subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(raw), "-af", af,
+                    "-ar", "44100", "-b:a", "128k", str(tmp)], check=True)
+    tmp.replace(out)
+    return f"{float(m['input_i']):.1f} -> {VO_LUFS:.0f} LUFS"
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--scene", help="lines file name without .json")
@@ -46,7 +76,13 @@ def main():
     p.add_argument("--stale", action="store_true", help="include lines whose text changed")
     p.add_argument("--limit", type=int, default=40, help="max lines per run")
     p.add_argument("--only", help="comma-separated line IDs to record (e.g. for a spot-check)")
+    p.add_argument("--renorm", action="store_true", help="re-level every recorded line to VO_LUFS (free)")
     a = p.parse_args()
+
+    if a.renorm:
+        for f in sorted(VO_DIR.glob("*.mp3")):
+            print(f"  {f.stem:<40} {level(f.stem)}")
+        return
 
     files = [LINES_DIR / f"{a.scene}.json"] if a.scene else sorted(LINES_DIR.glob("*.json"))
     voices = load_voices()
@@ -106,8 +142,11 @@ def main():
             cmd += ["--language-code", LANGUAGE]
         if state == "stale":
             cmd.append("--force")
+        RAW_DIR.mkdir(parents=True, exist_ok=True)
+        cmd[cmd.index("--out") + 1] = str(RAW_DIR / f"{line_id}.mp3")
         if subprocess.run(cmd, cwd=ROOT).returncode != 0:
             sys.exit(f"stopped at {line_id}")
+        print(f"    levelled {level(line_id)}")
         index[line_id] = h
         INDEX.parent.mkdir(parents=True, exist_ok=True)
         INDEX.write_text(json.dumps(index, indent=2, sort_keys=True))

@@ -1,0 +1,21 @@
+{
+  "description": "A grumpy, slightly gruff middle-aged Polish market merchant in his forties or fifties speaking Polish with a natural standard Polish accent: comic but natural, a hungry grumbler who warms up and laughs heartily.",
+  "text": "Za darmo? Od rana tu stoj\u0119 i nic nie jad\u0142em\u2026 Za obwarzanka bym da\u0142! Szewczyk na smoka? Ha ha ha! Patrz\u2026 on naprawd\u0119 zrobi\u0142 owc\u0119!",
+  "previews": [
+    {
+      "n": 1,
+      "generated_voice_id": "09AU2DlQHUqCcmzecefG",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/merchant/preview_1.mp3"
+    },
+    {
+      "n": 2,
+      "generated_voice_id": "ehZp75Dnv0edrbzljIv7",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/merchant/preview_2.mp3"
+    },
+    {
+      "n": 3,
+      "generated_voice_id": "BOTSx1zsmBJAzXt1VHwy",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/merchant/preview_3.mp3"
+    }
+  ]
+}

@@ -17,5 +17,29 @@
   },
   "narrator": {
     "voice_id": "GYIFzZqrrlcE48raxPZg"
+  },
+  "krak": {
+    "voice_id": "0iXfn4hK80iLF1j1ogcQ",
+    "description": "A warm, gentle older Polish man in his sixties or seventies speaking Polish with a natural standard Polish accent: a soft, grandfatherly good king, a little tired and worried, kind, never booming or theatrical."
+  },
+  "shepherd": {
+    "voice_id": "oIaalvoyWlp1kv7fh2uh",
+    "description": "A slow, kind, slightly raspy Polish country grandpa in his seventies speaking Polish with a natural standard Polish accent: gentle, unhurried and warm, with soft pauses, an old shepherd who loves his sheep. Clear for children, not comic, not mumbling."
+  },
+  "dratewka": {
+    "voice_id": "QCck6YPUFcnyqeYcPXJb",
+    "description": "A young Polish man in his twenties speaking Polish with a natural standard Polish accent: bright, friendly and warm, quick-witted with a little nervous energy, an eager young cobbler's apprentice. Natural, not a cartoon voice, clear for children."
+  },
+  "dragon": {
+    "voice_id": "xbUAOoJt3z4gVibawx0j",
+    "description": "A big, deep, rumbly cartoon dragon voice performed by an adult male voice actor speaking Polish: slow, grumbly and silly, comically greedy for food, suspicious hmmm sounds, warm and funny, never menacing."
+  },
+  "merchant": {
+    "voice_id": "09AU2DlQHUqCcmzecefG",
+    "description": "A grumpy, slightly gruff middle-aged Polish market merchant in his forties or fifties speaking Polish with a natural standard Polish accent: comic but natural, a hungry grumbler who warms up and laughs heartily."
+  },
+  "baker": {
+    "voice_id": "zxhLQ41ngr0bBraqbQ9c",
+    "description": "A warm, slightly frazzled young Polish woman in her late twenties speaking Polish with a natural standard Polish accent: a friendly, bright village baker, quick and lively, clearly younger and lighter than a mother's voice."
   }
 }

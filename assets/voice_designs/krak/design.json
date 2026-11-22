@@ -1,0 +1,21 @@
+{
+  "description": "A warm, gentle older Polish man in his sixties or seventies speaking Polish with a natural standard Polish accent: a soft, grandfatherly good king, a little tired and worried, kind, never booming or theatrical.",
+  "text": "Moi rycerze uciekli. Miecze nie pomog\u0105\u2026 Szewcze, mo\u017ce to si\u0119 uda. We\u017acie m\u00f3j w\u00f3z. Szewczyku, by\u0142e\u015b m\u0105drzejszy ni\u017c wszyscy moi rycerze.",
+  "previews": [
+    {
+      "n": 1,
+      "generated_voice_id": "KSgB6qUaQxdoFtGYgoxn",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/krak/preview_1.mp3"
+    },
+    {
+      "n": 2,
+      "generated_voice_id": "0iXfn4hK80iLF1j1ogcQ",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/krak/preview_2.mp3"
+    },
+    {
+      "n": 3,
+      "generated_voice_id": "D1kWAOO9S5zafwPrfQ9A",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/krak/preview_3.mp3"
+    }
+  ]
+}

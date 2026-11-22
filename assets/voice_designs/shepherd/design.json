@@ -1,0 +1,21 @@
+{
+  "description": "A slow, kind, slightly raspy Polish country grandpa in his seventies speaking Polish with a natural standard Polish accent: gentle, unhurried and warm, with soft pauses, an old shepherd who loves his sheep. Clear for children, not comic, not mumbling.",
+  "text": "\u2026i K\u0142\u0119buszek. Wszystkie. Dobranoc, owieczki. Bodzio jest uparty, lubi tylko mlecze\u2026 i maluch\u00f3w nigdy nie bodzie. Dotrzyma\u0142e\u015b s\u0142owa, ch\u0142opcze.",
+  "previews": [
+    {
+      "n": 1,
+      "generated_voice_id": "oIaalvoyWlp1kv7fh2uh",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/shepherd/preview_1.mp3"
+    },
+    {
+      "n": 2,
+      "generated_voice_id": "HsX0OMGfGYbu8OUOqliu",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/shepherd/preview_2.mp3"
+    },
+    {
+      "n": 3,
+      "generated_voice_id": "pDhCfxiK84MaqziAUR05",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/shepherd/preview_3.mp3"
+    }
+  ]
+}

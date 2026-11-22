@@ -1,0 +1,21 @@
+{
+  "description": "A big, deep, rumbly cartoon dragon voice performed by an adult male voice actor speaking Polish: slow, grumbly and silly, comically greedy for food, suspicious hmmm sounds, warm and funny, never menacing.",
+  "text": "Hmmm\u2026 Owieczki\u2026 Moje! Owca, kt\u00f3ra nie beczy? Hmmm\u2026 Mniam, mniam\u2026 Oj. Ojojoj\u2026 Brzuch! Pi\u0107! Gor\u0105co! Pi\u0107! Ojej, ale mi niedobrze.",
+  "previews": [
+    {
+      "n": 1,
+      "generated_voice_id": "xbUAOoJt3z4gVibawx0j",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/dragon/preview_1.mp3"
+    },
+    {
+      "n": 2,
+      "generated_voice_id": "hYlnXh6UQ8fmgYl3jyfl",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/dragon/preview_2.mp3"
+    },
+    {
+      "n": 3,
+      "generated_voice_id": "fId9vvZaCvfsdYB9LDoH",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-krakow/gucio-julek-odkrywaja-krakow/assets/voice_designs/dragon/preview_3.mp3"
+    }
+  ]
+}
