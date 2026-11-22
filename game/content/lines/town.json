@@ -1,47 +1,193 @@
 {
-  "town.knight.1": {"speaker": "gucio", "text": "Rycerz? Uciekał!"},
-  "town.knight.2": {"speaker": "julek", "text": "Bum!", "direction": "[giggles]", "model": "eleven_v3"},
-  "town.knight.3": {"speaker": "krak", "text": "Moi rycerze uciekli. Miecze nie pomogą…"},
-  "town.promise.1": {"speaker": "shepherd", "text": "Dzieci? W tym strachu? … Smok zabrał mi Kłębuszka. Najmniejszego."},
-  "town.promise.2": {"speaker": "shepherd", "text": "Został mi tylko ten kłębek wełny."},
-  "town.promise.3": {"speaker": "julek", "text": "Beee…", "direction": "[sad, small]", "model": "eleven_v3"},
-  "town.promise.4": {"speaker": "gucio", "text": "Przyprowadzimy go. Obiecuję."},
-  "town.promise.5": {"speaker": "shepherd", "text": "Dobre z ciebie dziecko… Idę do moich owieczek, na łąkę."},
-  "town.laugh.1": {"speaker": "merchant", "text": "Szewczyk na smoka? Ha ha ha!"},
-  "town.laugh.2": {"speaker": "baker", "text": "Z igłą na smoka! Hi hi!"},
-  "town.laugh.3": {"speaker": "gucio", "text": "Wszyscy się z niego śmieją… A ja mu wierzę! Chodź, Julek."},
-  "town.krak.look": {"speaker": "gucio", "text": "To król. Korona trochę mu spada."},
-  "town.shepherd.look": {"speaker": "gucio", "text": "Stary pasterz. Trzyma w ręku kłębek wełny."},
-  "town.knight.look": {"speaker": "gucio", "text": "Rycerz! Ale ucieka…"},
-  "town.merchant.look": {"speaker": "gucio", "text": "Ktoś się śmieje w oknie Dratewki."},
-  "town.baker.look": {"speaker": "gucio", "text": "Ona też się śmieje. Nieładnie."},
-  "town.krak.julek": {"speaker": "julek", "text": "Kuj!", "direction": "[pointing]", "model": "eleven_v3"},
-  "town.krak.julek.krak": {"speaker": "krak", "text": "Tak, maluchu. Król bez rycerzy."},
-  "town.krak.talk.who.1": {"speaker": "gucio", "text": "Kim jesteś?"},
-  "town.krak.talk.who.2": {"speaker": "krak", "text": "Jestem Krak. Król tej osady. Smutny król."},
-  "town.krak.talk.knights.1": {"speaker": "gucio", "text": "Co z rycerzami?"},
-  "town.krak.talk.knights.2": {"speaker": "krak", "text": "Pobiegli na smoka z mieczami. A smok tylko kichnął… i uciekli."},
-  "town.krak.talk.knights.3": {"speaker": "julek", "text": "Apsik!", "direction": "[giggles]", "model": "eleven_v3"},
-  "town.krak.talk.plan.1": {"speaker": "gucio", "text": "Dratewka ma plan! Zrobimy owcę, która nie jest owcą!"},
-  "town.krak.talk.plan.2": {"speaker": "krak", "text": "Szewczyk? Hm… Moi rycerze nie dali rady. Ale… zobaczymy."},
-  "town.krak.talk.bye.1": {"speaker": "gucio", "text": "Pa pa!"},
-  "town.krak.talk.bye.2": {"speaker": "krak", "text": "Uważajcie na siebie, dzieci."},
-  "town.workshop_door.look": {"speaker": "gucio", "text": "Warsztat szewca. Nad drzwiami wisi drewniany but."},
-  "town.workshop_window.look": {"speaker": "gucio", "text": "Ktoś tam się śmieje…"},
-  "town.workshop_window.look.after": {"speaker": "gucio", "text": "Dratewka coś majstruje."},
-  "town.workshop_window.use": {"speaker": "gucio", "text": "Lepiej wejdę drzwiami."},
-  "town.houses.look": {"speaker": "gucio", "text": "Wszyscy pozamykali drzwi. Boją się smoka."},
-  "town.houses.use": {"speaker": "gucio", "text": "Puk, puk… Nikt nie otwiera."},
-  "town.hill.look": {"speaker": "gucio", "text": "Wzgórze Wawel. Na dole jest jaskinia… i dym."},
-  "town.hill.use": {"speaker": "gucio", "text": "Za daleko."},
-  "town.path_hill.look": {"speaker": "gucio", "text": "Ścieżka do smoczej jamy."},
-  "town.path_hill.locked": {"speaker": "gucio", "text": "Do smoka? Bez planu? O nie!"},
-  "town.path_hill.locked.after": {"speaker": "gucio", "text": "Najpierw zrobimy owcę. Dopiero potem do smoka!"},
-  "town.path_meadow.look": {"speaker": "gucio", "text": "Ścieżka nad rzekę. Tam jest łąka pasterza."},
-  "town.path_market.look": {"speaker": "gucio", "text": "Tam jest targ."},
-  "town.path.locked": {"speaker": "gucio", "text": "Najpierw pomóżmy Dratewce. Bez igły nic nie uszyje."},
-  "town.helmet.look": {"speaker": "gucio", "text": "Rycerz zgubił hełm. Ale uciekał!"},
-  "town.helmet.use": {"speaker": "gucio", "text": "Za duży dla mnie."},
-  "town.helmet.julek.1": {"speaker": "julek", "text": "Cima!", "direction": "[giggles, muffled]", "model": "eleven_v3"},
-  "town.helmet.julek.2": {"speaker": "gucio", "text": "Ciemno? Julcio, hełm zasłania ci oczy!"}
+  "town.knight.1": {
+    "speaker": "gucio",
+    "text": "Rycerz? Uciekał!"
+  },
+  "town.knight.2": {
+    "speaker": "julek",
+    "text": "Bum!",
+    "direction": "[giggles]",
+    "model": "eleven_v3"
+  },
+  "town.knight.3": {
+    "speaker": "krak",
+    "text": "Moi rycerze uciekli. Miecze nie pomogą…"
+  },
+  "town.promise.1": {
+    "speaker": "shepherd",
+    "text": "Dzieci? W tym strachu? … Smok zabrał mi Kłębuszka. Najmniejszego."
+  },
+  "town.promise.2": {
+    "speaker": "shepherd",
+    "text": "Został mi tylko ten kłębek wełny."
+  },
+  "town.promise.3": {
+    "speaker": "julek",
+    "text": "Beee…",
+    "direction": "[sad, small]",
+    "model": "eleven_v3",
+    "spoken": "Be-e-e…"
+  },
+  "town.promise.4": {
+    "speaker": "gucio",
+    "text": "Przyprowadzimy go. Obiecuję."
+  },
+  "town.promise.5": {
+    "speaker": "shepherd",
+    "text": "Dobre z ciebie dziecko… Idę do moich owieczek, na łąkę."
+  },
+  "town.laugh.1": {
+    "speaker": "merchant",
+    "text": "Szewczyk na smoka? Ha ha ha!"
+  },
+  "town.laugh.2": {
+    "speaker": "baker",
+    "text": "Z igłą na smoka! Hi hi!"
+  },
+  "town.laugh.3": {
+    "speaker": "gucio",
+    "text": "Wszyscy się z niego śmieją… A ja mu wierzę! Chodź, Julek."
+  },
+  "town.krak.look": {
+    "speaker": "gucio",
+    "text": "To król. Korona trochę mu spada."
+  },
+  "town.shepherd.look": {
+    "speaker": "gucio",
+    "text": "Stary pasterz. Trzyma w ręku kłębek wełny."
+  },
+  "town.knight.look": {
+    "speaker": "gucio",
+    "text": "Rycerz! Ale ucieka…"
+  },
+  "town.merchant.look": {
+    "speaker": "gucio",
+    "text": "Ktoś się śmieje w oknie Dratewki."
+  },
+  "town.baker.look": {
+    "speaker": "gucio",
+    "text": "Ona też się śmieje. Nieładnie."
+  },
+  "town.krak.julek": {
+    "speaker": "julek",
+    "text": "Kuj!",
+    "direction": "[pointing]",
+    "model": "eleven_v3"
+  },
+  "town.krak.julek.krak": {
+    "speaker": "krak",
+    "text": "Tak, maluchu. Król bez rycerzy."
+  },
+  "town.krak.talk.who.1": {
+    "speaker": "gucio",
+    "text": "Kim jesteś?"
+  },
+  "town.krak.talk.who.2": {
+    "speaker": "krak",
+    "text": "Jestem Krak. Król tej osady. Smutny król."
+  },
+  "town.krak.talk.knights.1": {
+    "speaker": "gucio",
+    "text": "Co z rycerzami?"
+  },
+  "town.krak.talk.knights.2": {
+    "speaker": "krak",
+    "text": "Pobiegli na smoka z mieczami. A smok tylko kichnął… i uciekli."
+  },
+  "town.krak.talk.knights.3": {
+    "speaker": "julek",
+    "text": "Apsik!",
+    "direction": "[giggles]",
+    "model": "eleven_v3"
+  },
+  "town.krak.talk.plan.1": {
+    "speaker": "gucio",
+    "text": "Dratewka ma plan! Zrobimy owcę, która nie jest owcą!"
+  },
+  "town.krak.talk.plan.2": {
+    "speaker": "krak",
+    "text": "Szewczyk? Hm… Moi rycerze nie dali rady. Ale… zobaczymy."
+  },
+  "town.krak.talk.bye.1": {
+    "speaker": "gucio",
+    "text": "Pa pa!"
+  },
+  "town.krak.talk.bye.2": {
+    "speaker": "krak",
+    "text": "Uważajcie na siebie, dzieci."
+  },
+  "town.workshop_door.look": {
+    "speaker": "gucio",
+    "text": "Warsztat szewca. Nad drzwiami wisi drewniany but."
+  },
+  "town.workshop_window.look": {
+    "speaker": "gucio",
+    "text": "Ktoś tam się śmieje…"
+  },
+  "town.workshop_window.look.after": {
+    "speaker": "gucio",
+    "text": "Dratewka coś majstruje."
+  },
+  "town.workshop_window.use": {
+    "speaker": "gucio",
+    "text": "Lepiej wejdę drzwiami."
+  },
+  "town.houses.look": {
+    "speaker": "gucio",
+    "text": "Wszyscy pozamykali drzwi. Boją się smoka."
+  },
+  "town.houses.use": {
+    "speaker": "gucio",
+    "text": "Puk, puk… Nikt nie otwiera."
+  },
+  "town.hill.look": {
+    "speaker": "gucio",
+    "text": "Wzgórze Wawel. Na dole jest jaskinia… i dym."
+  },
+  "town.hill.use": {
+    "speaker": "gucio",
+    "text": "Za daleko."
+  },
+  "town.path_hill.look": {
+    "speaker": "gucio",
+    "text": "Ścieżka do smoczej jamy."
+  },
+  "town.path_hill.locked": {
+    "speaker": "gucio",
+    "text": "Do smoka? Bez planu? O nie!"
+  },
+  "town.path_hill.locked.after": {
+    "speaker": "gucio",
+    "text": "Najpierw zrobimy owcę. Dopiero potem do smoka!"
+  },
+  "town.path_meadow.look": {
+    "speaker": "gucio",
+    "text": "Ścieżka nad rzekę. Tam jest łąka pasterza."
+  },
+  "town.path_market.look": {
+    "speaker": "gucio",
+    "text": "Tam jest targ."
+  },
+  "town.path.locked": {
+    "speaker": "gucio",
+    "text": "Najpierw pomóżmy Dratewce. Bez igły nic nie uszyje."
+  },
+  "town.helmet.look": {
+    "speaker": "gucio",
+    "text": "Rycerz zgubił hełm. Ale uciekał!"
+  },
+  "town.helmet.use": {
+    "speaker": "gucio",
+    "text": "Za duży dla mnie."
+  },
+  "town.helmet.julek.1": {
+    "speaker": "julek",
+    "text": "Cima!",
+    "direction": "[giggles, muffled]",
+    "model": "eleven_v3"
+  },
+  "town.helmet.julek.2": {
+    "speaker": "gucio",
+    "text": "Ciemno? Julcio, hełm zasłania ci oczy!"
+  }
 }

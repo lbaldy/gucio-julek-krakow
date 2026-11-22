@@ -10,7 +10,7 @@ never the same twice in a row:
 - **crawl** (workshop): under the workbench for Dratewka's needle.
 - **charm** (meadow): gives the grumpy ram Bodzio a dandelion and strokes his nose ("Kotek!").
 - **peekaboo** (market): "Kuku!" makes the baker's crying baby laugh.
-- **grab** (market, optional gag): snatches a sulphur stone and sniffs it: "Fuj!"
+- **grab** (market, optional gag): snatches a sulphur stone and sniffs it: "Fe!"
 - **noise** (cave): "Beee!" from behind the fake sheep. The dragon is fooled. His only
   noise trick in the game, and the payoff of the bedroom.
 - **crawl** again (den): into the hollow for Kłębuszek, the emotional twin of the needle.
@@ -22,7 +22,7 @@ He shouts "Kako!" when the town is named Kraków, receives Kłębuszek's tuft of
 Words in this game: approved toddler words (kuku, jeś, katko, ato, aaa, nie ma), the
 user's new words for this game (Kako, Cima, Faitek, Kuj, Alo; table below), simple real
 words (smok, but, kotek, pa pa) and noises (beee, bum,
-fuj, mniam, hop, ojej, apsik, ha ha).
+fe, mniam, hop, ojej, apsik, ha ha).
 
 **New poses:** `bounce_r` (hopping, arms up; or `cheer_r` with a hop tween if it reads),
 `offer_r` (holding out a dandelion), `peekaboo_r` (hands over his eyes), `fuj_r`

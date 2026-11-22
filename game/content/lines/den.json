@@ -1,33 +1,138 @@
 {
-  "den.enter.1": {"speaker": "dratewka", "text": "Tu mieszkał smok… Patrzcie, owce!"},
-  "den.enter.2": {"speaker": "julek", "text": "Beee!", "direction": "[excited]", "model": "eleven_v3"},
-  "den.dratewka.look": {"speaker": "gucio", "text": "Dratewka świeci nam latarnią."},
-  "den.gate.look": {"speaker": "gucio", "text": "Owce są za płotem! Zasuwa jest wysoko, ale ja sięgnę!"},
-  "den.gate.look.open": {"speaker": "gucio", "text": "Brama otwarta."},
-  "den.gate.use": {"speaker": "gucio", "text": "Hop! Otwarte! Owieczki, do domu!"},
-  "den.gate.julek": {"speaker": "gucio", "text": "Julcio, to dla dużych."},
-  "den.count.1": {"speaker": "gucio", "text": "Jedna, dwie, trzy… wszystkie… oprócz Kłębuszka!"},
-  "den.count.2": {"speaker": "gucio", "text": "Kłębuszku? Gdzie jesteś?"},
-  "den.hollow.look": {"speaker": "gucio", "text": "Za mała dziura dla mnie."},
-  "den.hollow.look.after": {"speaker": "gucio", "text": "Stamtąd słychać meee… i wystaje ogonek!"},
-  "den.hollow.use": {"speaker": "gucio", "text": "Za mała dziura dla mnie. Julek?"},
-  "den.hollow.early": {"speaker": "gucio", "text": "Najpierw wypuśćmy owce!"},
-  "den.hollow.julek.1": {"speaker": "julek", "text": "Kuku?", "direction": "[gently]", "model": "eleven_v3"},
-  "den.hollow.julek.2": {"speaker": "julek", "text": "Beee!", "direction": "[softly, like to a friend]", "model": "eleven_v3"},
-  "den.hollow.julek.3": {"speaker": "gucio", "text": "Kłębuszek! Julek, znalazłeś go!"},
-  "den.hollow.julek.4": {"speaker": "julek", "text": "Jeś!", "direction": "[proudly, hugging]", "model": "eleven_v3"},
-  "den.sheep_pen.look": {"speaker": "gucio", "text": "Śpią na sianie. Całe stado!"},
-  "den.sheep_pen.use": {"speaker": "gucio", "text": "Owieczki, wstawajcie!"},
-  "den.dragon_bed.look": {"speaker": "gucio", "text": "Smocze legowisko. Ale ogromne!"},
-  "den.dragon_bed.use": {"speaker": "gucio", "text": "Brr, jeszcze ciepłe."},
-  "den.dragon_bed.julek": {"speaker": "julek", "text": "Aaa…", "direction": "[sleepy]", "model": "eleven_v3"},
-  "den.dragon_bed.julek.gucio": {"speaker": "gucio", "text": "Nie śpimy tu, Julcio!"},
-  "den.helmets.look": {"speaker": "gucio", "text": "Hełmy rycerzy! Smok je zbierał."},
-  "den.helmets.use": {"speaker": "gucio", "text": "Oddamy je królowi."},
-  "den.embers.look": {"speaker": "gucio", "text": "Żar. Smok tu grzał łapy."},
-  "den.embers.use": {"speaker": "gucio", "text": "Gorące! Nie dotykam."},
-  "den.klebuszek.look": {"speaker": "gucio", "text": "Kłębuszek! Mały i biały, jak piłeczka."},
-  "den.cave_exit.look": {"speaker": "gucio", "text": "Wyjście nad rzekę."},
-  "den.cave_exit.locked": {"speaker": "gucio", "text": "Bez Kłębuszka nie wracamy!"},
-  "den.cave_exit.use": {"speaker": "gucio", "text": "Do domu, Kłębuszku! Pasterz czeka."}
+  "den.enter.1": {
+    "speaker": "dratewka",
+    "text": "Tu mieszkał smok… Patrzcie, owce!"
+  },
+  "den.enter.2": {
+    "speaker": "julek",
+    "text": "Beee!",
+    "direction": "[excited]",
+    "model": "eleven_v3",
+    "spoken": "Be-e-e!"
+  },
+  "den.dratewka.look": {
+    "speaker": "gucio",
+    "text": "Dratewka świeci nam latarnią."
+  },
+  "den.gate.look": {
+    "speaker": "gucio",
+    "text": "Owce są za płotem! Zasuwa jest wysoko, ale ja sięgnę!"
+  },
+  "den.gate.look.open": {
+    "speaker": "gucio",
+    "text": "Brama otwarta."
+  },
+  "den.gate.use": {
+    "speaker": "gucio",
+    "text": "Hop! Otwarte! Owieczki, do domu!"
+  },
+  "den.gate.julek": {
+    "speaker": "gucio",
+    "text": "Julcio, to dla dużych."
+  },
+  "den.count.1": {
+    "speaker": "gucio",
+    "text": "Jedna, dwie, trzy… wszystkie… oprócz Kłębuszka!"
+  },
+  "den.count.2": {
+    "speaker": "gucio",
+    "text": "Kłębuszku? Gdzie jesteś?"
+  },
+  "den.hollow.look": {
+    "speaker": "gucio",
+    "text": "Za mała dziura dla mnie."
+  },
+  "den.hollow.look.after": {
+    "speaker": "gucio",
+    "text": "Stamtąd słychać meee… i wystaje ogonek!"
+  },
+  "den.hollow.use": {
+    "speaker": "gucio",
+    "text": "Za mała dziura dla mnie. Julek?"
+  },
+  "den.hollow.early": {
+    "speaker": "gucio",
+    "text": "Najpierw wypuśćmy owce!"
+  },
+  "den.hollow.julek.1": {
+    "speaker": "julek",
+    "text": "Kuku?",
+    "direction": "[gently]",
+    "model": "eleven_v3"
+  },
+  "den.hollow.julek.2": {
+    "speaker": "julek",
+    "text": "Beee!",
+    "direction": "[softly, like to a friend]",
+    "model": "eleven_v3",
+    "spoken": "Be-e-e!"
+  },
+  "den.hollow.julek.3": {
+    "speaker": "gucio",
+    "text": "Kłębuszek! Julek, znalazłeś go!"
+  },
+  "den.hollow.julek.4": {
+    "speaker": "julek",
+    "text": "Jeś!",
+    "direction": "[proudly, hugging]",
+    "model": "eleven_v3"
+  },
+  "den.sheep_pen.look": {
+    "speaker": "gucio",
+    "text": "Śpią na sianie. Całe stado!"
+  },
+  "den.sheep_pen.use": {
+    "speaker": "gucio",
+    "text": "Owieczki, wstawajcie!"
+  },
+  "den.dragon_bed.look": {
+    "speaker": "gucio",
+    "text": "Smocze legowisko. Ale ogromne!"
+  },
+  "den.dragon_bed.use": {
+    "speaker": "gucio",
+    "text": "Brr, jeszcze ciepłe."
+  },
+  "den.dragon_bed.julek": {
+    "speaker": "julek",
+    "text": "Aaa…",
+    "direction": "[sleepy]",
+    "model": "eleven_v3"
+  },
+  "den.dragon_bed.julek.gucio": {
+    "speaker": "gucio",
+    "text": "Nie śpimy tu, Julcio!"
+  },
+  "den.helmets.look": {
+    "speaker": "gucio",
+    "text": "Hełmy rycerzy! Smok je zbierał."
+  },
+  "den.helmets.use": {
+    "speaker": "gucio",
+    "text": "Oddamy je królowi."
+  },
+  "den.embers.look": {
+    "speaker": "gucio",
+    "text": "Żar. Smok tu grzał łapy."
+  },
+  "den.embers.use": {
+    "speaker": "gucio",
+    "text": "Gorące! Nie dotykam."
+  },
+  "den.klebuszek.look": {
+    "speaker": "gucio",
+    "text": "Kłębuszek! Mały i biały, jak piłeczka."
+  },
+  "den.cave_exit.look": {
+    "speaker": "gucio",
+    "text": "Wyjście nad rzekę."
+  },
+  "den.cave_exit.locked": {
+    "speaker": "gucio",
+    "text": "Bez Kłębuszka nie wracamy!"
+  },
+  "den.cave_exit.use": {
+    "speaker": "gucio",
+    "text": "Do domu, Kłębuszku! Pasterz czeka."
+  }
 }

@@ -1,21 +1,88 @@
 {
-  "outro.reunion.shepherd": {"speaker": "shepherd", "text": "Kłębuszku!… Dotrzymałeś słowa, chłopcze."},
-  "outro.reunion.gucio": {"speaker": "gucio", "text": "Obiecałem."},
-  "outro.hero.krak": {"speaker": "krak", "text": "Szewczyku, byłeś mądrzejszy niż wszyscy moi rycerze."},
-  "outro.hero.dratewka": {"speaker": "dratewka", "text": "Sam bym nie dał rady. To oni!"},
-  "outro.feast.narrator": {"speaker": "narrator", "text": "Na cześć dobrego króla gród nazwano Krakowem."},
-  "outro.feast.crowd": {"speaker": "crowd", "text": "Kraków! Kraków!"},
-  "outro.feast.julek": {"speaker": "julek", "text": "Kako!", "direction": "[shouting happily]", "model": "eleven_v3"},
-  "outro.feast.gucio": {"speaker": "gucio", "text": "Kraków, Julcio!"},
-  "outro.gift.shepherd": {"speaker": "shepherd", "text": "Dla najlepszego beczącego pomocnika."},
-  "outro.gift.julek": {"speaker": "julek", "text": "Beee!", "direction": "[softly, proud]", "model": "eleven_v3"},
-  "outro.bonus.shepherd": {"speaker": "shepherd", "text": "Znowu skacze!"},
-  "outro.today.narrator": {"speaker": "narrator", "text": "Pod Wawelem, nad Wisłą, do dziś stoi smok. I naprawdę zieje ogniem. Ale owiec już nie zabiera."},
-  "outro.morning.1": {"speaker": "julek", "text": "Beee!", "direction": "[proud]", "model": "eleven_v3"},
-  "outro.morning.2": {"speaker": "mama", "text": "Dzień dobry, owieczki! To co, dokończymy legendę?"},
-  "outro.morning.3": {"speaker": "gucio", "text": "Mamo, ja wiem, jak się skończyła!"},
-  "outro.morning.4": {"speaker": "julek", "text": "Smok! Bum!", "direction": "[puffing out his cheeks]", "model": "eleven_v3"},
-  "outro.morning.5": {"speaker": "mama", "text": "Skąd ta wełna?… W wakacje pojedziemy do Krakowa. Zobaczycie prawdziwego smoka."},
-  "outro.end.gucio": {"speaker": "gucio", "text": "To chyba nie był zwykły sen…"},
-  "outro.end": {"speaker": "narrator", "text": "Koniec"}
+  "outro.reunion.shepherd": {
+    "speaker": "shepherd",
+    "text": "Kłębuszku!… Dotrzymałeś słowa, chłopcze."
+  },
+  "outro.reunion.gucio": {
+    "speaker": "gucio",
+    "text": "Obiecałem."
+  },
+  "outro.hero.krak": {
+    "speaker": "krak",
+    "text": "Szewczyku, byłeś mądrzejszy niż wszyscy moi rycerze."
+  },
+  "outro.hero.dratewka": {
+    "speaker": "dratewka",
+    "text": "Sam bym nie dał rady. To oni!"
+  },
+  "outro.feast.narrator": {
+    "speaker": "narrator",
+    "text": "Na cześć dobrego króla gród nazwano Krakowem."
+  },
+  "outro.feast.crowd": {
+    "speaker": "crowd",
+    "text": "Kraków! Kraków!"
+  },
+  "outro.feast.julek": {
+    "speaker": "julek",
+    "text": "Kako!",
+    "direction": "[shouting happily]",
+    "model": "eleven_v3"
+  },
+  "outro.feast.gucio": {
+    "speaker": "gucio",
+    "text": "Kraków, Julcio!"
+  },
+  "outro.gift.shepherd": {
+    "speaker": "shepherd",
+    "text": "Dla najlepszego beczącego pomocnika."
+  },
+  "outro.gift.julek": {
+    "speaker": "julek",
+    "text": "Beee!",
+    "direction": "[softly, proud]",
+    "model": "eleven_v3",
+    "spoken": "Be-e-e!"
+  },
+  "outro.bonus.shepherd": {
+    "speaker": "shepherd",
+    "text": "Znowu skacze!"
+  },
+  "outro.today.narrator": {
+    "speaker": "narrator",
+    "text": "Pod Wawelem, nad Wisłą, do dziś stoi smok. I naprawdę zieje ogniem. Ale owiec już nie zabiera."
+  },
+  "outro.morning.1": {
+    "speaker": "julek",
+    "text": "Beee!",
+    "direction": "[proud]",
+    "model": "eleven_v3",
+    "spoken": "Be-e-e!"
+  },
+  "outro.morning.2": {
+    "speaker": "mama",
+    "text": "Dzień dobry, owieczki! To co, dokończymy legendę?"
+  },
+  "outro.morning.3": {
+    "speaker": "gucio",
+    "text": "Mamo, ja wiem, jak się skończyła!"
+  },
+  "outro.morning.4": {
+    "speaker": "julek",
+    "text": "Smok! Bum!",
+    "direction": "[puffing out his cheeks]",
+    "model": "eleven_v3"
+  },
+  "outro.morning.5": {
+    "speaker": "mama",
+    "text": "Skąd ta wełna?… W wakacje pojedziemy do Krakowa. Zobaczycie prawdziwego smoka."
+  },
+  "outro.end.gucio": {
+    "speaker": "gucio",
+    "text": "To chyba nie był zwykły sen…"
+  },
+  "outro.end": {
+    "speaker": "narrator",
+    "text": "Koniec"
+  }
 }

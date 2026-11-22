@@ -162,7 +162,7 @@
   },
   "market.sulphur_box.julek.1": {
     "speaker": "julek",
-    "text": "Fuj!",
+    "text": "Fe!",
     "direction": "[disgusted face]",
     "model": "eleven_v3"
   },
@@ -172,7 +172,7 @@
   },
   "market.fuj.after.1": {
     "speaker": "julek",
-    "text": "Fuj!",
+    "text": "Fe!",
     "direction": "[disgusted face]",
     "model": "eleven_v3"
   },

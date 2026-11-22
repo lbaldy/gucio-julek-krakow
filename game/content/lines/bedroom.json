@@ -3,7 +3,8 @@
     "speaker": "julek",
     "text": "Beee! Beee!",
     "direction": "[giggles]",
-    "model": "eleven_v3"
+    "model": "eleven_v3",
+    "spoken": "Be-e-e! Be-e-e!"
   },
   "bedroom.enter.2": {
     "speaker": "gucio",
@@ -42,7 +43,8 @@
     "speaker": "julek",
     "text": "Beee! Beee! Hop!",
     "direction": "[excited]",
-    "model": "eleven_v3"
+    "model": "eleven_v3",
+    "spoken": "Be-e-e! Be-e-e! Hop!"
   },
   "bedroom.crib.julek.2": {
     "speaker": "gucio",
@@ -99,7 +101,8 @@
     "speaker": "julek",
     "text": "Beee…",
     "direction": "[sleepy]",
-    "model": "eleven_v3"
+    "model": "eleven_v3",
+    "spoken": "Be-e-e…"
   },
   "bedroom.bed.look": {
     "speaker": "gucio",

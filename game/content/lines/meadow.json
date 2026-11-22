@@ -1,51 +1,214 @@
 {
-  "meadow.enter.first": {"speaker": "gucio", "text": "Łąka pasterza! Ale mało tu owieczek…"},
-  "meadow.shepherd.look": {"speaker": "gucio", "text": "Pasterz. Ciągle trzyma ten kłębek wełny."},
-  "meadow.shepherd.julek": {"speaker": "julek", "text": "Beee?", "direction": "[shy]", "model": "eleven_v3"},
-  "meadow.shepherd.julek.shepherd": {"speaker": "shepherd", "text": "Beee, maluchu. Beee."},
-  "meadow.shepherd.talk.skin.1": {"speaker": "gucio", "text": "Potrzebujemy owczej skóry. Do planu na smoka!"},
-  "meadow.shepherd.talk.skin.2": {"speaker": "shepherd", "text": "Stara skóra, ale ciepła. Bierzcie. Dla dobrej sprawy."},
-  "meadow.shepherd.talk.klebuszek.1": {"speaker": "gucio", "text": "Jaki był Kłębuszek?"},
-  "meadow.shepherd.talk.klebuszek.2": {"speaker": "shepherd", "text": "Najmniejszy. Najbielszy. I skakał jak piłeczka."},
-  "meadow.shepherd.talk.ram.1": {"speaker": "gucio", "text": "Ten baran nie daje mi słomy!"},
-  "meadow.shepherd.talk.ram.2": {"speaker": "shepherd", "text": "Bodzio jest uparty. Lubi tylko mlecze… i maluchów nigdy nie bodzie."},
-  "meadow.shepherd.talk.bye.1": {"speaker": "gucio", "text": "Pa pa!"},
-  "meadow.shepherd.talk.bye.2": {"speaker": "shepherd", "text": "Uważajcie na siebie, dzieci."},
-  "meadow.ram.look": {"speaker": "gucio", "text": "To baran Bodzio. Groźnie patrzy."},
-  "meadow.ram.look.soft": {"speaker": "gucio", "text": "Bodzio leży i się uśmiecha!"},
-  "meadow.ram.use": {"speaker": "gucio", "text": "Ojej! Bodzio mnie bodzie!"},
-  "meadow.ram.use.soft": {"speaker": "gucio", "text": "Grzeczny Bodzio."},
-  "meadow.ram.use.dandelion": {"speaker": "gucio", "text": "Masz mlecza! … Ała! Znowu! Chyba woli maluchy?"},
-  "meadow.ram.julek.nodandelion": {"speaker": "gucio", "text": "Julek mu się podoba… ale Bodzio jest głodny."},
-  "meadow.ram.combo.1": {"speaker": "julek", "text": "Mniam?", "direction": "[offering]", "model": "eleven_v3"},
-  "meadow.ram.combo.2": {"speaker": "julek", "text": "Kotek!", "direction": "[stroking his nose, giggles]", "model": "eleven_v3"},
-  "meadow.ram.combo.3": {"speaker": "gucio", "text": "To nie kotek, Julcio, to baran! Ale już jest grzeczny."},
-  "meadow.haystack.look": {"speaker": "gucio", "text": "Słoma! Ale pilnuje jej baran."},
-  "meadow.haystack.look.free": {"speaker": "gucio", "text": "Słoma! Bodzio już nie pilnuje."},
-  "meadow.haystack.look.done": {"speaker": "gucio", "text": "Stóg siana. Słomę już mamy."},
-  "meadow.haystack.use.nosack": {"speaker": "gucio", "text": "Na rękach tyle słomy nie zaniosę. Potrzebny worek."},
-  "meadow.haystack.use.sack": {"speaker": "gucio", "text": "Pełny worek słomy!"},
-  "meadow.dandelions.look": {"speaker": "gucio", "text": "Żółte mlecze! Pełno ich."},
-  "meadow.dandelions.use": {"speaker": "gucio", "text": "Jeden mlecz. Dla kogoś, kto lubi mlecze."},
-  "meadow.dandelions.use.have": {"speaker": "gucio", "text": "Mam już mlecza."},
-  "meadow.dandelions.julek": {"speaker": "julek", "text": "Faitek!", "model": "eleven_v3"},
-  "meadow.dandelions.julek.gucio": {"speaker": "gucio", "text": "Kwiatek! Mlecz, Julcio."},
-  "meadow.fold.look": {"speaker": "gucio", "text": "Zagroda. Brama jest zepsuta… tędy przyszedł smok."},
-  "meadow.fold.use": {"speaker": "gucio", "text": "Nie da się jej zamknąć."},
-  "meadow.footprints.look": {"speaker": "gucio", "text": "Ogromne ślady! Prowadzą… do wzgórza."},
-  "meadow.footprints.use": {"speaker": "gucio", "text": "Brr. Nie idę tam sam."},
-  "meadow.footprints.julek": {"speaker": "julek", "text": "Smok!", "direction": "[whisper]", "model": "eleven_v3"},
-  "meadow.river.look": {"speaker": "gucio", "text": "Wisła. Duża rzeka."},
-  "meadow.river.use": {"speaker": "gucio", "text": "Woda jest za głęboka."},
-  "meadow.hill.look": {"speaker": "gucio", "text": "Tam jest smocza jama."},
-  "meadow.hill.use": {"speaker": "gucio", "text": "Jeszcze nie teraz."},
-  "meadow.sheep.look": {"speaker": "gucio", "text": "Owieczki pasterza. Jest ich tak mało…"},
-  "meadow.sheep.use": {"speaker": "gucio", "text": "Beee! … Nie odpowiadają mi."},
-  "meadow.sheep.julek": {"speaker": "julek", "text": "Beee!", "model": "eleven_v3"},
-  "meadow.sack.look": {"speaker": "gucio", "text": "Pusty worek. Przyda się."},
-  "meadow.sack.use": {"speaker": "gucio", "text": "Biorę worek."},
-  "meadow.path_town.look": {"speaker": "gucio", "text": "Do osady."},
-  "meadow.end.1": {"speaker": "shepherd", "text": "Kłębuszek lubił tu skakać…", "direction": "[quietly]"},
-  "meadow.end.2": {"speaker": "gucio", "text": "Przyprowadzimy go. Obiecuję."},
-  "meadow.end.3": {"speaker": "julek", "text": "Beee!", "direction": "[determined]", "model": "eleven_v3"}
+  "meadow.enter.first": {
+    "speaker": "gucio",
+    "text": "Łąka pasterza! Ale mało tu owieczek…"
+  },
+  "meadow.shepherd.look": {
+    "speaker": "gucio",
+    "text": "Pasterz. Ciągle trzyma ten kłębek wełny."
+  },
+  "meadow.shepherd.julek": {
+    "speaker": "julek",
+    "text": "Beee?",
+    "direction": "[shy]",
+    "model": "eleven_v3",
+    "spoken": "Be-e-e?"
+  },
+  "meadow.shepherd.julek.shepherd": {
+    "speaker": "shepherd",
+    "text": "Beee, maluchu. Beee."
+  },
+  "meadow.shepherd.talk.skin.1": {
+    "speaker": "gucio",
+    "text": "Potrzebujemy owczej skóry. Do planu na smoka!"
+  },
+  "meadow.shepherd.talk.skin.2": {
+    "speaker": "shepherd",
+    "text": "Stara skóra, ale ciepła. Bierzcie. Dla dobrej sprawy."
+  },
+  "meadow.shepherd.talk.klebuszek.1": {
+    "speaker": "gucio",
+    "text": "Jaki był Kłębuszek?"
+  },
+  "meadow.shepherd.talk.klebuszek.2": {
+    "speaker": "shepherd",
+    "text": "Najmniejszy. Najbielszy. I skakał jak piłeczka."
+  },
+  "meadow.shepherd.talk.ram.1": {
+    "speaker": "gucio",
+    "text": "Ten baran nie daje mi słomy!"
+  },
+  "meadow.shepherd.talk.ram.2": {
+    "speaker": "shepherd",
+    "text": "Bodzio jest uparty. Lubi tylko mlecze… i maluchów nigdy nie bodzie."
+  },
+  "meadow.shepherd.talk.bye.1": {
+    "speaker": "gucio",
+    "text": "Pa pa!"
+  },
+  "meadow.shepherd.talk.bye.2": {
+    "speaker": "shepherd",
+    "text": "Uważajcie na siebie, dzieci."
+  },
+  "meadow.ram.look": {
+    "speaker": "gucio",
+    "text": "To baran Bodzio. Groźnie patrzy."
+  },
+  "meadow.ram.look.soft": {
+    "speaker": "gucio",
+    "text": "Bodzio leży i się uśmiecha!"
+  },
+  "meadow.ram.use": {
+    "speaker": "gucio",
+    "text": "Ojej! Bodzio mnie bodzie!"
+  },
+  "meadow.ram.use.soft": {
+    "speaker": "gucio",
+    "text": "Grzeczny Bodzio."
+  },
+  "meadow.ram.use.dandelion": {
+    "speaker": "gucio",
+    "text": "Masz mlecza! … Ała! Znowu! Chyba woli maluchy?"
+  },
+  "meadow.ram.julek.nodandelion": {
+    "speaker": "gucio",
+    "text": "Julek mu się podoba… ale Bodzio jest głodny."
+  },
+  "meadow.ram.combo.1": {
+    "speaker": "julek",
+    "text": "Mniam?",
+    "direction": "[offering]",
+    "model": "eleven_v3"
+  },
+  "meadow.ram.combo.2": {
+    "speaker": "julek",
+    "text": "Kotek!",
+    "direction": "[stroking his nose, giggles]",
+    "model": "eleven_v3"
+  },
+  "meadow.ram.combo.3": {
+    "speaker": "gucio",
+    "text": "To nie kotek, Julcio, to baran! Ale już jest grzeczny."
+  },
+  "meadow.haystack.look": {
+    "speaker": "gucio",
+    "text": "Słoma! Ale pilnuje jej baran."
+  },
+  "meadow.haystack.look.free": {
+    "speaker": "gucio",
+    "text": "Słoma! Bodzio już nie pilnuje."
+  },
+  "meadow.haystack.look.done": {
+    "speaker": "gucio",
+    "text": "Stóg siana. Słomę już mamy."
+  },
+  "meadow.haystack.use.nosack": {
+    "speaker": "gucio",
+    "text": "Na rękach tyle słomy nie zaniosę. Potrzebny worek."
+  },
+  "meadow.haystack.use.sack": {
+    "speaker": "gucio",
+    "text": "Pełny worek słomy!"
+  },
+  "meadow.dandelions.look": {
+    "speaker": "gucio",
+    "text": "Żółte mlecze! Pełno ich."
+  },
+  "meadow.dandelions.use": {
+    "speaker": "gucio",
+    "text": "Jeden mlecz. Dla kogoś, kto lubi mlecze."
+  },
+  "meadow.dandelions.use.have": {
+    "speaker": "gucio",
+    "text": "Mam już mlecza."
+  },
+  "meadow.dandelions.julek": {
+    "speaker": "julek",
+    "text": "Faitek!",
+    "model": "eleven_v3"
+  },
+  "meadow.dandelions.julek.gucio": {
+    "speaker": "gucio",
+    "text": "Kwiatek! Mlecz, Julcio."
+  },
+  "meadow.fold.look": {
+    "speaker": "gucio",
+    "text": "Zagroda. Brama jest zepsuta… tędy przyszedł smok."
+  },
+  "meadow.fold.use": {
+    "speaker": "gucio",
+    "text": "Nie da się jej zamknąć."
+  },
+  "meadow.footprints.look": {
+    "speaker": "gucio",
+    "text": "Ogromne ślady! Prowadzą… do wzgórza."
+  },
+  "meadow.footprints.use": {
+    "speaker": "gucio",
+    "text": "Brr. Nie idę tam sam."
+  },
+  "meadow.footprints.julek": {
+    "speaker": "julek",
+    "text": "Smok!",
+    "direction": "[whisper]",
+    "model": "eleven_v3"
+  },
+  "meadow.river.look": {
+    "speaker": "gucio",
+    "text": "Wisła. Duża rzeka."
+  },
+  "meadow.river.use": {
+    "speaker": "gucio",
+    "text": "Woda jest za głęboka."
+  },
+  "meadow.hill.look": {
+    "speaker": "gucio",
+    "text": "Tam jest smocza jama."
+  },
+  "meadow.hill.use": {
+    "speaker": "gucio",
+    "text": "Jeszcze nie teraz."
+  },
+  "meadow.sheep.look": {
+    "speaker": "gucio",
+    "text": "Owieczki pasterza. Jest ich tak mało…"
+  },
+  "meadow.sheep.use": {
+    "speaker": "gucio",
+    "text": "Beee! … Nie odpowiadają mi."
+  },
+  "meadow.sheep.julek": {
+    "speaker": "julek",
+    "text": "Beee!",
+    "model": "eleven_v3",
+    "spoken": "Be-e-e!"
+  },
+  "meadow.sack.look": {
+    "speaker": "gucio",
+    "text": "Pusty worek. Przyda się."
+  },
+  "meadow.sack.use": {
+    "speaker": "gucio",
+    "text": "Biorę worek."
+  },
+  "meadow.path_town.look": {
+    "speaker": "gucio",
+    "text": "Do osady."
+  },
+  "meadow.end.1": {
+    "speaker": "shepherd",
+    "text": "Kłębuszek lubił tu skakać…",
+    "direction": "[quietly]"
+  },
+  "meadow.end.2": {
+    "speaker": "gucio",
+    "text": "Przyprowadzimy go. Obiecuję."
+  },
+  "meadow.end.3": {
+    "speaker": "julek",
+    "text": "Beee!",
+    "direction": "[determined]",
+    "model": "eleven_v3",
+    "spoken": "Be-e-e!"
+  }
 }

@@ -62,7 +62,12 @@ Lines live in `game/content/lines/<scene>.json`, which the game reads too:
   mispronounces them.
 - **Short made-up or baby-talk words get read as another language.** "Jujo" came out as
   Spanish "huho". Respell them in `"spoken"` in the model's reading ("Yuyo", "Oć") and keep the
-  real spelling in `text`.
+  real spelling in `text`. Even with the Polish language code, v3 reads a doubled "ee" as
+  English "i" ("Beee" → "Biii"); hyphenate it (`"spoken": "Be-e-e!"`, the user's pick).
+  Even then about 1 in 3 takes slipped, worst on "Beee! Beee!". The reliable fix: record one
+  take, have the user approve it, and build the plain lines from it (trim, join with a 0.3 s gap,
+  put it in `raw/audio/vo/<id>.mp3`, then `level(id)`). Kraków did this for 5 lines from
+  `voice_designs/julek_tests/beee_2.mp3`; re-recording them with `--force` would undo it.
 - **A v3 audio tag only covers the phrase after it.** `[whispers]` at the start whispered the
   first sentence only; repeat the tag before every sentence in `"spoken"`. For calm, sleepy or
   goodnight lines, v2 stability/style tweaks don't help (the user found them "even worse");
