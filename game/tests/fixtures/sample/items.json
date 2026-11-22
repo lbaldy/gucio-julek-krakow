@@ -1,0 +1,7 @@
+{
+  "crowbar": {"name": "crowbar", "icon": "items/crowbar.png"},
+  "key": {"name": "rusty key", "icon": "items/key.png"},
+  "pen": {"name": "pen", "icon": "items/pen.png"},
+  "letter": {"name": "letter", "icon": "items/letter.png"},
+  "signed_letter": {"name": "signed letter", "icon": "items/signed_letter.png"}
+}

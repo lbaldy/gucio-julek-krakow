@@ -1,0 +1,24 @@
+{
+  "id": "attic",
+  "background": "scenes/attic/bg.png",
+  "walkable": [[[100, 1060], [1820, 1060], [1500, 760], [400, 760]]],
+  "blocked": [[[900, 900], [1100, 900], [1100, 980], [900, 980]]],
+  "scale": {"near_y": 1040, "near": 1.0, "far_y": 780, "far": 0.6},
+  "spawns": {
+    "default": {"x": 960, "y": 1010, "facing": "right"},
+    "from_hall": {"x": 1680, "y": 1000, "facing": "left"}
+  },
+  "hotspots": [
+    {"id": "window", "name": "dusty window", "polygon": [[800, 200], [1100, 200], [1100, 500], [800, 500]], "walk_to": [950, 800], "face": "up"},
+    {"id": "chest", "name": "chest", "polygon": [[480, 760], [700, 760], [700, 900], [480, 900]], "walk_to": [600, 940], "face": "up"}
+  ],
+  "objects": [
+    {"id": "crowbar", "name": "crowbar", "sprite": "items/crowbar_world.png", "x": 1300, "y": 880, "visible_if": "!taken:crowbar", "walk_to": [1280, 940]},
+    {"id": "key", "name": "rusty key", "sprite": "items/key_world.png", "x": 590, "y": 820, "visible_if": "chest_open && !taken:key", "walk_to": [600, 940]}
+  ],
+  "patches": [{"image": "scenes/attic/chest_open.png", "x": 480, "y": 700, "visible_if": "chest_open"}],
+  "exits": [
+    {"id": "to_hall", "name": "door", "polygon": [[1760, 500], [1900, 500], [1900, 1000], [1760, 1000]], "walk_to": [1680, 1000], "target": "hall", "spawn": "from_attic"}
+  ],
+  "points": {}
+}

@@ -1,0 +1,425 @@
+{
+ "id": "forest",
+ "background": "scenes/forest/bg.png",
+ "music": "music/forest.mp3",
+ "ambience": "amb/forest_loop.mp3",
+ "walkable": [
+  [
+   [
+    40,
+    1070
+   ],
+   [
+    1900,
+    1070
+   ],
+   [
+    1900,
+    1010
+   ],
+   [
+    1570,
+    1000
+   ],
+   [
+    1560,
+    830
+   ],
+   [
+    1520,
+    720
+   ],
+   [
+    1440,
+    660
+   ],
+   [
+    1260,
+    660
+   ],
+   [
+    1060,
+    700
+   ],
+   [
+    880,
+    760
+   ],
+   [
+    640,
+    800
+   ],
+   [
+    620,
+    990
+   ],
+   [
+    240,
+    1000
+   ],
+   [
+    40,
+    1010
+   ]
+  ]
+ ],
+ "scale": {
+  "near_y": 1050,
+  "near": 1.0,
+  "far_y": 660,
+  "far": 0.62
+ },
+ "spawns": {
+  "default": {
+   "x": 900,
+   "y": 960,
+   "facing": "right"
+  },
+  "from_river": {
+   "x": 1400,
+   "y": 690,
+   "facing": "left"
+  }
+ },
+ "hotspots": [
+  {
+   "id": "squirrel_tree",
+   "name": "drzewo wiewiórki",
+   "polygon": [
+    [
+     90,
+     0
+    ],
+    [
+     470,
+     0
+    ],
+    [
+     470,
+     500
+    ],
+    [
+     560,
+     700
+    ],
+    [
+     480,
+     780
+    ],
+    [
+     180,
+     760
+    ],
+    [
+     100,
+     500
+    ]
+   ],
+   "walk_to": [
+    660,
+    880
+   ],
+   "face": "left"
+  },
+  {
+   "id": "branch",
+   "name": "gałąź",
+   "polygon": [
+    [
+     440,
+     250
+    ],
+    [
+     760,
+     270
+    ],
+    [
+     1000,
+     220
+    ],
+    [
+     1250,
+     130
+    ],
+    [
+     1270,
+     200
+    ],
+    [
+     1000,
+     300
+    ],
+    [
+     780,
+     380
+    ],
+    [
+     460,
+     390
+    ]
+   ],
+   "walk_to": [
+    800,
+    820
+   ],
+   "face": "up"
+  },
+  {
+   "id": "leaves",
+   "name": "kupka liści",
+   "polygon": [
+    [
+     1200,
+     760
+    ],
+    [
+     1300,
+     700
+    ],
+    [
+     1480,
+     690
+    ],
+    [
+     1600,
+     780
+    ],
+    [
+     1560,
+     820
+    ],
+    [
+     1220,
+     820
+    ]
+   ],
+   "walk_to": [
+    1300,
+    860
+   ],
+   "face": "right"
+  },
+  {
+   "id": "stash",
+   "name": "schowek w korzeniach",
+   "polygon": [
+    [
+     1080,
+     580
+    ],
+    [
+     1200,
+     580
+    ],
+    [
+     1210,
+     670
+    ],
+    [
+     1070,
+     670
+    ]
+   ],
+   "walk_to": [
+    1140,
+    720
+   ],
+   "face": "up"
+  },
+  {
+   "id": "log",
+   "name": "wydrążona kłoda",
+   "polygon": [
+    [
+     1580,
+     820
+    ],
+    [
+     1740,
+     690
+    ],
+    [
+     1920,
+     700
+    ],
+    [
+     1920,
+     1000
+    ],
+    [
+     1600,
+     1000
+    ]
+   ],
+   "walk_to": [
+    1560,
+    1030
+   ],
+   "face": "right"
+  },
+  {
+   "id": "stone",
+   "name": "omszały kamień",
+   "polygon": [
+    [
+     230,
+     860
+    ],
+    [
+     330,
+     800
+    ],
+    [
+     540,
+     800
+    ],
+    [
+     600,
+     900
+    ],
+    [
+     600,
+     990
+    ],
+    [
+     240,
+     990
+    ]
+   ],
+   "walk_to": [
+    680,
+    1000
+   ],
+   "face": "left"
+  }
+ ],
+ "objects": [
+  {
+   "id": "stick",
+   "name": "długi kij",
+   "sprite": "items/stick_world.png",
+   "x": 560,
+   "y": 745,
+   "pickup": true,
+   "visible_if": "!taken:stick",
+   "walk_to": [
+    680,
+    1000
+   ]
+  },
+  {
+   "id": "acorn_on_branch",
+   "name": "żołądź",
+   "sprite": "items/acorn_world.png",
+   "x": 800,
+   "y": 355,
+   "visible_if": "!acorn_branch_down",
+   "walk_to": [
+    800,
+    820
+   ]
+  },
+  {
+   "id": "acorn_fallen",
+   "name": "żołądź",
+   "sprite": "items/acorn_world.png",
+   "x": 790,
+   "y": 850,
+   "pickup": true,
+   "visible_if": "acorn_branch_down && !acorn_branch",
+   "walk_to": [
+    760,
+    890
+   ]
+  },
+  {
+   "id": "jay",
+   "name": "sójka",
+   "sprite": "scenes/forest/jay.png",
+   "x": 1075,
+   "y": 470,
+   "visible_if": "!jay_gone",
+   "walk_to": [
+    1140,
+    720
+   ]
+  },
+  {
+   "id": "feather_forest_ferns",
+   "name": "białe piórko",
+   "sprite": "items/feather_world.png",
+   "x": 700,
+   "y": 690,
+   "pickup": true,
+   "visible_if": "!feather_forest_ferns",
+   "walk_to": [
+    720,
+    820
+   ]
+  },
+  {
+   "id": "feather_forest_path",
+   "name": "białe piórko",
+   "sprite": "items/feather_world.png",
+   "x": 1350,
+   "y": 630,
+   "pickup": true,
+   "visible_if": "!feather_forest_path",
+   "walk_to": [
+    1380,
+    680
+   ]
+  }
+ ],
+ "actors": [
+  {
+   "id": "lech",
+   "x": 1660,
+   "y": 700,
+   "facing": "left",
+   "visible_if": "!nest_done"
+  },
+  {
+   "id": "ruda",
+   "x": 540,
+   "y": 800,
+   "facing": "right"
+  }
+ ],
+ "exits": [
+  {
+   "id": "path_river",
+   "name": "ścieżka nad rzekę",
+   "polygon": [
+    [
+     1330,
+     420
+    ],
+    [
+     1560,
+     420
+    ],
+    [
+     1560,
+     640
+    ],
+    [
+     1330,
+     650
+    ]
+   ],
+   "walk_to": [
+    1430,
+    670
+   ],
+   "target": "river",
+   "spawn": "from_forest"
+  }
+ ],
+ "points": {
+  "acorn_landing": [
+   790,
+   850
+  ]
+ }
+}

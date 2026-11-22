@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+node_modules/
+dist/
+.DS_Store
+
+# picture book: generated output and scratch (kept on disk, not in git)
+book/out/
+book/*/out/
+book/fonts/candidates/
+assets/raw/book/*/*_fit.png
+assets/raw/book/*/*_guides.png

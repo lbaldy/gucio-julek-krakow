@@ -1,0 +1,15 @@
+{
+  "attic.enter.first": {"speaker": "hero", "text": "How did I get up here?"},
+  "attic.window.look": {"speaker": "hero", "text": "A dusty window. Too small to climb through."},
+  "attic.window.use": {"speaker": "hero", "text": "It's painted shut."},
+  "attic.chest.look": {"speaker": "hero", "text": "An old chest with a cheap padlock."},
+  "attic.chest.use": {"speaker": "hero", "text": "Locked."},
+  "attic.chest.item.crowbar": {"speaker": "hero", "text": "One good pull... and it's open."},
+  "attic.chest.open.use": {"speaker": "hero", "text": "Empty now."},
+  "attic.crowbar.look": {"speaker": "hero", "text": "A crowbar, leaning on the wall."},
+  "attic.crowbar.use": {"speaker": "hero", "text": "That might come in handy."},
+  "attic.key.look": {"speaker": "hero", "text": "A key, at the bottom of the chest."},
+  "attic.key.use": {"speaker": "hero", "text": "Got it."},
+  "attic.to_hall.locked": {"speaker": "hero", "text": "The door's locked."},
+  "attic.to_hall.item.key": {"speaker": "hero", "text": "It fits."}
+}

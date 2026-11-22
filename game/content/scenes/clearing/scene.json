@@ -1,0 +1,461 @@
+{
+ "id": "clearing",
+ "background": "scenes/clearing/bg.png",
+ "music": "music/clearing.mp3",
+ "ambience": "amb/clearing_loop.mp3",
+ "walkable": [
+  [
+   [
+    20,
+    1075
+   ],
+   [
+    1420,
+    1075
+   ],
+   [
+    1430,
+    920
+   ],
+   [
+    1530,
+    835
+   ],
+   [
+    1300,
+    815
+   ],
+   [
+    1240,
+    705
+   ],
+   [
+    1150,
+    668
+   ],
+   [
+    900,
+    660
+   ],
+   [
+    730,
+    695
+   ],
+   [
+    700,
+    805
+   ],
+   [
+    180,
+    805
+   ],
+   [
+    110,
+    860
+   ],
+   [
+    20,
+    880
+   ]
+  ]
+ ],
+ "scale": {
+  "near_y": 1050,
+  "near": 1.0,
+  "far_y": 665,
+  "far": 0.6
+ },
+ "spawns": {
+  "from_oak": {
+   "x": 930,
+   "y": 730,
+   "facing": "left"
+  },
+  "default": {
+   "x": 930,
+   "y": 730,
+   "facing": "left"
+  }
+ },
+ "hotspots": [
+  {
+   "id": "blueberries",
+   "name": "jagody",
+   "polygon": [
+    [
+     1300,
+     640
+    ],
+    [
+     1520,
+     585
+    ],
+    [
+     1760,
+     600
+    ],
+    [
+     1770,
+     800
+    ],
+    [
+     1300,
+     810
+    ]
+   ],
+   "walk_to": [
+    1400,
+    860
+   ],
+   "face": "right"
+  },
+  {
+   "id": "apple_tree",
+   "name": "dzika jabłoń",
+   "polygon": [
+    [
+     880,
+     250
+    ],
+    [
+     1050,
+     150
+    ],
+    [
+     1300,
+     180
+    ],
+    [
+     1400,
+     330
+    ],
+    [
+     1340,
+     530
+    ],
+    [
+     1140,
+     540
+    ],
+    [
+     1130,
+     655
+    ],
+    [
+     1060,
+     655
+    ],
+    [
+     1050,
+     520
+    ],
+    [
+     900,
+     480
+    ]
+   ],
+   "walk_to": [
+    1090,
+    720
+   ],
+   "face": "up"
+  },
+  {
+   "id": "ferns",
+   "name": "paprocie",
+   "polygon": [
+    [
+     1700,
+     640
+    ],
+    [
+     1920,
+     600
+    ],
+    [
+     1920,
+     900
+    ],
+    [
+     1720,
+     900
+    ]
+   ],
+   "walk_to": [
+    1500,
+    900
+   ],
+   "face": "right"
+  },
+  {
+   "id": "toadstool",
+   "name": "muchomor",
+   "polygon": [
+    [
+     1440,
+     920
+    ],
+    [
+     1550,
+     850
+    ],
+    [
+     1600,
+     830
+    ],
+    [
+     1760,
+     840
+    ],
+    [
+     1760,
+     900
+    ],
+    [
+     1680,
+     920
+    ],
+    [
+     1690,
+     1010
+    ],
+    [
+     1630,
+     1010
+    ],
+    [
+     1520,
+     1030
+    ],
+    [
+     1440,
+     1030
+    ]
+   ],
+   "walk_to": [
+    1380,
+    1000
+   ],
+   "face": "right"
+  },
+  {
+   "id": "basket",
+   "name": "koszyk",
+   "polygon": [
+    [
+     330,
+     440
+    ],
+    [
+     515,
+     440
+    ],
+    [
+     515,
+     665
+    ],
+    [
+     330,
+     665
+    ]
+   ],
+   "walk_to": [
+    430,
+    830
+   ],
+   "face": "left"
+  },
+  {
+   "id": "stream",
+   "name": "strumyk",
+   "polygon": [
+    [
+     1220,
+     600
+    ],
+    [
+     1400,
+     600
+    ],
+    [
+     1400,
+     655
+    ],
+    [
+     1220,
+     655
+    ]
+   ],
+   "walk_to": [
+    1200,
+    720
+   ],
+   "face": "up"
+  }
+ ],
+ "objects": [
+  {
+   "id": "apples_fallen",
+   "name": "jabłka",
+   "sprite": "items/apples_world.png",
+   "x": 1040,
+   "y": 700,
+   "pickup": true,
+   "visible_if": "apples_down && !has:apples && !basket_apples",
+   "walk_to": [
+    1090,
+    760
+   ]
+  },
+  {
+   "id": "porcino_obj",
+   "name": "prawdziwek",
+   "sprite": "items/porcino_world.png",
+   "x": 1760,
+   "y": 840,
+   "visible_if": "!porcino_picked",
+   "walk_to": [
+    1500,
+    900
+   ]
+  },
+  {
+   "id": "feather_clearing_daisies",
+   "name": "białe piórko",
+   "sprite": "items/feather_world.png",
+   "x": 150,
+   "y": 905,
+   "pickup": true,
+   "visible_if": "!feather_clearing_daisies",
+   "walk_to": [
+    200,
+    960
+   ]
+  },
+  {
+   "id": "feather_clearing_boulder",
+   "name": "białe piórko",
+   "sprite": "items/feather_world.png",
+   "x": 330,
+   "y": 790,
+   "pickup": true,
+   "visible_if": "!feather_clearing_boulder",
+   "walk_to": [
+    380,
+    850
+   ]
+  }
+ ],
+ "patches": [
+  {
+   "id": "basket_0",
+   "image": "scenes/clearing/basket_0.png",
+   "x": 330,
+   "y": 445,
+   "visible_if": "!basket_1"
+  },
+  {
+   "id": "basket_1",
+   "image": "scenes/clearing/basket_1.png",
+   "x": 330,
+   "y": 445,
+   "visible_if": "basket_1 && !basket_2"
+  },
+  {
+   "id": "basket_2",
+   "image": "scenes/clearing/basket_2.png",
+   "x": 330,
+   "y": 445,
+   "visible_if": "basket_2 && !basket_3"
+  },
+  {
+   "id": "basket_3",
+   "image": "scenes/clearing/basket_3.png",
+   "x": 330,
+   "y": 445,
+   "visible_if": "basket_3 && !basket_full"
+  },
+  {
+   "id": "basket_4",
+   "image": "scenes/clearing/basket_4.png",
+   "x": 330,
+   "y": 445,
+   "visible_if": "basket_full"
+  }
+ ],
+ "actors": [
+  {
+   "id": "lech",
+   "x": 640,
+   "y": 800,
+   "facing": "right"
+  },
+  {
+   "id": "ruda",
+   "x": 600,
+   "y": 940,
+   "facing": "right",
+   "visible_if": "ruda_arrived"
+  }
+ ],
+ "exits": [
+  {
+   "id": "hill",
+   "name": "wzgórze z dębem",
+   "polygon": [
+    [
+     110,
+     330
+    ],
+    [
+     700,
+     380
+    ],
+    [
+     900,
+     560
+    ],
+    [
+     730,
+     620
+    ],
+    [
+     560,
+     520
+    ],
+    [
+     540,
+     430
+    ],
+    [
+     300,
+     430
+    ],
+    [
+     280,
+     560
+    ],
+    [
+     110,
+     560
+    ]
+   ],
+   "walk_to": [
+    790,
+    700
+   ],
+   "target": "oak",
+   "spawn": "from_clearing"
+  }
+ ],
+ "points": {
+  "ruda_from": [
+   -80,
+   1000
+  ],
+  "ruda_to": [
+   980,
+   960
+  ]
+ }
+}

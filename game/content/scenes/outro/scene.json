@@ -1,0 +1,22 @@
+{
+  "id": "outro",
+  "background": "scenes/outro/card1.png",
+  "music": "music/legend.mp3",
+  "no_hero": true,
+  "no_companions": true,
+  "skip_hint": true,
+  "walkable": [[[900, 1060], [1020, 1060], [1020, 1070], [900, 1070]]],
+  "spawns": {"default": {"x": 960, "y": 1065, "facing": "right"}},
+  "patches": [
+    {"id": "card1", "image": "scenes/outro/card1.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "outro_1",
+     "drift": {"from": [1.0, 0.5, 0.6], "to": [1.15, 0.5, 0.35], "ms": 16000}},
+    {"id": "card2", "image": "scenes/outro/card2.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "outro_2", "fade_in_ms": 1000,
+     "drift": {"from": [1.1, 0.5, 0.45], "to": [1.0, 0.5, 0.5], "ms": 18000}},
+    {"id": "card3", "image": "scenes/outro/card3.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "outro_3", "fade_in_ms": 1000,
+     "drift": {"from": [1.0, 0.5, 0.5], "to": [1.12, 0.5, 0.4], "ms": 10000}},
+    {"id": "card_chicks", "image": "scenes/outro/card_chicks.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "outro_chicks", "fade_in_ms": 1000,
+     "drift": {"from": [1.05, 0.5, 0.5], "to": [1.15, 0.5, 0.45], "ms": 9000}},
+    {"id": "card4", "image": "scenes/outro/card4.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "outro_4", "fade_in_ms": 1400,
+     "drift": {"from": [1.12, 0.55, 0.5], "to": [1.0, 0.5, 0.5], "ms": 12000}}
+  ]
+}

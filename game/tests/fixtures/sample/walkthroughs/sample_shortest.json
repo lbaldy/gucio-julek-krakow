@@ -1,0 +1,10 @@
+{
+  "start": {"scene": "hall", "give": ["pen"]},
+  "steps": [
+    {"talk": "old_man"},
+    {"choose": 2, "expect": "has:letter"},
+    {"choose": 2},
+    {"combine": ["letter", "pen"], "expect": "has:signed_letter"},
+    {"item": "signed_letter", "on": "old_man", "expect": "game_end"}
+  ]
+}

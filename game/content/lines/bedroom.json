@@ -1,0 +1,136 @@
+{
+ "bedroom.enter.mama": {
+  "speaker": "mama",
+  "text": "Chłopcy! Pora spać! Jeszcze tylko jedna książeczka."
+ },
+ "bedroom.enter.first": {
+  "speaker": "gucio",
+  "text": "Gdzie moja książka o Polsce? Julek gdzieś schował…"
+ },
+ "bedroom.crib.look": {
+  "speaker": "gucio",
+  "text": "Łóżeczko Julka. Pod spodem coś leży… za nisko dla mnie."
+ },
+ "bedroom.crib.use": {
+  "speaker": "gucio",
+  "text": "Za mała dziura dla mnie… Julek by się zmieścił!"
+ },
+ "bedroom.crib.julek": {
+  "speaker": "julek",
+  "text": "Kuku!",
+  "direction": "[giggles]",
+  "model": "eleven_v3"
+ },
+ "bedroom.crib.julek.2": {
+  "speaker": "julek",
+  "text": "Jeś!",
+  "direction": "[proudly]",
+  "model": "eleven_v3"
+ },
+ "bedroom.crib.julek.gucio": {
+  "speaker": "gucio",
+  "text": "Moja książka! Dzięki, Julcio."
+ },
+ "bedroom.bed.look": {
+  "speaker": "gucio",
+  "text": "Moje łóżko z dinozaurami."
+ },
+ "bedroom.bed.use.early": {
+  "speaker": "gucio",
+  "text": "Jeszcze nie śpię! Najpierw książka."
+ },
+ "bedroom.bed.use": {
+  "speaker": "gucio",
+  "text": "Dobranoc, Julek."
+ },
+ "bedroom.bed.use.julek": {
+  "speaker": "julek",
+  "text": "Aaa…",
+  "direction": "[sleepy]",
+  "model": "eleven_v3"
+ },
+ "bedroom.book.read.1": {
+  "speaker": "gucio",
+  "text": "Julek, skąd się wzięła Polska?"
+ },
+ "bedroom.book.read.2": {
+  "speaker": "julek",
+  "text": "Goło!",
+  "direction": "[pointing, excited]",
+  "model": "eleven_v3"
+ },
+ "bedroom.book.read.3": {
+  "speaker": "gucio",
+  "text": "To Biały Orzeł. Jest na naszym godle. Ale skąd się tam wziął?"
+ },
+ "bedroom.book.read.4": {
+  "speaker": "julek",
+  "text": "Aaa…",
+  "direction": "[yawning]",
+  "model": "eleven_v3"
+ },
+ "bedroom.book.read.5": {
+  "speaker": "gucio",
+  "text": "Julek już śpiący. Do łóżek!"
+ },
+ "bedroom.window.look": {
+  "speaker": "gucio",
+  "text": "Wiosna! Czereśnia kwitnie."
+ },
+ "bedroom.window.use": {
+  "speaker": "gucio",
+  "text": "Zamknięte. Wieczorem chłodno."
+ },
+ "bedroom.lamp.look": {
+  "speaker": "gucio",
+  "text": "Moja lampka. Do czytania."
+ },
+ "bedroom.lamp.use": {
+  "speaker": "gucio",
+  "text": "Niech jeszcze świeci."
+ },
+ "bedroom.toy_chest.look": {
+  "speaker": "gucio",
+  "text": "Klocki i piłka. Jutro się pobawimy."
+ },
+ "bedroom.door.look": {
+  "speaker": "gucio",
+  "text": "Mama mówi, że już pora spać."
+ },
+ "bedroom.door.use": {
+  "speaker": "gucio",
+  "text": "Nie wychodzimy. Dobranoc!"
+ },
+ "bedroom.crib.look.after": {
+  "speaker": "gucio",
+  "text": "Łóżeczko Julka. Zaraz w nim zaśnie."
+ },
+ "bedroom.crib.use.after": {
+  "speaker": "gucio",
+  "text": "Książka już jest. Teraz spać!"
+ },
+ "bedroom.crib.julek.after": {
+  "speaker": "julek",
+  "text": "Aaa…",
+  "direction": "[sleepy]",
+  "model": "eleven_v3"
+ },
+ "bedroom.book.look": {
+  "speaker": "gucio",
+  "text": "Pod łóżeczkiem leży moja książka! Za nisko dla mnie."
+ },
+ "bedroom.toy_chest.julek": {
+  "speaker": "julek",
+  "text": "Hop! Hihi!",
+  "direction": "[giggles]",
+  "model": "eleven_v3"
+ },
+ "bedroom.shelf.look": {
+  "speaker": "gucio",
+  "text": "Moja rakieta. Kiedyś polecę w kosmos."
+ },
+ "bedroom.shelf.use": {
+  "speaker": "gucio",
+  "text": "Rakieta zostaje na półce."
+ }
+}

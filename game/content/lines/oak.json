@@ -1,0 +1,150 @@
+{
+ "oak.enter.first": {
+  "speaker": "gucio",
+  "text": "Jaki ogromny dąb! A tam, na górze… Orzeł!"
+ },
+ "oak.enter.first.julek": {
+  "speaker": "julek",
+  "text": "Goło! Goło!",
+  "direction": "[excited, pointing]",
+  "model": "eleven_v3"
+ },
+ "oak.eagle.look": {
+  "speaker": "gucio",
+  "text": "Orzeł! Jest niespokojny. Patrzy w dół, na ziemię…"
+ },
+ "oak.eagle.talk": {
+  "speaker": "gucio",
+  "text": "Orle, co się stało?"
+ },
+ "oak.eagle.talk.2": {
+  "speaker": "gucio",
+  "text": "Patrzy na mech… Jajka wypadły z gniazda! Trzy!"
+ },
+ "oak.eagle.look.done": {
+  "speaker": "gucio",
+  "text": "Orzeł jest szczęśliwy."
+ },
+ "oak.eagle.julek": {
+  "speaker": "julek",
+  "text": "Goło! Pa pa!",
+  "direction": "[waving]",
+  "model": "eleven_v3"
+ },
+ "oak.moss.look": {
+  "speaker": "gucio",
+  "text": "Mięciutki mech. A w nim… jajko! Całe!"
+ },
+ "oak.moss.use": {
+  "speaker": "gucio",
+  "text": "Ostrożnie… Mam!"
+ },
+ "oak.moss.look.empty": {
+  "speaker": "gucio",
+  "text": "Sam mech. Dobrze, że taki miękki."
+ },
+ "oak.hollow.look": {
+  "speaker": "gucio",
+  "text": "Mała dziupla. Coś tam bieleje. Za ciasno dla mnie."
+ },
+ "oak.hollow.julek": {
+  "speaker": "julek",
+  "text": "Kuku! … Jeś!",
+  "direction": "[proudly]",
+  "model": "eleven_v3"
+ },
+ "oak.hollow.julek.gucio": {
+  "speaker": "gucio",
+  "text": "Jajko! I piórko! Ostrożnie, Julcio."
+ },
+ "oak.hollow.look.empty": {
+  "speaker": "gucio",
+  "text": "Pusta dziupla."
+ },
+ "oak.low_branch.look": {
+  "speaker": "gucio",
+  "text": "Ta gałąź jest nisko. Wdrapię się! A wyżej… jajko!"
+ },
+ "oak.low_branch.use": {
+  "speaker": "gucio",
+  "text": "Hop… hop… Mam! Teraz powolutku w dół."
+ },
+ "oak.low_branch.look.empty": {
+  "speaker": "gucio",
+  "text": "Już tam byłem."
+ },
+ "oak.low_branch.julek": {
+  "speaker": "julek",
+  "text": "Hop!",
+  "direction": "[trying]",
+  "model": "eleven_v3"
+ },
+ "oak.low_branch.julek.gucio": {
+  "speaker": "gucio",
+  "text": "Za wysoko, Julcio. Ja wejdę."
+ },
+ "oak.nest.look": {
+  "speaker": "gucio",
+  "text": "Gniazdo orła. Puste!"
+ },
+ "oak.nest.use.1": {
+  "speaker": "gucio",
+  "text": "Mamy jedno jajko. Brakuje jeszcze dwóch."
+ },
+ "oak.nest.use.2": {
+  "speaker": "gucio",
+  "text": "Mamy dwa jajka. Brakuje jeszcze jednego."
+ },
+ "oak.nest.use.0": {
+  "speaker": "gucio",
+  "text": "Najpierw jajka."
+ },
+ "oak.nest.use.3": {
+  "speaker": "gucio",
+  "text": "Wszystkie trzy! Wspinam się… Powolutku…"
+ },
+ "oak.nest.done.1": {
+  "speaker": "gucio",
+  "text": "Jajka są w domu. Proszę bardzo, orle!"
+ },
+ "oak.nest.done.2": {
+  "speaker": "julek",
+  "text": "Goło! Jajo!",
+  "direction": "[delighted]",
+  "model": "eleven_v3"
+ },
+ "oak.nest.done.3": {
+  "speaker": "gucio",
+  "text": "Odlatuje… Leci po Lecha!"
+ },
+ "oak.nest.look.done": {
+  "speaker": "gucio",
+  "text": "Jajka są w gnieździe. Bezpieczne."
+ },
+ "oak.trunk.look": {
+  "speaker": "gucio",
+  "text": "Najstarszy dąb na świecie. Chyba."
+ },
+ "oak.trunk.use": {
+  "speaker": "gucio",
+  "text": "Za gruby, nie obejmę."
+ },
+ "oak.trunk.julek": {
+  "speaker": "julek",
+  "text": "Ooo!",
+  "direction": "[amazed, hugging the trunk]",
+  "model": "eleven_v3"
+ },
+ "oak.view.look": {
+  "speaker": "gucio",
+  "text": "Na dole słoneczna polana!"
+ },
+ "oak.view.locked": {
+  "speaker": "gucio",
+  "text": "Najpierw orzeł."
+ },
+ "oak.path_back.look": {
+  "speaker": "gucio",
+  "text": "Z powrotem do rzeki."
+ }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Untitled Adventure",
+  "start_scene": "attic",
+  "start_spawn": "default",
+  "intro_scene": "intro",
+  "hero": "hero",
+  "fonts": {"title": "fonts/BebasNeue-Regular.ttf", "menu": "fonts/CourierPrime-Bold.ttf"},
+  "start_inventory": [],
+  "fail_lines": {
+    "use": ["_.use.fail.1", "_.use.fail.2"],
+    "item": ["_.item.fail.1", "_.item.fail.2"],
+    "look": ["_.look.fail.1"],
+    "talk": ["_.talk.fail.1"]
+  },
+  "ui": {"resume": "Resume", "save": "Save", "load": "Load", "new_game": "New game", "start": "Click to start", "skip": "Esc · Skip",
+         "continue_game": "Continue", "options": "Options", "back": "Back",
+         "volume_music": "Music", "volume_sfx": "Sound effects", "volume_voice": "Voices"}
+}

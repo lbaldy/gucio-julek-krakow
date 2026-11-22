@@ -1,0 +1,17 @@
+{
+  "_.use.fail.1": {"speaker": "hero", "text": "That won't do anything."},
+  "_.use.fail.2": {"speaker": "hero", "text": "No."},
+  "_.item.fail.1": {"speaker": "hero", "text": "I don't see how those go together."},
+  "_.item.fail.2": {"speaker": "hero", "text": "That doesn't work."},
+  "_.look.fail.1": {"speaker": "hero", "text": "Nothing interesting."},
+  "_.talk.fail.1": {"speaker": "hero", "text": "No answer."},
+
+  "item.crowbar.look": {"speaker": "hero", "text": "A crowbar. Heavy, honest, persuasive."},
+  "item.key.look": {"speaker": "hero", "text": "A rusty key."},
+  "item.pen.look": {"speaker": "hero", "text": "A fountain pen. Still has ink."},
+  "item.letter.look": {"speaker": "hero", "text": "A blank permission slip."},
+  "item.letter.read.1": {"speaker": "hero", "text": "\"To whom it may concern: the bearer may leave.\""},
+  "item.letter.read.2": {"speaker": "hero", "text": "It needs a signature."},
+  "item.signed_letter.look": {"speaker": "hero", "text": "Signed. Official enough."},
+  "combo.sign_letter": {"speaker": "hero", "text": "There. My best forgery."}
+}

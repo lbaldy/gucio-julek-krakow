@@ -1,0 +1,14 @@
+{
+  "start": {"scene": "forest", "set": ["dreaming"]},
+  "steps": [
+    {"item": "julek", "on": "squirrel_tree", "expect": "!ruda_told"},
+    {"item": "julek", "on": "branch", "said": "forest.branch.julek.gucio", "expect": "!acorn_branch_down"},
+    {"use": "stick"},
+    {"item": "stick", "on": "stash", "said": "forest.jay.stick", "expect": "!jay_gone"},
+    {"item": "stick", "on": "ruda", "expect": "has:stick && !ruda_told"},
+    {"go": "path_river", "said": "forest.path_river.locked", "expect": "scene:forest"},
+    {"use": "leaves", "expect": "has:acorns"},
+    {"item": "acorns", "on": "lech", "said": "forest.lech.item.acorns", "expect": "has:acorns && !ruda_told"},
+    {"use": "leaves", "said": "forest.leaves.look.empty", "expect": "acorn_leaves"}
+  ]
+}

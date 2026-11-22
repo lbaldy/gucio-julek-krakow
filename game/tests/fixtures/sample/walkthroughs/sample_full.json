@@ -1,0 +1,22 @@
+{
+  "steps": [
+    {"look": "window", "said": "attic.window.look"},
+    {"use": "chest", "said": "attic.chest.use"},
+    {"go": "to_hall", "said": "attic.to_hall.locked", "expect": "scene:attic"},
+    {"use": "crowbar", "expect": "has:crowbar"},
+    {"item": "crowbar", "on": "chest", "expect": "chest_open"},
+    {"use": "key", "expect": "has:key"},
+    {"item": "key", "on": "to_hall", "expect": "scene:hall && attic_door_open && !has:key"},
+    {"talk": "old_man"},
+    {"choose": 1, "said": "hall.old_man.a_who.2"},
+    {"choose": 1, "said": "hall.old_man.a_leave.1", "expect": "has:letter"},
+    {"choose": 1, "said": "hall.old_man.bye"},
+    {"lookItem": "letter", "said": "item.letter.read.2"},
+    {"item": "letter", "on": "old_man", "said": "hall.old_man.item.letter"},
+    {"use": "pen", "expect": "has:pen"},
+    {"combine": ["pen", "letter"], "expect": "has:signed_letter && !has:letter"},
+    {"go": "to_attic", "expect": "scene:attic"},
+    {"go": "to_hall", "expect": "scene:hall"},
+    {"item": "signed_letter", "on": "old_man", "said": "hall.end", "expect": "game_end"}
+  ]
+}

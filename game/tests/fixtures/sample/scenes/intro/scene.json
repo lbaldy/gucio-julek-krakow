@@ -1,0 +1,8 @@
+{
+  "id": "intro",
+  "background": "scenes/intro/bg.png",
+  "no_hero": true,
+  "skip_hint": true,
+  "walkable": [[[900, 1060], [1020, 1060], [1020, 1070], [900, 1070]]],
+  "spawns": {"default": {"x": 960, "y": 1065, "facing": "right"}}
+}

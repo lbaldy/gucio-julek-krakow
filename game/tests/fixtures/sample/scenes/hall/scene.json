@@ -1,0 +1,19 @@
+{
+  "id": "hall",
+  "background": "scenes/hall/bg.png",
+  "music": [{"if": "got_letter", "path": "music/hall_late.mp3"}, {"path": "music/hall.mp3"}],
+  "walkable": [[[60, 1060], [1860, 1060], [1600, 780], [320, 780]]],
+  "scale": {"near_y": 1040, "near": 1.0, "far_y": 800, "far": 0.65},
+  "spawns": {
+    "default": {"x": 960, "y": 1000, "facing": "right"},
+    "from_attic": {"x": 260, "y": 1000, "facing": "right"}
+  },
+  "objects": [
+    {"id": "pen", "name": "pen", "sprite": "items/pen_world.png", "x": 900, "y": 840, "visible_if": "!taken:pen", "walk_to": [900, 900]}
+  ],
+  "exits": [
+    {"id": "to_attic", "name": "stairs up", "polygon": [[0, 500], [140, 500], [140, 1000], [0, 1000]], "walk_to": [260, 1000], "target": "attic", "spawn": "from_hall"}
+  ],
+  "actors": [{"id": "old_man", "x": 1450, "y": 920, "facing": "left"}],
+  "points": {}
+}

@@ -1,0 +1,21 @@
+{
+  "description": "A small, fast, chattery young female cartoon squirrel voice speaking Polish with a natural standard Polish accent. Bright and a little squeaky but warm and clear, never shrill. Breathless and quick when excited, sweet and dramatic about small things.",
+  "text": "Ojej, ojej, ojej! Moje \u017co\u0142\u0119dzie! Wszystkie znikn\u0119\u0142y! Or\u0142a? Jakiego or\u0142a? Nie pami\u0119tam! My\u015bl\u0119 tylko o \u017co\u0142\u0119dziach! Czekajcie, czekajcie! Dla was! Za moje \u017co\u0142\u0119dzie!",
+  "previews": [
+    {
+      "n": 1,
+      "generated_voice_id": "lRxU3vuKz9RkAA8OG5TY",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-gniezno/gucio-julek-odkrywaja-gniezno/assets/voice_designs/ruda/preview_1.mp3"
+    },
+    {
+      "n": 2,
+      "generated_voice_id": "5ZP5C5mIt4BpSHjMclVx",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-gniezno/gucio-julek-odkrywaja-gniezno/assets/voice_designs/ruda/preview_2.mp3"
+    },
+    {
+      "n": 3,
+      "generated_voice_id": "9v3c9usW68W80KruyeNK",
+      "file": "/Users/lukasz/projects/gucio-julek/gucio-julek-gniezno/gucio-julek-odkrywaja-gniezno/assets/voice_designs/ruda/preview_3.mp3"
+    }
+  ]
+}

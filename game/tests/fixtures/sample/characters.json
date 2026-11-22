@@ -1,0 +1,7 @@
+{
+  "hero": {"name": "Ada", "height_px": 520, "text_color": "#ffd27f", "speed": 420,
+    "anims": {"idle_r": {"frames": 1, "fps": 1}, "walk_r": {"frames": 6, "fps": 10},
+              "talk_r": {"frames": 3, "fps": 8}, "pickup_r": {"frames": 1, "fps": 1, "hold_ms": 400}}},
+  "old_man": {"name": "Old man", "height_px": 480, "text_color": "#9fd3ff", "speed": 200,
+    "anims": {"idle_r": {"frames": 1, "fps": 1}, "talk_r": {"frames": 3, "fps": 8}}}
+}

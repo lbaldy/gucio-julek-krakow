@@ -1,0 +1,4 @@
+{
+  "fal": { "total": 20, "per_call": 0.5 },
+  "elevenlabs": { "total": 109000, "per_call": 5000 }
+}

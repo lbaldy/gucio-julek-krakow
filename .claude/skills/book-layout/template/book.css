@@ -1,0 +1,67 @@
+/* Picture-book layout. Copied to book/layout/book.css by the book-layout skill,
+   then edited per book. booktools.py inlines it into book/out/book.html and
+   defines --pw/--ph (page incl. bleed), --bleed, --safe, --trim-w/-h, --gutter
+   and @page. Positions inside a page are in mm from the bleed edge. */
+
+/* Fonts live in book/fonts/ (OFL, Polish glyphs checked). Paths are relative to book/out/. */
+@font-face { font-family: "Body"; src: url("../fonts/Andika-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: "Body"; src: url("../fonts/Andika-Bold.ttf"); font-weight: 700; }
+@font-face { font-family: "Title"; src: url("../fonts/Title.ttf"); }
+
+:root {
+  --ink: #5a3f2b;        /* warm ink brown, never black (style.md) */
+  --paper: #f1e6cf;      /* paper cream */
+  --glow: #f2c14e;
+  --night: #1f2f57;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--paper); }
+body { font-family: "Body", "Andika", "Nunito", sans-serif; color: var(--ink);
+       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.page { position: relative; width: var(--pw); height: var(--ph); overflow: hidden;
+        background: var(--paper); break-after: page; }
+.page:last-child { break-after: auto; }
+.art  { position: absolute; top: 0; display: block; object-fit: cover; }  /* final art is exact size; cover only protects drafts */
+.spot { position: absolute; display: block; height: auto; }
+
+/* Text blocks: positioned and sized by book.json (box in mm from trim). */
+.text { position: absolute; line-height: 1.38; hyphens: manual; overflow-wrap: normal;
+        display: flex; flex-direction: column; justify-content: flex-start; gap: 0.55em; }
+.text.v-center { justify-content: center; }
+.text.v-bottom { justify-content: flex-end; }
+.text p { text-wrap: pretty; }
+.on-light { color: var(--ink); }
+/* no blurred shadows anywhere: some PDF renderers/RIPs draw them as boxes */
+.on-dark  { color: var(--paper); }
+.panel    { color: var(--ink); background: var(--paper); border-radius: 5mm; padding: 4mm 5mm; }
+/* a panel hugs its text; the box sets where it starts (top-left) and how wide it is */
+.text.panel:not(.v-center):not(.v-bottom):not(.fixed) { height: auto !important; }
+/* .fixed: a panel used as a card with set height (e.g. behind a QR code); .spot-top puts the spot above text */
+.spot-top .spot { z-index: 2; }
+.title    { font-family: "Title", "Body", serif; line-height: 1.1; }
+
+.folio { position: absolute; bottom: calc(var(--bleed) + 6mm); font-size: 11pt; color: var(--ink); z-index: 3;
+         background: var(--paper); border-radius: 1.5mm; padding: .4mm 1.6mm; line-height: 1.2; }
+.verso .folio { left: calc(var(--bleed) + var(--safe)); }
+.recto .folio { right: calc(var(--bleed) + var(--safe)); }
+
+/* ---------- proof mode (screen only): facing pages side by side with guides ---------- */
+@media screen {
+  html:has(body.proof) { background: #444; }
+  body.proof { display: flex; gap: 0; padding: 20px; background: #444; width: max-content; }
+  /* show trimmed pages only, so facing pages meet at the fold as in the printed book */
+  body.proof .page { flex: none; clip-path: inset(var(--bleed)); margin: 0 calc(-1 * var(--bleed)); }
+  body.proof .page.blank { background: #555; }
+  body.proof .page::after { content: ""; position: absolute; pointer-events: none;      /* safe area */
+    inset: calc(var(--bleed) + var(--safe)); outline: 1px dashed rgba(40, 160, 60, .9); }
+  body.proof .kind-spread.verso::before { content: ""; position: absolute; z-index: 1;   /* gutter band */
+    top: 0; bottom: 0; right: var(--bleed); width: var(--gutter); background: rgba(240, 140, 20, .15); }
+  body.proof .kind-spread.recto::before { content: ""; position: absolute; z-index: 1;
+    top: 0; bottom: 0; left: var(--bleed); width: var(--gutter); background: rgba(240, 140, 20, .15); }
+  body.proof .text { outline: 1px dashed rgba(200, 40, 160, .8); }
+}
+
+/* an unprinted page (inside covers): white paper, no ink. Solid colours only: PDF 1.3 has no transparency */
+.page.unprinted { background: #fff; }

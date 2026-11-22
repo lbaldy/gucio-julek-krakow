@@ -1,0 +1,71 @@
+{
+  "language": "pl",
+  "title": "Gucio i Julek Odkrywają Polskę",
+  "start_scene": "bedroom",
+  "start_spawn": "default",
+  "hero": "gucio",
+  "fonts": {
+    "title": "fonts/BebasNeue-Regular.ttf",
+    "menu": "fonts/CourierPrime-Bold.ttf"
+  },
+  "start_inventory": [
+    "julek"
+  ],
+  "companions": [
+    {
+      "id": "julek",
+      "offset": [
+        150,
+        10
+      ]
+    }
+  ],
+  "one_tap": true,
+  "inventory_always": true,
+  "idle_hint_ms": 40000,
+  "fail_lines": {
+    "use": [
+      "_.use.fail.1",
+      "_.use.fail.2",
+      "_.use.fail.3"
+    ],
+    "item": [
+      "_.item.fail.1",
+      "_.item.fail.2"
+    ],
+    "look": [
+      "_.look.fail.1"
+    ],
+    "talk": [
+      "_.talk.fail.1"
+    ],
+    "items": {
+      "julek": [
+        "_.julek.fail.1",
+        "_.julek.fail.2",
+        "_.julek.fail.3",
+        "_.julek.fail.4"
+      ]
+    }
+  },
+  "ui": {
+    "resume": "Wróć do gry",
+    "save": "Zapisz",
+    "load": "Wczytaj",
+    "new_game": "Nowa gra",
+    "start": "Dotknij, aby zacząć",
+    "skip": "Pomiń",
+    "continue_game": "Graj dalej",
+    "options": "Ustawienia",
+    "back": "Wstecz",
+    "volume_music": "Muzyka",
+    "volume_sfx": "Dźwięki",
+    "volume_voice": "Głosy",
+    "tagline": "Tajemnica Białego Orła"
+  },
+  "counter": {
+    "prefix": "feather_",
+    "total": 12,
+    "icon": "items/feather.png"
+  }
+}

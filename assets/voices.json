@@ -1,0 +1,21 @@
+{
+  "gucio": {
+    "voice_id": "xLCJR8xcZX2YjImGFyGw"
+  },
+  "julek": {
+    "voice_id": "B8gJV1IhpuegLxdpXFOE"
+  },
+  "mama": {
+    "voice_id": "iCzRDxXsrROcDYzWimM9"
+  },
+  "lech": {
+    "voice_id": "Nh6FDy4azd3RiUZSHH4n"
+  },
+  "ruda": {
+    "voice_id": "5ZP5C5mIt4BpSHjMclVx",
+    "description": "A small, fast, chattery young female cartoon squirrel voice speaking Polish with a natural standard Polish accent. Bright and a little squeaky but warm and clear, never shrill. Breathless and quick when excited, sweet and dramatic about small things."
+  },
+  "narrator": {
+    "voice_id": "GYIFzZqrrlcE48raxPZg"
+  }
+}

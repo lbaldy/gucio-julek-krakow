@@ -1,0 +1,400 @@
+{
+ "id": "oak",
+ "background": "scenes/oak/bg.png",
+ "music": "music/forest.mp3",
+ "ambience": "amb/oak_loop.mp3",
+ "walkable": [
+  [
+   [
+    20,
+    1075
+   ],
+   [
+    1900,
+    1075
+   ],
+   [
+    1900,
+    820
+   ],
+   [
+    1700,
+    790
+   ],
+   [
+    1450,
+    770
+   ],
+   [
+    1250,
+    790
+   ],
+   [
+    1080,
+    830
+   ],
+   [
+    960,
+    850
+   ],
+   [
+    640,
+    850
+   ],
+   [
+    480,
+    830
+   ],
+   [
+    330,
+    800
+   ],
+   [
+    170,
+    790
+   ],
+   [
+    20,
+    800
+   ]
+  ]
+ ],
+ "scale": {
+  "near_y": 1050,
+  "near": 1.0,
+  "far_y": 780,
+  "far": 0.76
+ },
+ "spawns": {
+  "from_river": {
+   "x": 240,
+   "y": 930,
+   "facing": "right"
+  },
+  "from_clearing": {
+   "x": 1750,
+   "y": 880,
+   "facing": "left"
+  },
+  "default": {
+   "x": 240,
+   "y": 930,
+   "facing": "right"
+  }
+ },
+ "hotspots": [
+  {
+   "id": "nest",
+   "name": "gniazdo",
+   "polygon": [
+    [
+     810,
+     120
+    ],
+    [
+     1150,
+     120
+    ],
+    [
+     1160,
+     300
+    ],
+    [
+     820,
+     305
+    ]
+   ],
+   "walk_to": [
+    1000,
+    880
+   ],
+   "face": "up"
+  },
+  {
+   "id": "hollow",
+   "name": "dziupla przy korzeniach",
+   "polygon": [
+    [
+     730,
+     685
+    ],
+    [
+     855,
+     685
+    ],
+    [
+     860,
+     805
+    ],
+    [
+     725,
+     805
+    ]
+   ],
+   "walk_to": [
+    790,
+    880
+   ],
+   "face": "up"
+  },
+  {
+   "id": "low_branch",
+   "name": "niska gałąź",
+   "polygon": [
+    [
+     200,
+     500
+    ],
+    [
+     440,
+     540
+    ],
+    [
+     700,
+     520
+    ],
+    [
+     700,
+     630
+    ],
+    [
+     440,
+     620
+    ],
+    [
+     200,
+     650
+    ]
+   ],
+   "walk_to": [
+    430,
+    860
+   ],
+   "face": "up"
+  },
+  {
+   "id": "moss",
+   "name": "miękki mech",
+   "polygon": [
+    [
+     340,
+     860
+    ],
+    [
+     640,
+     870
+    ],
+    [
+     700,
+     1010
+    ],
+    [
+     330,
+     1020
+    ]
+   ],
+   "walk_to": [
+    500,
+    1040
+   ],
+   "face": "up"
+  },
+  {
+   "id": "trunk",
+   "name": "pień dębu",
+   "polygon": [
+    [
+     570,
+     40
+    ],
+    [
+     900,
+     40
+    ],
+    [
+     945,
+     420
+    ],
+    [
+     960,
+     690
+    ],
+    [
+     860,
+     690
+    ],
+    [
+     860,
+     810
+    ],
+    [
+     580,
+     810
+    ],
+    [
+     600,
+     420
+    ]
+   ],
+   "walk_to": [
+    1020,
+    880
+   ],
+   "face": "up"
+  }
+ ],
+ "objects": [
+  {
+   "id": "eagle",
+   "name": "Biały Orzeł",
+   "sprite": "scenes/oak/eagle_restless.png",
+   "x": 1080,
+   "y": 60,
+   "visible_if": "!nest_done",
+   "walk_to": [
+    1060,
+    870
+   ],
+   "face": "up"
+  },
+  {
+   "id": "eagle_calm",
+   "name": "Biały Orzeł",
+   "sprite": "scenes/oak/eagle_calm.png",
+   "x": 890,
+   "y": 90,
+   "visible_if": "nest_done && !eagle_gone",
+   "walk_to": [
+    1060,
+    870
+   ],
+   "face": "up"
+  },
+  {
+   "id": "egg_moss_obj",
+   "name": "jajko",
+   "sprite": "items/egg_world.png",
+   "x": 470,
+   "y": 900,
+   "pickup": true,
+   "visible_if": "!egg_moss",
+   "walk_to": [
+    500,
+    1040
+   ]
+  },
+  {
+   "id": "egg_fork",
+   "name": "jajko na gałęzi",
+   "sprite": "items/egg_world.png",
+   "x": 495,
+   "y": 288,
+   "visible_if": "!egg_branch",
+   "walk_to": [
+    430,
+    860
+   ]
+  },
+  {
+   "id": "feather_oak_violets",
+   "name": "białe piórko",
+   "sprite": "items/feather_world.png",
+   "x": 1560,
+   "y": 930,
+   "pickup": true,
+   "visible_if": "!feather_oak_violets",
+   "walk_to": [
+    1520,
+    1000
+   ]
+  },
+  {
+   "id": "feather_oak_root",
+   "name": "białe piórko",
+   "sprite": "items/feather_world.png",
+   "x": 260,
+   "y": 880,
+   "pickup": true,
+   "visible_if": "!feather_oak_root",
+   "walk_to": [
+    230,
+    960
+   ]
+  }
+ ],
+ "patches": [
+  {
+   "id": "nest_eggs",
+   "image": "scenes/oak/nest_eggs_shaded.png",
+   "x": 912,
+   "y": 170,
+   "visible_if": "nest_done"
+  },
+  {
+   "id": "nest_rim",
+   "image": "scenes/oak/nest_rim.png",
+   "x": 820,
+   "y": 212,
+   "baseline": 400,
+   "visible_if": "nest_done && !eagle_gone"
+  }
+ ],
+ "exits": [
+  {
+   "id": "path_back",
+   "name": "ścieżka do rzeki",
+   "polygon": [
+    [
+     0,
+     780
+    ],
+    [
+     200,
+     780
+    ],
+    [
+     260,
+     1080
+    ],
+    [
+     0,
+     1080
+    ]
+   ],
+   "walk_to": [
+    110,
+    950
+   ],
+   "target": "river",
+   "spawn": "from_oak"
+  },
+  {
+   "id": "view",
+   "name": "polana",
+   "polygon": [
+    [
+     1700,
+     560
+    ],
+    [
+     1920,
+     560
+    ],
+    [
+     1920,
+     1080
+    ],
+    [
+     1760,
+     1080
+    ]
+   ],
+   "walk_to": [
+    1820,
+    900
+   ],
+   "target": "clearing",
+   "spawn": "from_oak"
+  }
+ ]
+}

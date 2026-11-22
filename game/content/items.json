@@ -1,0 +1,30 @@
+{
+  "julek": {
+    "name": "Julek",
+    "icon": "items/julek.png"
+  },
+  "stick": {
+    "name": "długi kij",
+    "icon": "items/stick.png"
+  },
+  "acorns": {
+    "name": "żołędzie",
+    "icon": "items/acorns.png"
+  },
+  "eggs": {
+    "name": "jajka orła",
+    "icon": "items/eggs.png"
+  },
+  "blueberries": {
+    "name": "jagody",
+    "icon": "items/blueberries.png"
+  },
+  "apples": {
+    "name": "jabłka",
+    "icon": "items/apples.png"
+  },
+  "porcino": {
+    "name": "prawdziwek",
+    "icon": "items/porcino.png"
+  }
+}

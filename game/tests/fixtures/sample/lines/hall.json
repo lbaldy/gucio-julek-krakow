@@ -1,0 +1,15 @@
+{
+  "hall.enter.first": {"speaker": "old_man", "text": "Ah. You found the key."},
+  "hall.pen.look": {"speaker": "hero", "text": "A pen on the side table."},
+  "hall.pen.use": {"speaker": "hero", "text": "I'll borrow this."},
+  "hall.old_man.look": {"speaker": "hero", "text": "An old man in a dressing gown."},
+  "hall.old_man.q_who": {"speaker": "hero", "text": "Who are you?"},
+  "hall.old_man.a_who.1": {"speaker": "old_man", "text": "The caretaker."},
+  "hall.old_man.a_who.2": {"speaker": "old_man", "text": "Somebody has to be."},
+  "hall.old_man.q_leave": {"speaker": "hero", "text": "How do I get out of here?"},
+  "hall.old_man.a_leave.1": {"speaker": "old_man", "text": "With permission. Here, fill this in."},
+  "hall.old_man.bye": {"speaker": "hero", "text": "Goodbye."},
+  "hall.old_man.item.letter": {"speaker": "old_man", "text": "It isn't signed."},
+  "hall.old_man.item.signed_letter": {"speaker": "old_man", "text": "Everything seems to be in order."},
+  "hall.end": {"speaker": "narrator", "text": "And so Ada left. The end."}
+}
