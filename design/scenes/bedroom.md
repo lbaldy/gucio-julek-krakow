@@ -93,4 +93,4 @@ None in the background. The book sprite moves from the shelf to the rug.
 ## Build status
 - [x] Summer edits: `bg.png` (open window, linden, fireflies) and `bg_morning.png`, geometry unchanged
 - [ ] Lines locked → VO
-- [ ] Music, ambience
+- [x] Music, ambience

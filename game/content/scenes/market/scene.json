@@ -2,7 +2,7 @@
   "id": "market",
   "background": "scenes/market/bg.png",
   "music": "music/town.mp3",
-  "ambience": "amb/market_loop.mp3",
+  "ambience": "amb/market_cry_loop.mp3",
   "walkable": [
     [
       [

@@ -1,7 +1,7 @@
 {
   "id": "outro",
   "background": "scenes/outro/reunion.png",
-  "music": "music/legend.mp3",
+  "music": "music/feast.mp3",
   "no_hero": true,
   "no_companions": true,
   "skip_hint": true,

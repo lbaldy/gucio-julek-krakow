@@ -3,7 +3,7 @@ import { woolTargets } from "../../globals";
 
 // Act III, the market: the baker's baby won't stop crying; Julek's "Kuku!" makes it laugh and the
 // baker gives an obwarzanek; the hungry merchant trades a sulphur stone for it. Julek grabbing a
-// stone and going "Fuj!" is an optional gag (it plays after the trade if the player skipped it).
+// stone and going "Fe!" is an optional gag (it plays after the trade if the player skipped it).
 
 async function peekaboo(g: GameAPI) {
   if (g.flag("baby_asleep")) return g.say("market.cradle.julek.asleep");
@@ -13,6 +13,7 @@ async function peekaboo(g: GameAPI) {
     await g.say("market.cradle.julek.1");
     await g.say("market.cradle.julek.2");
     g.set("baby_laughed");
+    g.ambience("market_loop"); // the crying stops
     void g.anim("baker", "give");
     await g.say("market.cradle.julek.3");
     g.give("pretzel");
@@ -58,7 +59,11 @@ const cradle = {
 
 export default defineScene("market", {
   async enter(g) {
-    if (g.flag("baby_laughed")) g.set("baby_asleep");
+    // the default ambience has the baby crying in it; once he has laughed, the market is calm
+    if (g.flag("baby_laughed")) {
+      g.set("baby_asleep");
+      g.ambience("market_loop");
+    }
     if (g.visited("market")) return;
     await g.say("market.enter.first.1");
     await g.say("market.enter.first.2");

@@ -121,4 +121,4 @@ No people, no sheep, no ram, no sack, no text.
 - [x] Chrome pass: butt → Julek calms Bodzio → sack on haystack → sheepskin → end beat
 - [ ] Optional: Julek toddles up to Bodzio during the offer (now he offers from beside Gucio)
 - [ ] Lines locked → VO
-- [ ] Music and ambience
+- [x] Music and ambience

@@ -123,4 +123,4 @@ No people, no dragon, no cart, no wheel, no text.
 - [x] Chrome pass: wheel → peg → push → hide → sniff → doubt → Julek's Beee → happy → burp → den
 - [ ] Optional: a gulp frame (the sheep vanishes on the cut to the cards)
 - [ ] Lines locked → VO
-- [ ] Music, ambience, the silence at the sniff
+- [x] Music, ambience, the silence at the sniff

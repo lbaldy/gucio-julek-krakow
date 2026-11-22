@@ -131,4 +131,4 @@ paths open).
       shepherd (idle, sad, sad_talk, 6-frame walk), knight (idle, 6-frame run), merchant/baker
       window busts, Julek in the helmet (`helmet_r`)
 - [ ] Lines locked with the user → VO
-- [ ] Music `town.mp3`, ambience `town_loop.mp3`
+- [x] Music `town.mp3`, ambience `town_loop.mp3`

@@ -96,4 +96,4 @@ None. (Kłębuszek is scripted; he follows the boys.)
 - [x] Gucio `lift_r`, Julek `hug_r`, Kłębuszek `idle_r`
 - [x] Chrome pass: gate → sheep out → count → tail → Julek in the hollow → hug → Kłębuszek beside the boys
 - [ ] Lines locked → VO
-- [ ] Music, ambience
+- [x] Music, ambience
