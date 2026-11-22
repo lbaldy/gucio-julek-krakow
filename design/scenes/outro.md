@@ -51,3 +51,9 @@ Then → **the bedroom morning** (`bedroom`, `bg_morning`, scripted, no player c
   river), painted in the series style. No text, no signs.
 - The morning beat uses the bedroom `bg_morning` plus a new Julek pose holding the tuft
   (`wool_r`); `outro_end` is a card.
+
+## Build status
+- [x] Cards: 1K drafts → 2K finals (all in `assets/game/scenes/outro/`)
+- [ ] Lines locked → VO
+- [ ] Music and per-card sfx
+- The morning beat is the `outro/morning` card (boys in it) rather than the bare `bg_morning` with sprites.

@@ -36,3 +36,8 @@ After card 5 → `town` (the boys enter from the left, from the river path).
 ## Art notes
 Cards 1–4 show legend characters small, in the style of their refs. Card 5 uses the
 boys' refs. No text in any card.
+
+## Build status
+- [x] Cards: 1K drafts → 2K finals (all in `assets/game/scenes/prologue/`)
+- [ ] Lines locked → VO
+- [ ] Music and per-card sfx

@@ -16,7 +16,7 @@
     {"id": "gift", "image": "scenes/outro/gift.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "out_gift", "baseline": 9003, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
     {"id": "bonus", "image": "scenes/outro/bonus.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "out_bonus", "baseline": 9004, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
     {"id": "today", "image": "scenes/outro/today.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "out_today", "baseline": 9005, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
-    {"id": "morning", "image": "scenes/bedroom/bg_morning.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "out_morning", "baseline": 9006, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
+    {"id": "morning", "image": "scenes/outro/morning.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "out_morning", "baseline": 9006, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
     {"id": "end", "image": "scenes/outro/end.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "out_end", "baseline": 9007, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900}
   ]
 }

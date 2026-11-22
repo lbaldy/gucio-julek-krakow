@@ -29,3 +29,8 @@ After card 5 → `den`. Night has fallen; Dratewka lights his lantern.
 ## Art notes
 The dragon follows his ref in every card. In card 1 the fake sheep is a lumpy shape in
 his mouth; nothing gory. In card 4 the smoke rings are big, round and comic.
+
+## Build status
+- [x] Cards: 1K drafts → 2K finals (all in `assets/game/scenes/burp/`)
+- [ ] Lines locked → VO
+- [ ] Music and per-card sfx

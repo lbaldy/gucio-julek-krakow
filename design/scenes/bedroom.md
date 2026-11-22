@@ -89,3 +89,8 @@ None in the background. The book sprite moves from the shelf to the rug.
 - `bedroom.door.look`: gucio: "Mama zaraz przyjdzie poczytać."
 - `bedroom.door.use`: gucio: "Nie wychodzimy. Już wieczór."
 - `bedroom.hint.book`: gucio: "Książka jest wysoko… A Julek tak skacze w łóżeczku!"
+
+## Build status
+- [x] Summer edits: `bg.png` (open window, linden, fireflies) and `bg_morning.png`, geometry unchanged
+- [ ] Lines locked → VO
+- [ ] Music, ambience
