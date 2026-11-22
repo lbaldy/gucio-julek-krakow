@@ -171,7 +171,8 @@ canvas make the hero shrink whenever he walks.
 A character with a `run_r` cycle and `"run_speed"` (px/s at scale 1) uses them when running
 (`g.actorWalk(id, to, "run")`, or the hero's double-click): the cycle plays in real time at
 that speed instead of the generic 2× walk. Set `speed`/`run_speed` = stride × fps so feet don't
-skate. `_l` variants are mirrored
+skate. `g.actorWalk(id, to, "free")` walks straight to `to`, ignoring the walkable area (animals
+leaving a pen behind a fence). `_l` variants are mirrored
 from `_r` unless their folder exists. A missing anim falls back to `idle`.
 `float_px` lifts a flying character (a fairy) off its feet point and gives it a gentle bob;
 its hit box and subtitle move with it.

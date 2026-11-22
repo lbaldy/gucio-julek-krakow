@@ -74,8 +74,9 @@ export interface GameAPI {
   end(lineId: string): Promise<void>;
   walkTo(target: string | Pt): Promise<void>;
   face(dir: Facing): void;
-  /** Walk (or run, with the character's `run` cycle and `run_speed` if it has them) an actor to a point, or to a target's walk_to. */
-  actorWalk(actorId: string, to: Pt | string, how?: "walk" | "run"): Promise<void>;
+  /** Walk (or run, with the character's `run` cycle and `run_speed` if it has them) an actor to a point, or to a target's walk_to.
+   *  `free` walks in a straight line, ignoring the walkable area (sheep leaving a pen the hero can't enter). */
+  actorWalk(actorId: string, to: Pt | string, how?: "walk" | "run" | "free"): Promise<void>;
   actorFace(actorId: string, dir: Facing): void;
   /** Move an actor instantly (e.g. on scene entry, to where a past cutscene left them). */
   place(actorId: string, at: Pt): void;

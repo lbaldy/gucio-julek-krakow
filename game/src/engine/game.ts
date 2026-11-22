@@ -68,7 +68,8 @@ interface Speech {
 }
 
 /** How the hero gets to a click: walk, run (double-click), or jump straight there (double-click on an exit). */
-type Approach = "walk" | "run" | "jump";
+/** `free` walks straight to the point, ignoring the walkable area (animals leaving a pen). */
+type Approach = "walk" | "run" | "jump" | "free";
 
 const SPEED = 380;
 /** A mini-game can be skipped (skip hint / Esc) after this long. */
@@ -403,7 +404,7 @@ export class Game {
 
   private walkActor(a: Actor, to: Pt, how: Approach = "walk"): Promise<boolean> {
     if (a.arrive) this.settle(a, false);
-    const path = this.walk.find([a.x, a.y], to);
+    const path = how === "free" ? [to] : this.walk.find([a.x, a.y], to);
     if (!path.length) return Promise.resolve(true);
     if (this.instant || how === "jump") {
       const [x, y] = path[path.length - 1];

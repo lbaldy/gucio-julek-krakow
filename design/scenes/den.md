@@ -87,3 +87,13 @@ None. (Kłębuszek is scripted; he follows the boys.)
 - `den.cave_exit.look`: gucio: "Wyjście nad rzekę."
 - `den.cave_exit.locked`: gucio: "Bez Kłębuszka nie wracamy!"
 - `den.cave_exit.use`: gucio: "Do domu, Kłębuszku! Pasterz czeka."
+
+## Build status
+- [x] Greybox and walkthroughs
+- [x] Background: 1K draft → 2K final (heavy bar across the gate, conical helmets)
+- [x] Patches: `gate_open` (bar on the ground), `hollow_tail` (tail + glowing tuft), `fg_gate` occluder while closed
+- [x] Sheep peek over the closed gate on the hay; they leave through the gate (engine: `actorWalk(…, "free")`)
+- [x] Gucio `lift_r`, Julek `hug_r`, Kłębuszek `idle_r`
+- [x] Chrome pass: gate → sheep out → count → tail → Julek in the hollow → hug → Kłębuszek beside the boys
+- [ ] Lines locked → VO
+- [ ] Music, ambience

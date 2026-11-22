@@ -3,36 +3,415 @@
   "background": "scenes/den/bg.png",
   "music": "music/den.mp3",
   "ambience": "amb/den_loop.mp3",
-  "walkable": [[[0, 1075], [1900, 1075], [1900, 860], [1400, 820], [800, 810], [0, 840]]],
-  "scale": {"near_y": 1050, "near": 1.0, "far_y": 760, "far": 0.75},
+  "walkable": [
+    [
+      [
+        250,
+        1075
+      ],
+      [
+        1890,
+        1075
+      ],
+      [
+        1860,
+        985
+      ],
+      [
+        1760,
+        955
+      ],
+      [
+        1650,
+        965
+      ],
+      [
+        1560,
+        945
+      ],
+      [
+        1490,
+        930
+      ],
+      [
+        1380,
+        918
+      ],
+      [
+        1100,
+        915
+      ],
+      [
+        905,
+        925
+      ],
+      [
+        875,
+        965
+      ],
+      [
+        600,
+        955
+      ],
+      [
+        560,
+        905
+      ],
+      [
+        420,
+        885
+      ],
+      [
+        395,
+        850
+      ],
+      [
+        330,
+        725
+      ],
+      [
+        210,
+        690
+      ],
+      [
+        110,
+        720
+      ],
+      [
+        90,
+        800
+      ],
+      [
+        150,
+        900
+      ],
+      [
+        230,
+        1000
+      ]
+    ]
+  ],
+  "scale": {
+    "near_y": 1060,
+    "near": 0.8,
+    "far_y": 700,
+    "far": 0.45
+  },
   "spawns": {
-    "default": {"x": 220, "y": 940, "facing": "right"}
+    "default": {
+      "x": 270,
+      "y": 890,
+      "facing": "right"
+    }
   },
   "hotspots": [
-    {"id": "gate", "name": "brama z zasuwą", "polygon": [[300, 360], [800, 360], [800, 820], [300, 820]], "walk_to": [560, 880], "face": "up"},
-    {"id": "dragon_bed", "name": "smocze legowisko", "polygon": [[860, 640], [1260, 640], [1260, 830], [860, 830]], "walk_to": [1060, 880], "face": "up"},
-    {"id": "helmets", "name": "hełmy rycerzy", "polygon": [[1360, 600], [1660, 600], [1660, 820], [1360, 820]], "walk_to": [1500, 880], "face": "up"},
-    {"id": "embers", "name": "żar", "polygon": [[900, 380], [1160, 380], [1160, 560], [900, 560]], "walk_to": [1030, 860], "face": "up"},
-    {"id": "hollow", "name": "dziurka w skale", "polygon": [[1700, 760], [1880, 760], [1880, 880], [1700, 880]], "walk_to": [1640, 940], "face": "right"}
+    {
+      "id": "gate",
+      "name": "brama z zasuwą",
+      "polygon": [
+        [
+          540,
+          640
+        ],
+        [
+          860,
+          640
+        ],
+        [
+          905,
+          790
+        ],
+        [
+          860,
+          955
+        ],
+        [
+          600,
+          955
+        ],
+        [
+          540,
+          820
+        ]
+      ],
+      "walk_to": [
+        720,
+        985
+      ],
+      "face": "up"
+    },
+    {
+      "id": "dragon_bed",
+      "name": "smocze legowisko",
+      "polygon": [
+        [
+          890,
+          700
+        ],
+        [
+          1050,
+          612
+        ],
+        [
+          1350,
+          600
+        ],
+        [
+          1550,
+          680
+        ],
+        [
+          1560,
+          840
+        ],
+        [
+          1350,
+          900
+        ],
+        [
+          1000,
+          900
+        ],
+        [
+          890,
+          830
+        ]
+      ],
+      "walk_to": [
+        1200,
+        960
+      ],
+      "face": "up"
+    },
+    {
+      "id": "helmets",
+      "name": "hełmy rycerzy",
+      "polygon": [
+        [
+          1420,
+          560
+        ],
+        [
+          1520,
+          360
+        ],
+        [
+          1700,
+          350
+        ],
+        [
+          1820,
+          420
+        ],
+        [
+          1800,
+          620
+        ],
+        [
+          1640,
+          640
+        ],
+        [
+          1460,
+          620
+        ]
+      ],
+      "walk_to": [
+        1500,
+        960
+      ],
+      "face": "up"
+    },
+    {
+      "id": "embers",
+      "name": "żar",
+      "polygon": [
+        [
+          980,
+          480
+        ],
+        [
+          1100,
+          330
+        ],
+        [
+          1300,
+          330
+        ],
+        [
+          1390,
+          500
+        ],
+        [
+          1300,
+          575
+        ],
+        [
+          1050,
+          575
+        ]
+      ],
+      "walk_to": [
+        1150,
+        950
+      ],
+      "face": "up"
+    },
+    {
+      "id": "hollow",
+      "name": "dziurka w skale",
+      "polygon": [
+        [
+          1585,
+          810
+        ],
+        [
+          1680,
+          760
+        ],
+        [
+          1775,
+          785
+        ],
+        [
+          1775,
+          905
+        ],
+        [
+          1600,
+          915
+        ]
+      ],
+      "walk_to": [
+        1560,
+        985
+      ],
+      "face": "right"
+    }
   ],
   "patches": [
-    {"id": "gate_open", "image": "scenes/den/gate_open.png", "x": 300, "y": 360, "visible_if": "gate_open"}
+    {
+      "image": "scenes/den/gate_open.png",
+      "x": 420,
+      "y": 500,
+      "visible_if": "gate_open"
+    },
+    {
+      "image": "scenes/den/fg_gate.png",
+      "x": 530,
+      "y": 625,
+      "baseline": 950,
+      "visible_if": "!gate_open"
+    },
+    {
+      "image": "scenes/den/hollow_tail.png",
+      "x": 1440,
+      "y": 640,
+      "visible_if": "klebuszek_heard && !klebuszek_found"
+    }
   ],
-  "objects": [
-    {"id": "tail", "name": "ogonek", "sprite": "scenes/den/tail.png", "x": 1790, "y": 860, "walk_to": [1640, 940], "visible_if": "klebuszek_heard && !klebuszek_found"}
-  ],
+  "objects": [],
   "exits": [
-    {"id": "cave_exit", "name": "wyjście", "polygon": [[0, 300], [150, 300], [150, 900], [0, 900]], "walk_to": [160, 940], "target": "outro", "spawn": "default"}
+    {
+      "id": "cave_exit",
+      "name": "wyjście",
+      "polygon": [
+        [
+          50,
+          200
+        ],
+        [
+          200,
+          110
+        ],
+        [
+          480,
+          130
+        ],
+        [
+          500,
+          350
+        ],
+        [
+          420,
+          620
+        ],
+        [
+          300,
+          700
+        ],
+        [
+          110,
+          700
+        ],
+        [
+          60,
+          500
+        ]
+      ],
+      "walk_to": [
+        230,
+        860
+      ],
+      "target": "outro",
+      "spawn": "default"
+    }
   ],
   "actors": [
-    {"id": "dratewka", "x": 160, "y": 980, "facing": "right"},
-    {"id": "sheep_a", "x": 420, "y": 720, "facing": "right", "visible_if": "!sheep_out", "look": "sheep"},
-    {"id": "sheep_b", "x": 560, "y": 700, "facing": "right", "visible_if": "!sheep_out", "look": "sheep"},
-    {"id": "sheep_c", "x": 700, "y": 730, "facing": "right", "visible_if": "!sheep_out", "look": "sheep"},
-    {"id": "klebuszek", "x": 1560, "y": 960, "facing": "left", "visible_if": "klebuszek_found"}
+    {
+      "id": "dratewka",
+      "x": 175,
+      "y": 800,
+      "facing": "right"
+    },
+    {
+      "id": "sheep_a",
+      "x": 645,
+      "y": 655,
+      "facing": "right",
+      "visible_if": "!sheep_out",
+      "look": "sheep"
+    },
+    {
+      "id": "sheep_b",
+      "x": 795,
+      "y": 642,
+      "facing": "left",
+      "visible_if": "!sheep_out",
+      "look": "sheep"
+    },
+    {
+      "id": "sheep_c",
+      "x": 720,
+      "y": 608,
+      "facing": "right",
+      "visible_if": "!sheep_out",
+      "look": "sheep"
+    },
+    {
+      "id": "klebuszek",
+      "x": 1470,
+      "y": 985,
+      "facing": "right",
+      "visible_if": "klebuszek_found && !lamb_hugged"
+    }
   ],
   "points": {
-    "sheep_exit": [20, 900],
-    "klebuszek_spot": [1560, 960]
+    "gate_out": [
+      720,
+      985
+    ],
+    "sheep_exit": [
+      150,
+      800
+    ],
+    "julek_hollow": [
+      1610,
+      968
+    ],
+    "klebuszek_spot": [
+      1470,
+      985
+    ]
   }
 }
