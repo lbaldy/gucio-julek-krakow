@@ -3,31 +3,403 @@
   "background": "scenes/market/bg.png",
   "music": "music/town.mp3",
   "ambience": "amb/market_loop.mp3",
-  "walkable": [[[0, 1075], [1920, 1075], [1920, 840], [1200, 800], [700, 800], [0, 840]]],
-  "scale": {"near_y": 1050, "near": 1.0, "far_y": 800, "far": 0.85},
+  "walkable": [
+    [
+      [
+        300,
+        1075
+      ],
+      [
+        1300,
+        1075
+      ],
+      [
+        1300,
+        760
+      ],
+      [
+        1560,
+        725
+      ],
+      [
+        1560,
+        655
+      ],
+      [
+        1310,
+        690
+      ],
+      [
+        1290,
+        640
+      ],
+      [
+        940,
+        625
+      ],
+      [
+        700,
+        632
+      ],
+      [
+        655,
+        705
+      ],
+      [
+        765,
+        740
+      ],
+      [
+        775,
+        965
+      ],
+      [
+        480,
+        978
+      ],
+      [
+        300,
+        1000
+      ]
+    ]
+  ],
+  "scale": {
+    "near_y": 1060,
+    "near": 0.7,
+    "far_y": 640,
+    "far": 0.3
+  },
   "spawns": {
-    "default": {"x": 140, "y": 920, "facing": "right"}
+    "default": {
+      "x": 690,
+      "y": 680,
+      "facing": "right"
+    }
   },
   "hotspots": [
-    {"id": "sulphur_box", "name": "skrzynka z siarką", "polygon": [[420, 640], [640, 640], [640, 780], [420, 780]], "walk_to": [520, 840], "face": "up"},
-    {"id": "pretzels", "name": "obwarzanki", "polygon": [[1360, 300], [1660, 300], [1660, 560], [1360, 560]], "walk_to": [1450, 860], "face": "up"},
-    {"id": "cradle", "name": "kołyska", "polygon": [[1120, 690], [1320, 690], [1320, 830], [1120, 830]], "walk_to": [1200, 870], "face": "up"},
-    {"id": "well", "name": "studnia", "polygon": [[820, 360], [1080, 360], [1080, 720], [820, 720]], "walk_to": [950, 820], "face": "up"},
-    {"id": "closed_stalls", "name": "zamknięte kramy", "polygon": [[600, 280], [800, 280], [800, 520], [600, 520]], "walk_to": [700, 820], "face": "up"},
-    {"id": "pots", "name": "gliniane dzbany", "polygon": [[1100, 450], [1280, 450], [1280, 640], [1100, 640]], "walk_to": [1180, 830], "face": "up"}
+    {
+      "id": "sulphur_box",
+      "name": "skrzynka z siarką",
+      "polygon": [
+        [
+          515,
+          790
+        ],
+        [
+          560,
+          752
+        ],
+        [
+          665,
+          770
+        ],
+        [
+          700,
+          830
+        ],
+        [
+          745,
+          850
+        ],
+        [
+          745,
+          935
+        ],
+        [
+          640,
+          960
+        ],
+        [
+          560,
+          920
+        ]
+      ],
+      "walk_to": [
+        800,
+        900
+      ],
+      "face": "left"
+    },
+    {
+      "id": "pretzels",
+      "name": "obwarzanki",
+      "polygon": [
+        [
+          1600,
+          400
+        ],
+        [
+          1910,
+          380
+        ],
+        [
+          1910,
+          520
+        ],
+        [
+          1600,
+          525
+        ]
+      ],
+      "walk_to": [
+        1300,
+        740
+      ],
+      "face": "right"
+    },
+    {
+      "id": "cradle",
+      "name": "kołyska",
+      "polygon": [
+        [
+          1330,
+          760
+        ],
+        [
+          1480,
+          745
+        ],
+        [
+          1560,
+          770
+        ],
+        [
+          1770,
+          770
+        ],
+        [
+          1775,
+          900
+        ],
+        [
+          1700,
+          1000
+        ],
+        [
+          1420,
+          1030
+        ],
+        [
+          1330,
+          950
+        ]
+      ],
+      "walk_to": [
+        1240,
+        930
+      ],
+      "face": "right"
+    },
+    {
+      "id": "well",
+      "name": "studnia",
+      "polygon": [
+        [
+          960,
+          450
+        ],
+        [
+          1000,
+          350
+        ],
+        [
+          1200,
+          350
+        ],
+        [
+          1260,
+          450
+        ],
+        [
+          1230,
+          720
+        ],
+        [
+          990,
+          720
+        ]
+      ],
+      "walk_to": [
+        1100,
+        800
+      ],
+      "face": "up"
+    },
+    {
+      "id": "closed_stalls",
+      "name": "zamknięte kramy",
+      "polygon": [
+        [
+          700,
+          380
+        ],
+        [
+          950,
+          380
+        ],
+        [
+          950,
+          620
+        ],
+        [
+          700,
+          620
+        ]
+      ],
+      "walk_to": [
+        830,
+        680
+      ],
+      "face": "up"
+    },
+    {
+      "id": "pots",
+      "name": "gliniane dzbany",
+      "polygon": [
+        [
+          1300,
+          530
+        ],
+        [
+          1560,
+          530
+        ],
+        [
+          1560,
+          670
+        ],
+        [
+          1300,
+          670
+        ]
+      ],
+      "walk_to": [
+        1400,
+        700
+      ],
+      "face": "up"
+    }
   ],
   "objects": [
-    {"id": "baby", "name": "maluszek", "sprite": "scenes/market/baby_cry.png", "x": 1220, "y": 790, "walk_to": [1200, 870], "visible_if": "!baby_laughed"},
-    {"id": "baby_happy", "name": "maluszek", "sprite": "scenes/market/baby_laugh.png", "x": 1220, "y": 790, "walk_to": [1200, 870], "visible_if": "baby_laughed"},
-    {"id": "wool_market_well", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 960, "y": 470, "walk_to": [950, 820], "visible_if": "!wool_market_well", "pickup": true},
-    {"id": "wool_market_stall", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 700, "y": 520, "walk_to": [700, 820], "visible_if": "!wool_market_stall", "pickup": true},
-    {"id": "wool_market_counter", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 300, "y": 800, "walk_to": [330, 860], "visible_if": "!wool_market_counter"}
+    {
+      "id": "wool_market_well",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 1062,
+      "y": 470,
+      "walk_to": [
+        1100,
+        800
+      ],
+      "visible_if": "!wool_market_well",
+      "pickup": true
+    },
+    {
+      "id": "wool_market_stall",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 905,
+      "y": 555,
+      "walk_to": [
+        830,
+        680
+      ],
+      "visible_if": "!wool_market_stall",
+      "pickup": true
+    },
+    {
+      "id": "wool_market_counter",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 340,
+      "y": 880,
+      "walk_to": [
+        420,
+        1000
+      ],
+      "visible_if": "!wool_market_counter"
+    }
   ],
   "exits": [
-    {"id": "path_town", "name": "do osady", "polygon": [[0, 600], [70, 600], [70, 1000], [0, 1000]], "walk_to": [80, 920], "target": "town", "spawn": "from_market"}
+    {
+      "id": "path_town",
+      "name": "do osady",
+      "polygon": [
+        [
+          400,
+          460
+        ],
+        [
+          560,
+          460
+        ],
+        [
+          620,
+          640
+        ],
+        [
+          600,
+          700
+        ],
+        [
+          400,
+          640
+        ]
+      ],
+      "walk_to": [
+        680,
+        660
+      ],
+      "target": "town",
+      "spawn": "from_market"
+    }
   ],
   "actors": [
-    {"id": "merchant", "x": 300, "y": 880, "facing": "right"},
-    {"id": "baker", "x": 1560, "y": 900, "facing": "left"}
+    {
+      "id": "merchant",
+      "x": 720,
+      "y": 715,
+      "facing": "right"
+    },
+    {
+      "id": "baker",
+      "x": 1450,
+      "y": 735,
+      "facing": "right"
+    }
+  ],
+  "blocked": [
+    [
+      [
+        968,
+        585
+      ],
+      [
+        1252,
+        585
+      ],
+      [
+        1252,
+        748
+      ],
+      [
+        968,
+        748
+      ]
+    ]
+  ],
+  "patches": [
+    {
+      "image": "scenes/market/baby_cry.png",
+      "x": 1480,
+      "y": 700,
+      "visible_if": "!baby_laughed"
+    },
+    {
+      "image": "scenes/market/baby_laugh.png",
+      "x": 1480,
+      "y": 700,
+      "visible_if": "baby_laughed"
+    }
   ]
 }

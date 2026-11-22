@@ -73,8 +73,6 @@ export default defineScene("market", {
       items: { julek: peekaboo },
     },
     cradle,
-    baby: cradle,
-    baby_happy: cradle,
     sulphur_box: {
       use: (g) => g.say(g.flag("sulphur_got") ? "market.sulphur_box.use.after" : "market.sulphur_box.use"),
       items: { julek: (g) => fuj(g, false), pretzel: trade },

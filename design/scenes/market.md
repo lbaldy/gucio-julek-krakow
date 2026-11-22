@@ -111,3 +111,15 @@ No people, no baby, no animals, no text.
 - `market.closed_stalls.use`: gucio: "Nikogo nie ma."
 - `market.pots.look`: gucio: "Gliniane dzbany."
 - `market.pots.use`: gucio: "Ostrożnie! Jeszcze coś stłukę."
+
+## Build status
+- [x] Greybox and walkthroughs
+- [x] Background: 1K draft → 2K final (stone towers removed); stones recoloured to sulphur yellow locally
+- [x] Geometry: well blocked; nobody walks behind the cradle or the counter; scale 0.70 @1060 → 0.30 @640
+- [x] Merchant: idle, talk (mouth-only), eat · Baker: idle, talk (mouth-only), give
+- [x] Baby in the cradle: crying / laughing, painted into the cradle as bg patches (crop-edit)
+- [x] Julek: peekaboo, fuj · Icons: pretzel, sulphur
+- [x] Chrome pass: cradle (Gucio) → Julek peekaboo → pretzel → merchant → sulphur → fuj gag
+- [ ] Optional: the merchant stands beside his counter, not behind it (no occluder)
+- [ ] Lines locked → VO
+- [ ] Music and ambience (crying stops after Julek)
