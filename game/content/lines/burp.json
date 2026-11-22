@@ -1,0 +1,9 @@
+{
+  "burp.gulp.dragon": {"speaker": "dragon", "text": "Mniam… Oj. Ojojoj… Brzuch!"},
+  "burp.gulp.julek": {"speaker": "julek", "text": "Fuj!", "direction": "[giggles]", "model": "eleven_v3"},
+  "burp.drink.dragon": {"speaker": "dragon", "text": "Pić! Gorąco! Pić!"},
+  "burp.drink.gucio": {"speaker": "gucio", "text": "Pije całą Wisłę!"},
+  "burp.beeek.julek": {"speaker": "julek", "text": "Bum!", "direction": "[delighted]", "model": "eleven_v3"},
+  "burp.fly.narrator": {"speaker": "narrator", "text": "I smok odleciał za góry. Już nigdy nie wrócił."},
+  "burp.fly.julek": {"speaker": "julek", "text": "Pa pa, smok!", "direction": "[waving]", "model": "eleven_v3"}
+}

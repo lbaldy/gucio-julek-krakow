@@ -1,30 +1,11 @@
 {
-  "julek": {
-    "name": "Julek",
-    "icon": "items/julek.png"
-  },
-  "stick": {
-    "name": "długi kij",
-    "icon": "items/stick.png"
-  },
-  "acorns": {
-    "name": "żołędzie",
-    "icon": "items/acorns.png"
-  },
-  "eggs": {
-    "name": "jajka orła",
-    "icon": "items/eggs.png"
-  },
-  "blueberries": {
-    "name": "jagody",
-    "icon": "items/blueberries.png"
-  },
-  "apples": {
-    "name": "jabłka",
-    "icon": "items/apples.png"
-  },
-  "porcino": {
-    "name": "prawdziwek",
-    "icon": "items/porcino.png"
-  }
+  "julek": {"name": "Julek", "icon": "items/julek.png"},
+  "sheepskin": {"name": "owcza skóra", "icon": "items/sheepskin.png"},
+  "sack": {"name": "pusty worek", "icon": "items/sack.png"},
+  "dandelion": {"name": "mlecz", "icon": "items/dandelion.png"},
+  "straw": {"name": "worek słomy", "icon": "items/straw.png"},
+  "pretzel": {"name": "obwarzanek", "icon": "items/pretzel.png"},
+  "sulphur": {"name": "siarka", "icon": "items/sulphur.png"},
+  "wheel": {"name": "koło od wozu", "icon": "items/wheel.png"},
+  "peg": {"name": "szewski kołek", "icon": "items/peg.png"}
 }

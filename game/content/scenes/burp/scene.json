@@ -1,0 +1,19 @@
+{
+  "id": "burp",
+  "background": "scenes/burp/gulp.png",
+  "music": "music/legend.mp3",
+  "no_hero": true,
+  "no_companions": true,
+  "skip_hint": true,
+  "walkable": [[[900, 1060], [1020, 1060], [1020, 1070], [900, 1070]]],
+  "spawns": {
+    "default": {"x": 960, "y": 1065, "facing": "right"}
+  },
+  "patches": [
+    {"id": "gulp", "image": "scenes/burp/gulp.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "burp_gulp", "baseline": 9000, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}},
+    {"id": "drink", "image": "scenes/burp/drink.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "burp_drink", "baseline": 9001, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
+    {"id": "balloon", "image": "scenes/burp/balloon.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "burp_balloon", "baseline": 9002, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
+    {"id": "beeek", "image": "scenes/burp/beeek.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "burp_beeek", "baseline": 9003, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
+    {"id": "fly", "image": "scenes/burp/fly.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "burp_fly", "baseline": 9004, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900}
+  ]
+}

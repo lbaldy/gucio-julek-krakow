@@ -1,266 +1,57 @@
 {
- "_.julek.fail.1": {
-  "speaker": "julek",
-  "text": "Nie!",
-  "direction": "[stubborn]",
-  "model": "eleven_v3"
- },
- "_.julek.fail.2": {
-  "speaker": "gucio",
-  "text": "Julek nie wie, co tu zrobić."
- },
- "_.julek.fail.3": {
-  "speaker": "julek",
-  "text": "Hihi?",
-  "direction": "[giggles]",
-  "model": "eleven_v3"
- },
- "_.julek.fail.4": {
-  "speaker": "gucio",
-  "text": "Nie, Julcio, to nie to."
- },
- "_.julek.look": {
-  "speaker": "gucio",
-  "text": "Mój brat Julek. Mały, ale dzielny."
- },
- "_.julek.talk.1": {
-  "speaker": "gucio",
-  "text": "Julcio, pomożesz mi?"
- },
- "_.julek.talk.2": {
-  "speaker": "julek",
-  "text": "Jujo!",
-  "spoken": "Yuyo!",
-  "direction": "[excited]",
-  "model": "eleven_v3"
- },
- "item.julek.look": {
-  "speaker": "gucio",
-  "text": "Julek! Wyślę go tam, gdzie ja się nie zmieszczę."
- },
- "item.julek.look.2": {
-  "speaker": "julek",
-  "text": "Jujo!",
-  "spoken": "Yuyo!",
-  "direction": "[proudly]",
-  "model": "eleven_v3"
- },
- "_.use.fail.1": {
-  "speaker": "gucio",
-  "text": "Nic z tego."
- },
- "_.use.fail.2": {
-  "speaker": "gucio",
-  "text": "To nic nie da."
- },
- "_.use.fail.3": {
-  "speaker": "gucio",
-  "text": "Hmm… nie."
- },
- "_.item.fail.1": {
-  "speaker": "gucio",
-  "text": "To do siebie nie pasuje."
- },
- "_.item.fail.2": {
-  "speaker": "gucio",
-  "text": "Nie, to bez sensu."
- },
- "_.look.fail.1": {
-  "speaker": "gucio",
-  "text": "Nic ciekawego."
- },
- "_.talk.fail.1": {
-  "speaker": "gucio",
-  "text": "Nie odpowiada."
- },
- "item.book.look": {
-  "speaker": "gucio",
-  "text": "Moja książka o Polsce! Ma piękne obrazki."
- },
- "_.hint.book": {
-  "speaker": "gucio",
-  "text": "Książka jest pod łóżeczkiem. Julek tam wejdzie."
- },
- "_.hint.read": {
-  "speaker": "gucio",
-  "text": "Poczytajmy książkę!"
- },
- "_.hint.sleep": {
-  "speaker": "gucio",
-  "text": "Pora spać. Do łóżka!"
- },
- "item.blueberries.look": {
-  "speaker": "gucio",
-  "text": "Garść jagód. Te są dla ludzi Lecha, Julek!"
- },
- "item.apples.look": {
-  "speaker": "gucio",
-  "text": "Czerwone jabłuszka."
- },
- "item.porcino.look": {
-  "speaker": "gucio",
-  "text": "Prawdziwek! Lech mówi, że dobry."
- },
- "_.hint.basket": {
-  "speaker": "gucio",
-  "text": "Pokażemy Lechowi, ile jedzenia jest w lesie!"
- },
- "_.hint.blueberries": {
-  "speaker": "gucio",
-  "text": "Jagody rosną nisko. Julek je zbierze."
- },
- "_.hint.blueberries_again": {
-  "speaker": "gucio",
-  "text": "Julek, jeszcze raz. Tym razem do koszyka!"
- },
- "_.hint.apples": {
-  "speaker": "gucio",
-  "text": "Jabłka wysoko. Kijem je strącę."
- },
- "_.hint.ask_lech": {
-  "speaker": "gucio",
-  "text": "Zapytam Lecha o grzyba."
- },
- "_.hint.porcino": {
-  "speaker": "gucio",
-  "text": "Lech mówi, że prawdziwek jest dobry. Zerwę go!"
- },
- "_.hint.toadstool": {
-  "speaker": "gucio",
-  "text": "Uwaga na czerwonego grzyba w kropki!"
- },
- "_.hint.fill": {
-  "speaker": "gucio",
-  "text": "Wszystko do koszyka!"
- },
- "item.stick.look": {
-  "speaker": "gucio",
-  "text": "Długi, mocny kij. Może się przydać!"
- },
- "item.acorns.look": {
-  "speaker": "gucio",
-  "text": "Żołędzie dla wiewiórki."
- },
- "_.feather.pickup": {
-  "speaker": "gucio",
-  "text": "Białe piórko! Orzeł tędy leciał."
- },
- "_.feather.pickup.2": {
-  "speaker": "julek",
-  "text": "Piórko!",
-  "direction": "[delighted]",
-  "model": "eleven_v3"
- },
- "_.hint.ruda": {
-  "speaker": "gucio",
-  "text": "Wiewiórka coś wie. Pomóżmy jej."
- },
- "_.hint.stick": {
-  "speaker": "gucio",
-  "text": "Kij leży przy kamieniu. Sięgnę nim gałęzi."
- },
- "_.hint.leaves": {
-  "speaker": "gucio",
-  "text": "W liściach coś błyszczy."
- },
- "_.hint.jay": {
-  "speaker": "gucio",
-  "text": "Sójka się mnie nie boi. Julek głośno krzyczy!"
- },
- "_.hint.give_acorns": {
-  "speaker": "gucio",
-  "text": "Mamy żołędzie! Do wiewiórki!"
- },
- "_.hint.river": {
-  "speaker": "gucio",
-  "text": "Orzeł poleciał nad rzekę. Ścieżką w prawo!"
- },
- "item.eggs.look": {
-  "speaker": "gucio",
-  "text": "Jajka orła. Ostrożnie!"
- },
- "_.hint.eagle": {
-  "speaker": "gucio",
-  "text": "Orzeł patrzy na ziemię. Czego szuka?"
- },
- "_.hint.eggs": {
-  "speaker": "gucio",
-  "text": "Trzy jajka: w mchu, w dziupli i na gałęzi."
- },
- "_.hint.hollow": {
-  "speaker": "gucio",
-  "text": "W dziupli jest jajko. Julek się zmieści."
- },
- "_.hint.nest": {
-  "speaker": "gucio",
-  "text": "Wszystkie jajka! Do gniazda!"
- },
- "_.hint.clearing": {
-  "speaker": "gucio",
-  "text": "Orzeł poleciał po Lecha. Chodźmy na polanę!"
- },
- "_.hint.planks": {
-  "speaker": "gucio",
-  "text": "Brakuje desek. Jedna przy mostku, jedna pod wierzbą…"
- },
- "_.hint.reeds": {
-  "speaker": "gucio",
-  "text": "Deska w trzcinach. Sięgnę kijem."
- },
- "_.hint.bush": {
-  "speaker": "gucio",
-  "text": "Pod krzakiem jest deska. Julek się zmieści."
- },
- "_.hint.bridge": {
-  "speaker": "gucio",
-  "text": "Mamy wszystkie deski! Do mostka!"
- },
- "_.hint.cross": {
-  "speaker": "gucio",
-  "text": "Przez mostek, do dębu!"
- },
- "item.stick.found": {
-  "speaker": "gucio",
-  "text": "Długi kij! Przyda się."
- },
- "item.acorns.look.1": {
-  "speaker": "gucio",
-  "text": "Jeden żołądź. Jeszcze dwa."
- },
- "item.acorns.look.2": {
-  "speaker": "gucio",
-  "text": "Dwa żołędzie. Jeszcze jeden!"
- },
- "item.acorns.look.3": {
-  "speaker": "gucio",
-  "text": "Trzy żołędzie! Wszystkie!"
- },
- "item.eggs.look.1": {
-  "speaker": "gucio",
-  "text": "Jedno jajko. Ostrożnie!"
- },
- "item.eggs.look.2": {
-  "speaker": "gucio",
-  "text": "Dwa jajka. Jeszcze jedno!"
- },
- "item.eggs.look.3": {
-  "speaker": "gucio",
-  "text": "Trzy jajka! Teraz do gniazda."
- },
- "_.feather.all": {
-  "speaker": "gucio",
-  "text": "Dwanaście piórek! Wszystkie piórka orła!"
- },
- "_.feather.look": {
-  "speaker": "gucio",
-  "text": "Białe piórko! Wezmę je."
- },
- "_.hint.branch": {
-  "speaker": "gucio",
-  "text": "Żołądź na gałęzi. Kijem go strącę!"
- },
- "_.hint.stick_back": {
-  "speaker": "gucio",
-  "text": "Potrzebny długi kij. Został w lesie, przy kamieniu."
- }
+  "_.julek.fail.1": {"speaker": "julek", "text": "Nie!", "model": "eleven_v3"},
+  "_.julek.fail.2": {"speaker": "gucio", "text": "Julek nie wie, co tu zrobić."},
+  "_.julek.fail.3": {"speaker": "julek", "text": "Hihi?", "model": "eleven_v3"},
+  "_.julek.fail.4": {"speaker": "gucio", "text": "Nie, Julcio, to nie to."},
+  "_.julek.look": {"speaker": "gucio", "text": "Mój brat Julek. Mały, ale dzielny."},
+  "_.julek.talk.1": {"speaker": "gucio", "text": "Julcio, pomożesz mi?"},
+  "_.julek.talk.2": {"speaker": "julek", "text": "Jujo!", "model": "eleven_v3"},
+  "item.julek.look": {"speaker": "gucio", "text": "Julek! Wyślę go tam, gdzie ja się nie zmieszczę."},
+  "item.julek.look.2": {"speaker": "julek", "text": "Jujo!", "model": "eleven_v3"},
+  "_.use.fail.1": {"speaker": "gucio", "text": "Nic z tego."},
+  "_.use.fail.2": {"speaker": "gucio", "text": "To nic nie da."},
+  "_.use.fail.3": {"speaker": "gucio", "text": "Hmm… nie."},
+  "_.item.fail.1": {"speaker": "gucio", "text": "To do siebie nie pasuje."},
+  "_.item.fail.2": {"speaker": "gucio", "text": "Nie, to bez sensu."},
+  "_.look.fail.1": {"speaker": "gucio", "text": "Nic ciekawego."},
+  "_.talk.fail.1": {"speaker": "gucio", "text": "Nie odpowiada."},
+  "item.sheepskin.look": {"speaker": "gucio", "text": "Stara owcza skóra. Ciepła i miękka."},
+  "item.sack.look": {"speaker": "gucio", "text": "Pusty worek. Przyda się na słomę."},
+  "item.dandelion.look": {"speaker": "gucio", "text": "Żółty mlecz. Ktoś je lubi…"},
+  "item.straw.look": {"speaker": "gucio", "text": "Worek pełen słomy. Dla owcy, która nie jest owcą!"},
+  "item.pretzel.look": {"speaker": "gucio", "text": "Obwarzanek. Pachnie pysznie… ale jest dla kupca."},
+  "item.sulphur.look": {"speaker": "gucio", "text": "Żółty kamień. Siarka. Fuj, jak śmierdzi!"},
+  "item.wheel.look": {"speaker": "gucio", "text": "Koło od wozu króla."},
+  "item.peg.look": {"speaker": "gucio", "text": "Drewniany kołek. Utrzyma koło!"},
+  "_.wool.look": {"speaker": "gucio", "text": "Kłębek wełny! Smok tędy niósł owce."},
+  "_.wool.pickup": {"speaker": "gucio", "text": "Kłębek wełny! Smok tędy niósł owce."},
+  "_.wool.pickup.2": {"speaker": "julek", "text": "Beee!", "direction": "[giggles]", "model": "eleven_v3"},
+  "_.wool.low": {"speaker": "gucio", "text": "Za nisko dla mnie… Julek?"},
+  "_.wool.julek": {"speaker": "julek", "text": "Jeś!", "direction": "[proudly]", "model": "eleven_v3"},
+  "_.wool.all": {"speaker": "gucio", "text": "Dwanaście kłębków! Cała wełna owieczek!"},
+  "_.hint.book": {"speaker": "gucio", "text": "Książka jest wysoko… A Julek tak skacze w łóżeczku!"},
+  "_.hint.read": {"speaker": "gucio", "text": "Książka spadła! Mama nam poczyta."},
+  "_.hint.sleep": {"speaker": "gucio", "text": "Pora spać. Do łóżka!"},
+  "_.hint.workshop": {"speaker": "gucio", "text": "Dratewka ma pomysł. Chodźmy do warsztatu!"},
+  "_.hint.plan": {"speaker": "gucio", "text": "Zapytajmy Dratewkę o jego plan."},
+  "_.hint.needle": {"speaker": "gucio", "text": "Igła wpadła w szparę pod stołem. Julek się zmieści."},
+  "_.hint.dratwa": {"speaker": "gucio", "text": "Splątane nici leżą na stołku. Rozplączę je!"},
+  "_.hint.bench": {"speaker": "gucio", "text": "Mamy coś dla Dratewki! Do warsztatu, na stół!"},
+  "_.hint.skin": {"speaker": "gucio", "text": "Pasterz na łące ma starą owczą skórę."},
+  "_.hint.dandelion_julek": {"speaker": "gucio", "text": "Bodzio woli maluchy. Dam mlecza Julkowi!"},
+  "_.hint.ram": {"speaker": "gucio", "text": "Baran pilnuje słomy. Pasterz mówił, że Bodzio lubi mlecze."},
+  "_.hint.sack": {"speaker": "gucio", "text": "Słomę trzeba w coś zabrać. Przy płocie leży worek."},
+  "_.hint.straw": {"speaker": "gucio", "text": "Bodzio jest grzeczny. Teraz słoma do worka!"},
+  "_.hint.pretzel": {"speaker": "gucio", "text": "Obwarzanek dla kupca! Da nam za niego siarkę."},
+  "_.hint.baby": {"speaker": "gucio", "text": "Maluszek piekarki płacze. Julek umie rozśmieszać!"},
+  "_.hint.sulphur": {"speaker": "gucio", "text": "Kupiec na targu ma siarkę. Zapytam go."},
+  "_.hint.wheel": {"speaker": "gucio", "text": "Koło odpadło. Może potoczyło się w trzciny?"},
+  "_.hint.wheel_on": {"speaker": "gucio", "text": "Mam koło! Na wóz z nim."},
+  "_.hint.peg": {"speaker": "gucio", "text": "Koło się chwieje. Szewc zawsze ma kołek!"},
+  "_.hint.peg_on": {"speaker": "gucio", "text": "Kołek do koła!"},
+  "_.hint.push": {"speaker": "gucio", "text": "Wóz gotowy. Pchamy go pod jamę!"},
+  "_.hint.beee": {"speaker": "julek", "text": "Beee?", "direction": "[whispering]", "model": "eleven_v3"},
+  "_.hint.gate": {"speaker": "gucio", "text": "Zasuwa jest wysoko, ale ja sięgnę!"},
+  "_.hint.hollow": {"speaker": "gucio", "text": "Kłębuszek jest w dziurce. Julek się zmieści!"},
+  "_.hint.julek_combo": {"speaker": "gucio", "text": "Julcio, daj mlecza baranowi. Na łące!"}
 }

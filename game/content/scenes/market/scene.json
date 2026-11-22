@@ -1,0 +1,33 @@
+{
+  "id": "market",
+  "background": "scenes/market/bg.png",
+  "music": "music/town.mp3",
+  "ambience": "amb/market_loop.mp3",
+  "walkable": [[[0, 1075], [1920, 1075], [1920, 840], [1200, 800], [700, 800], [0, 840]]],
+  "scale": {"near_y": 1050, "near": 1.0, "far_y": 800, "far": 0.85},
+  "spawns": {
+    "default": {"x": 140, "y": 920, "facing": "right"}
+  },
+  "hotspots": [
+    {"id": "sulphur_box", "name": "skrzynka z siarką", "polygon": [[420, 640], [640, 640], [640, 780], [420, 780]], "walk_to": [520, 840], "face": "up"},
+    {"id": "pretzels", "name": "obwarzanki", "polygon": [[1360, 300], [1660, 300], [1660, 560], [1360, 560]], "walk_to": [1450, 860], "face": "up"},
+    {"id": "cradle", "name": "kołyska", "polygon": [[1120, 690], [1320, 690], [1320, 830], [1120, 830]], "walk_to": [1200, 870], "face": "up"},
+    {"id": "well", "name": "studnia", "polygon": [[820, 360], [1080, 360], [1080, 720], [820, 720]], "walk_to": [950, 820], "face": "up"},
+    {"id": "closed_stalls", "name": "zamknięte kramy", "polygon": [[600, 280], [800, 280], [800, 520], [600, 520]], "walk_to": [700, 820], "face": "up"},
+    {"id": "pots", "name": "gliniane dzbany", "polygon": [[1100, 450], [1280, 450], [1280, 640], [1100, 640]], "walk_to": [1180, 830], "face": "up"}
+  ],
+  "objects": [
+    {"id": "baby", "name": "maluszek", "sprite": "scenes/market/baby_cry.png", "x": 1220, "y": 790, "walk_to": [1200, 870], "visible_if": "!baby_laughed"},
+    {"id": "baby_happy", "name": "maluszek", "sprite": "scenes/market/baby_laugh.png", "x": 1220, "y": 790, "walk_to": [1200, 870], "visible_if": "baby_laughed"},
+    {"id": "wool_market_well", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 960, "y": 470, "walk_to": [950, 820], "visible_if": "!wool_market_well", "pickup": true},
+    {"id": "wool_market_stall", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 700, "y": 520, "walk_to": [700, 820], "visible_if": "!wool_market_stall", "pickup": true},
+    {"id": "wool_market_counter", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 300, "y": 800, "walk_to": [330, 860], "visible_if": "!wool_market_counter"}
+  ],
+  "exits": [
+    {"id": "path_town", "name": "do osady", "polygon": [[0, 600], [70, 600], [70, 1000], [0, 1000]], "walk_to": [80, 920], "target": "town", "spawn": "from_market"}
+  ],
+  "actors": [
+    {"id": "merchant", "x": 300, "y": 880, "facing": "right"},
+    {"id": "baker", "x": 1560, "y": 900, "facing": "left"}
+  ]
+}

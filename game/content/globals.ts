@@ -1,107 +1,103 @@
 // Handlers that work in every scene: Julek (companion and inventory "power"), Gucio as the hint
-// button, the white feathers (optional collectibles) and the hint lists.
+// button, the glowing wool tufts (optional collectibles) and the hint lists.
 
 import { defineGlobals, type GameAPI } from "../src/engine/api";
 
-// ── White feathers: 3 per forest scene, 12 in all (game.json "counter"). Some only Julek reaches;
-// those come out together with a puzzle item (the log, the bush, the hollow, the blueberries).
+// ── Wool tufts: 3 in each of town, meadow, market and cave, 12 in all (game.json "counter").
+// The last one of each scene sits low and tight: only Julek reaches it.
 
-export const FEATHERS = [
-  "forest_ferns", "forest_log", "forest_path",
-  "river_marigold", "river_willow", "river_bush",
-  "oak_violets", "oak_hollow", "oak_root",
-  "clearing_daisies", "clearing_berries", "clearing_boulder",
+export const WOOL = [
+  "town_bench", "town_shutter", "town_flowerbox",
+  "meadow_gate", "meadow_reeds", "meadow_willow",
+  "market_well", "market_stall", "market_counter",
+  "cave_reeds", "cave_bush", "cave_crack",
 ] as const;
+type Wool = (typeof WOOL)[number];
+const JULEK_WOOL: Wool[] = ["town_flowerbox", "meadow_willow", "market_counter", "cave_crack"];
 
-export function feathersFound(g: GameAPI): number {
-  return FEATHERS.filter((f) => g.flag(`feather_${f}`)).length;
+export function woolFound(g: GameAPI): number {
+  return WOOL.filter((w) => g.flag(`wool_${w}`)).length;
 }
 
-/** Collect a feather: a chime, the counter pops, and a short line (Julek's "Piórko!" every other time). */
-export async function collectFeather(g: GameAPI, id: (typeof FEATHERS)[number], quiet = false) {
-  if (g.flag(`feather_${id}`)) return;
+async function collectWool(g: GameAPI, id: Wool, byJulek: boolean) {
+  if (g.flag(`wool_${id}`)) return;
   g.sfx("star");
-  g.set(`feather_${id}`);
-  if (feathersFound(g) === FEATHERS.length) {
-    g.set("all_feathers");
-    return g.say("_.feather.all");
+  g.set(`wool_${id}`);
+  if (woolFound(g) === WOOL.length) {
+    g.set("all_wool");
+    return g.say("_.wool.all");
   }
-  if (quiet) return;
-  await g.say(feathersFound(g) % 2 ? "_.feather.pickup" : "_.feather.pickup.2");
+  if (byJulek) return g.say("_.wool.julek");
+  await g.say(woolFound(g) % 2 ? "_.wool.pickup" : "_.wool.pickup.2");
 }
 
-/** Scene targets for feathers lying in the open: one tap picks them up. */
-export function featherTargets(...ids: (typeof FEATHERS)[number][]) {
-  const out: Record<string, { look: (g: GameAPI) => Promise<void>; use: (g: GameAPI) => Promise<void> }> = {};
+/** Scene targets for a scene's tufts: one tap picks up the open ones; the low one needs Julek. */
+export function woolTargets(...ids: Wool[]) {
+  const out: Record<string, { look: (g: GameAPI) => Promise<void>; use: (g: GameAPI) => Promise<void>; items?: Record<string, (g: GameAPI) => Promise<void>> }> = {};
   for (const id of ids) {
-    out[`feather_${id}`] = {
-      look: (g) => g.say("_.feather.look"),
+    const low = JULEK_WOOL.includes(id);
+    out[`wool_${id}`] = {
+      look: (g) => g.say(low ? "_.wool.low" : "_.wool.look"),
       use: async (g) => {
+        if (low) return g.say("_.wool.low");
         await g.anim("gucio", "pickup");
-        await collectFeather(g, id);
+        await collectWool(g, id, false);
+      },
+      items: {
+        julek: async (g) => {
+          await g.anim("julek", "crawl");
+          await collectWool(g, id, true);
+        },
       },
     };
   }
   return out;
 }
 
-// ── Hints: the open threads per scene, most useful first. The first open one in the current
-// scene wins; otherwise the first open one anywhere (it names where to go).
+// ── Hints: the open threads per act, most useful first. The first open one wins.
 
-const count = (g: GameAPI, flags: string[]) => flags.filter((f) => g.flag(f)).length;
-export const ACORNS = ["acorn_branch", "acorn_leaves", "acorn_stash"];
-export const PLANKS = ["plank_bank", "plank_willow", "plank_reeds", "plank_bush"];
-export const EGGS = ["egg_moss", "egg_hollow", "egg_branch"];
-export const FOODS = ["basket_blueberries", "basket_apples", "basket_porcino"];
-export const acornsFound = (g: GameAPI) => count(g, ACORNS);
-export const planksFound = (g: GameAPI) => count(g, PLANKS);
-export const eggsFound = (g: GameAPI) => count(g, EGGS);
-export const foodsIn = (g: GameAPI) => count(g, FOODS);
+const holdsBenchItem = (g: GameAPI) => g.has("sheepskin") || g.has("straw") || g.has("sulphur");
 
 const hints: { act: string; open: (g: GameAPI) => boolean; line: string }[] = [
   // Act I: the bedroom
-  { act: "bedroom", open: (g) => !g.flag("book_read"), line: "_.hint.book" },
-  { act: "bedroom", open: (g) => g.flag("book_read"), line: "_.hint.sleep" },
-  // Act II: the forest, Ruda's acorns
-  { act: "forest", open: (g) => acornsFound(g) === 3, line: "_.hint.give_acorns" },
-  { act: "forest", open: (g) => !g.flag("ruda_asked"), line: "_.hint.ruda" },
-  { act: "forest", open: (g) => !g.flag("acorn_branch") && !g.has("stick"), line: "_.hint.stick" },
-  { act: "forest", open: (g) => !g.flag("acorn_branch"), line: "_.hint.branch" },
-  { act: "forest", open: (g) => !g.flag("acorn_leaves"), line: "_.hint.leaves" },
-  { act: "forest", open: (g) => !g.flag("acorn_stash"), line: "_.hint.jay" },
-  { act: "forest", open: (g) => g.has("acorns"), line: "_.hint.give_acorns" },
-  // Act III: the river, the bridge
-  { act: "river", open: (g) => !g.visited("river"), line: "_.hint.river" },
-  { act: "river", open: (g) => planksFound(g) === 4, line: "_.hint.bridge" },
-  { act: "river", open: (g) => !g.flag("plank_bank") || !g.flag("plank_willow"), line: "_.hint.planks" },
-  { act: "river", open: (g) => !g.flag("plank_reeds") && !g.has("stick"), line: "_.hint.stick_back" },
-  { act: "river", open: (g) => !g.flag("plank_reeds"), line: "_.hint.reeds" },
-  { act: "river", open: (g) => !g.flag("plank_bush"), line: "_.hint.bush" },
-  // Act IV: the oak, the eggs
-  { act: "oak", open: (g) => !g.visited("oak"), line: "_.hint.cross" },
-  { act: "oak", open: (g) => eggsFound(g) === 3, line: "_.hint.nest" },
-  { act: "oak", open: (g) => !g.flag("eagle_asked"), line: "_.hint.eagle" },
-  { act: "oak", open: (g) => !g.flag("egg_hollow"), line: "_.hint.hollow" },
-  { act: "oak", open: (g) => !g.flag("egg_moss") || !g.flag("egg_branch"), line: "_.hint.eggs" },
-  // Act V: the clearing, the basket
-  { act: "clearing", open: (g) => !g.visited("clearing"), line: "_.hint.clearing" },
-  { act: "clearing", open: (g) => g.has("blueberries") || g.has("apples") || g.has("porcino"), line: "_.hint.fill" },
-  { act: "clearing", open: (g) => g.flag("berries_eaten") && !g.flag("berries_picked"), line: "_.hint.blueberries_again" },
-  { act: "clearing", open: (g) => !g.flag("berries_eaten"), line: "_.hint.blueberries" },
-  { act: "clearing", open: (g) => !g.flag("apples_down") && !g.has("stick"), line: "_.hint.stick_back" },
-  { act: "clearing", open: (g) => !g.flag("apples_down"), line: "_.hint.apples" },
-  { act: "clearing", open: (g) => !g.flag("lech_mushrooms"), line: "_.hint.ask_lech" },
-  { act: "clearing", open: (g) => !g.flag("porcino_picked"), line: "_.hint.porcino" },
-  { act: "clearing", open: (g) => !g.flag("toadstool_lesson") && !g.flag("toadstool_hinted"), line: "_.hint.toadstool" },
+  { act: "bedroom", open: (g) => !g.flag("book_down"), line: "_.hint.book" },
+  { act: "bedroom", open: (g) => !g.flag("book_read"), line: "_.hint.read" },
+  { act: "bedroom", open: () => true, line: "_.hint.sleep" },
+  // Act II: the town and the workshop
+  { act: "town", open: (g) => !g.visited("workshop"), line: "_.hint.workshop" },
+  { act: "town", open: () => true, line: "_.hint.plan" },
+  { act: "workshop", open: (g) => !g.flag("needle_found"), line: "_.hint.needle" },
+  { act: "workshop", open: (g) => !g.flag("dratwa_found"), line: "_.hint.dratwa" },
+  // Act III: the meadow and the market, in any order
+  { act: "gather", open: holdsBenchItem, line: "_.hint.bench" },
+  { act: "gather", open: (g) => !g.flag("skin_got"), line: "_.hint.skin" },
+  { act: "gather", open: (g) => !g.flag("straw_got") && !g.flag("ram_calm") && g.has("dandelion"), line: "_.hint.dandelion_julek" },
+  { act: "gather", open: (g) => !g.flag("straw_got") && !g.flag("ram_calm"), line: "_.hint.ram" },
+  { act: "gather", open: (g) => !g.flag("straw_got") && !g.has("sack"), line: "_.hint.sack" },
+  { act: "gather", open: (g) => !g.flag("straw_got"), line: "_.hint.straw" },
+  { act: "gather", open: (g) => !g.flag("sulphur_got") && g.has("pretzel"), line: "_.hint.pretzel" },
+  { act: "gather", open: (g) => !g.flag("sulphur_got") && !g.flag("baby_laughed"), line: "_.hint.baby" },
+  { act: "gather", open: (g) => !g.flag("sulphur_got"), line: "_.hint.sulphur" },
+  // Act V: the cave
+  { act: "cave", open: (g) => g.flag("dragon_waiting"), line: "_.hint.beee" },
+  { act: "cave", open: (g) => !g.flag("cart_wheel_on") && !g.has("wheel"), line: "_.hint.wheel" },
+  { act: "cave", open: (g) => !g.flag("cart_wheel_on"), line: "_.hint.wheel_on" },
+  { act: "cave", open: (g) => !g.flag("cart_fixed") && !g.has("peg"), line: "_.hint.peg" },
+  { act: "cave", open: (g) => !g.flag("cart_fixed"), line: "_.hint.peg_on" },
+  { act: "cave", open: (g) => !g.flag("cart_pushed"), line: "_.hint.push" },
+  // the den
+  { act: "den", open: (g) => !g.flag("gate_open"), line: "_.hint.gate" },
+  { act: "den", open: (g) => !g.flag("klebuszek_found"), line: "_.hint.hollow" },
 ];
 
 /** Which act's threads are open: only hints for the current act are given. */
 function act(g: GameAPI): string {
   if (!g.flag("dreaming")) return "bedroom";
-  if (!g.flag("ruda_told")) return "forest";
-  if (!g.flag("bridge_fixed")) return "river";
-  if (!g.flag("nest_done")) return "oak";
-  return "clearing";
+  if (!g.flag("plan_told")) return "town";
+  if (!g.flag("dratewka_ready")) return "workshop";
+  if (!g.flag("sheep_sewn")) return "gather";
+  if (!g.flag("beee_done")) return "cave";
+  return "den";
 }
 
 /** The hint said most recently (idle hint or Julek's), so clicking Gucio can repeat it. */
@@ -110,7 +106,6 @@ let lastHint: string | null = null;
 export async function hint(g: GameAPI) {
   const pick = hints.find((h) => h.act === act(g) && h.open(g));
   if (!pick) return;
-  if (pick.line === "_.hint.toadstool") g.set("toadstool_hinted");
   return g.say((lastHint = pick.line));
 }
 

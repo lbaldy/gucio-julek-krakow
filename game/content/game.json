@@ -61,11 +61,11 @@
     "volume_music": "Muzyka",
     "volume_sfx": "Dźwięki",
     "volume_voice": "Głosy",
-    "tagline": "Tajemnica Białego Orła"
+    "tagline": "Tajemnica Smoka Wawelskiego"
   },
   "counter": {
-    "prefix": "feather_",
+    "prefix": "wool_",
     "total": 12,
-    "icon": "items/feather.png"
+    "icon": "items/wool.png"
   }
 }

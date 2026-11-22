@@ -1,0 +1,20 @@
+{
+  "id": "prologue",
+  "background": "scenes/prologue/glow.png",
+  "music": "music/legend.mp3",
+  "no_hero": true,
+  "no_companions": true,
+  "skip_hint": true,
+  "walkable": [[[900, 1060], [1020, 1060], [1020, 1070], [900, 1070]]],
+  "spawns": {
+    "default": {"x": 960, "y": 1065, "facing": "right"}
+  },
+  "patches": [
+    {"id": "glow", "image": "scenes/prologue/glow.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "pro_glow", "baseline": 9000, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}},
+    {"id": "fold", "image": "scenes/prologue/fold.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "pro_fold", "baseline": 9001, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
+    {"id": "eyes", "image": "scenes/prologue/eyes.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "pro_eyes", "baseline": 9002, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
+    {"id": "empty", "image": "scenes/prologue/empty.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "pro_empty", "baseline": 9003, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
+    {"id": "knights", "image": "scenes/prologue/knights.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "pro_knights", "baseline": 9004, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900},
+    {"id": "bank", "image": "scenes/prologue/bank.png", "x": 0, "y": 0, "w": 1920, "h": 1080, "visible_if": "pro_bank", "baseline": 9005, "drift": {"from": [1.0, 0.5, 0.5], "to": [1.1, 0.5, 0.45], "ms": 12000}, "fade_in_ms": 900}
+  ]
+}

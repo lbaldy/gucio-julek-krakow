@@ -1,60 +1,75 @@
 import { defineScene, type GameAPI } from "../../../src/engine/api";
 
-// Act I, the tutorial: a spring evening. Julek crawls under his crib for the book about Poland,
-// Gucio reads the White Eagle page, Julek yawns, and the bed starts the dream.
+// Act I, the tutorial: a summer evening. Julek is a sheep tonight; his "Beee! Hop!" bouncing in the
+// crib shakes the book about Poland off the shelf (the setup for the climax). Mama reads the legend
+// of the Wawel dragon up to the cliffhanger, and the bed starts the dream.
 
-async function fetchBook(g: GameAPI) {
+async function bounce(g: GameAPI) {
+  if (g.flag("book_down")) return g.say("bedroom.crib.julek.after");
   await g.cutscene(async () => {
-    await g.say("bedroom.crib.julek");
-    await g.anim("julek", "crawl");
+    void g.anim("julek", "bounce");
+    await g.say("bedroom.crib.julek.1");
+    g.sfx("boing");
     await g.say("bedroom.crib.julek.2");
-    g.sfx("pickup");
-    await g.say("bedroom.crib.julek.gucio");
-    // reading it straight away: a close-up of the page, Gucio's question, Julek's "Ptak!"
+    g.set("book_down");
+    g.sfx("pop");
+    await g.say("bedroom.crib.julek.3");
+    await g.say("bedroom.crib.julek.4");
+  });
+}
+
+async function read(g: GameAPI) {
+  await g.cutscene(async () => {
+    await g.anim("gucio", "pickup");
     g.set("reading_book");
     g.sfx("magic");
     await g.wait(700);
     await g.say("bedroom.book.read.1");
     await g.say("bedroom.book.read.2");
     await g.say("bedroom.book.read.3");
-    g.unset("reading_book");
-    g.set("book_read");
-    await g.wait(400);
     await g.say("bedroom.book.read.4");
     await g.say("bedroom.book.read.5");
+    await g.say("bedroom.book.read.6");
+    g.unset("reading_book");
+    g.set("book_read");
+    await g.say("bedroom.book.read.7");
   });
 }
 
 export default defineScene("bedroom", {
   async enter(g) {
-    if (!g.visited("bedroom")) {
-      await g.say("bedroom.enter.mama");
-      await g.say("bedroom.enter.first");
-    }
+    if (g.visited("bedroom")) return;
+    await g.say("bedroom.enter.1");
+    await g.say("bedroom.enter.2");
+    await g.say("bedroom.enter.3");
   },
   targets: {
+    shelf: {
+      look: (g) => g.say(g.flag("book_down") ? "bedroom.shelf.look.after" : "bedroom.shelf.look"),
+      use: (g) => g.say(g.flag("book_down") ? "bedroom.shelf.look.after" : "bedroom.shelf.use"),
+      items: { julek: (g) => g.say("bedroom.shelf.julek") },
+    },
+    book_shelf: {
+      look: (g) => g.say("bedroom.shelf.look"),
+      use: (g) => g.say("bedroom.shelf.use"),
+      items: { julek: (g) => g.say("bedroom.shelf.julek") },
+    },
     crib: {
-      look: (g) => g.say(g.flag("book_read") ? "bedroom.crib.look.after" : "bedroom.crib.look"),
-      use: (g) => g.say(g.flag("book_read") ? "bedroom.crib.use.after" : "bedroom.crib.use"),
-      items: { julek: (g) => (g.flag("book_read") ? g.say("bedroom.crib.julek.after") : fetchBook(g)) },
-    },
-    book: {
-      look: (g) => g.say("bedroom.book.look"),
       use: (g) => g.say("bedroom.crib.use"),
-      items: { julek: fetchBook },
+      items: { julek: bounce },
     },
+    book: { use: read },
     bed: {
       use: async (g) => {
         if (!g.flag("book_read")) return g.say("bedroom.bed.use.early");
         await g.cutscene(async () => {
           await g.walkTo(g.point("gucio_bed"));
           await g.say("bedroom.bed.use");
-          await g.say("bedroom.bed.use.julek");
           g.sfx("magic");
           await g.wait(800);
         });
         g.set("dreaming");
-        await g.goto("dream");
+        await g.goto("prologue");
       },
     },
     window: { use: (g) => g.say("bedroom.window.use") },
@@ -63,7 +78,6 @@ export default defineScene("bedroom", {
       use: (g) => g.say("bedroom.toy_chest.look"),
       items: { julek: (g) => g.say("bedroom.toy_chest.julek") },
     },
-    shelf: { use: (g) => g.say("bedroom.shelf.use") },
     door: { use: (g) => g.say("bedroom.door.use") },
   },
 });

@@ -1,0 +1,12 @@
+{
+  "prologue.glow.mama": {"speaker": "mama", "text": "…pod wzgórzem Wawel, nad rzeką Wisłą…", "direction": "[fading, sleepy]"},
+  "prologue.fold.narrator": {"speaker": "narrator", "text": "Pod wzgórzem Wawel, nad Wisłą, mieszkał stary pasterz."},
+  "prologue.fold.shepherd": {"speaker": "shepherd", "text": "…i Kłębuszek. Wszystkie. Dobranoc, owieczki."},
+  "prologue.eyes.dragon": {"speaker": "dragon", "text": "Owieczki… Moje!", "direction": "[whispering, greedy]"},
+  "prologue.empty.shepherd": {"speaker": "shepherd", "text": "Kłębuszek?… Kłębuszku?"},
+  "prologue.knights.narrator": {"speaker": "narrator", "text": "Król Krak posłał rycerzy."},
+  "prologue.knights.krak": {"speaker": "krak", "text": "Ach… znowu."},
+  "prologue.bank.1": {"speaker": "gucio", "text": "To… to jest ta bajka od mamy!"},
+  "prologue.bank.2": {"speaker": "julek", "text": "Smok?", "direction": "[worried, small]", "model": "eleven_v3"},
+  "prologue.bank.3": {"speaker": "gucio", "text": "Nie bój się, Julcio. Jestem z tobą."}
+}

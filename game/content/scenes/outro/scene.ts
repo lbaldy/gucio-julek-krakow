@@ -1,38 +1,48 @@
 import { defineScene } from "../../../src/engine/api";
 
-// The ending as voiced picture cards: the eagle on its nest against the red sky, and the name made
-// by all three ("Gniazdo!" "Nieźdo!" "Gniezno!"); the emblem and the colours ("Tak mówi legenda");
-// the feather; with all 12 feathers the hatched eaglets; morning at home, the end title over it.
+// The ending: Kłębuszek comes home (the promise kept), Dratewka's moment, the feast and the name
+// Kraków, the gift of wool, (with all 12 tufts) Kłębuszek jumping again, the real dragon today, and
+// the morning at home. The end title goes over the last picture, never a black screen.
 export default defineScene("outro", {
   async enter(g) {
     await g.cutscene(async () => {
-      g.set("outro_1");
-      g.sfx("eagle");
+      g.set("out_reunion");
       await g.wait(900);
-      await g.say("outro.card.1");
-      await g.say("outro.card.1b");
-      await g.say("outro.card.1c");
-      await g.say("outro.card.1d");
-      g.set("outro_2");
-      await g.wait(1200);
-      await g.say("outro.card.2");
-      await g.say("outro.card.2b");
-      await g.say("outro.card.2c");
-      g.set("outro_3");
-      await g.wait(1200);
-      g.sfx("magic");
-      await g.say("outro.card.3");
-      await g.say("outro.card.3b");
-      if (g.flag("all_feathers")) {
-        g.set("outro_chicks");
-        await g.wait(1200);
-        await g.say("outro.card.chicks");
-        await g.say("outro.card.chicks.b");
+      await g.say("outro.reunion.shepherd");
+      await g.say("outro.reunion.gucio");
+      g.set("out_hero");
+      await g.wait(1000);
+      await g.say("outro.hero.krak");
+      await g.say("outro.hero.dratewka");
+      g.set("out_feast");
+      await g.wait(1000);
+      await g.say("outro.feast.narrator");
+      await g.say("outro.feast.crowd");
+      await g.say("outro.feast.julek");
+      await g.say("outro.feast.gucio");
+      g.set("out_gift");
+      await g.wait(1000);
+      await g.say("outro.gift.shepherd");
+      await g.say("outro.gift.julek");
+      if (g.flag("all_wool")) {
+        g.set("out_bonus");
+        await g.wait(1000);
+        await g.say("outro.bonus.shepherd");
       }
-      g.set("outro_4");
-      await g.wait(1500);
-      await g.say("outro.card.4");
-      await g.say("outro.card.4b");
+      g.set("out_today");
+      await g.wait(1000);
+      await g.say("outro.today.narrator");
+      g.set("out_morning");
+      g.music("home");
+      await g.wait(1200);
+      await g.say("outro.morning.1");
+      await g.say("outro.morning.2");
+      await g.say("outro.morning.3");
+      await g.say("outro.morning.4");
+      await g.say("outro.morning.5");
+      g.set("out_end");
+      await g.wait(1000);
+      await g.say("outro.end.gucio");
       await g.wait(600);
     });
     await g.end("outro.end");

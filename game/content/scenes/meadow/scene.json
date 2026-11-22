@@ -1,0 +1,38 @@
+{
+  "id": "meadow",
+  "background": "scenes/meadow/bg.png",
+  "music": "music/town.mp3",
+  "ambience": "amb/meadow_loop.mp3",
+  "walkable": [[[0, 1075], [1500, 1075], [1500, 700], [1100, 650], [500, 640], [0, 680]]],
+  "scale": {"near_y": 1050, "near": 1.0, "far_y": 650, "far": 0.7},
+  "spawns": {
+    "default": {"x": 140, "y": 900, "facing": "right"}
+  },
+  "hotspots": [
+    {"id": "fold", "name": "zagroda", "polygon": [[0, 330], [560, 330], [560, 600], [0, 600]], "walk_to": [360, 700], "face": "up"},
+    {"id": "dandelions", "name": "mlecze", "polygon": [[90, 860], [420, 860], [420, 1040], [90, 1040]], "walk_to": [300, 960], "face": "down"},
+    {"id": "haystack", "name": "stóg siana", "polygon": [[980, 230], [1400, 230], [1400, 620], [980, 620]], "walk_to": [1200, 690], "face": "up"},
+    {"id": "footprints", "name": "ślady smoka", "polygon": [[1520, 760], [1900, 820], [1900, 1060], [1500, 1060]], "walk_to": [1460, 920], "face": "right"},
+    {"id": "river", "name": "Wisła", "polygon": [[1560, 320], [1920, 320], [1920, 700], [1560, 700]], "walk_to": [1460, 760], "face": "right"},
+    {"id": "hill", "name": "wzgórze Wawel", "polygon": [[420, 140], [900, 140], [900, 380], [420, 380]], "walk_to": [700, 680], "face": "up"}
+  ],
+  "objects": [
+    {"id": "sack", "name": "pusty worek", "sprite": "items/sack_world.png", "x": 560, "y": 720, "walk_to": [600, 760], "visible_if": "!taken:sack", "pickup": true},
+    {"id": "wool_meadow_gate", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 330, "y": 590, "walk_to": [360, 700], "visible_if": "!wool_meadow_gate", "pickup": true},
+    {"id": "wool_meadow_reeds", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 1470, "y": 780, "walk_to": [1430, 820], "visible_if": "!wool_meadow_reeds", "pickup": true},
+    {"id": "wool_meadow_willow", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 1330, "y": 680, "walk_to": [1300, 720], "visible_if": "!wool_meadow_willow"}
+  ],
+  "exits": [
+    {"id": "path_town", "name": "do osady", "polygon": [[0, 600], [70, 600], [70, 1000], [0, 1000]], "walk_to": [80, 900], "target": "town", "spawn": "from_meadow"}
+  ],
+  "actors": [
+    {"id": "shepherd", "x": 760, "y": 820, "facing": "left"},
+    {"id": "ram", "x": 1060, "y": 730, "facing": "left"},
+    {"id": "sheep_a", "x": 560, "y": 680, "facing": "right", "look": "sheep"},
+    {"id": "sheep_b", "x": 860, "y": 670, "facing": "left", "look": "sheep"}
+  ],
+  "points": {
+    "ram_side": [930, 760],
+    "butt_back": [820, 860]
+  }
+}

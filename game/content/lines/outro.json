@@ -1,66 +1,21 @@
 {
- "outro.card.1": {
-  "speaker": "narrator",
-  "text": "Wieczorem orzeł usiadł w swoim gnieździe. Biały orzeł na czerwonym niebie."
- },
- "outro.card.1b": {
-  "speaker": "gucio",
-  "text": "Zobacz, Lech! Gniazdo!"
- },
- "outro.card.1c": {
-  "speaker": "julek",
-  "text": "Nieźdo! Nieźdo!",
-  "direction": "[excited, pointing]",
-  "model": "eleven_v3"
- },
- "outro.card.1d": {
-  "speaker": "lech",
-  "text": "Gniazdo… Nieźdo… Gniezno! Tak nazwiemy nasz gród!"
- },
- "outro.card.2": {
-  "speaker": "narrator",
-  "text": "Lech zbudował tu gród Gniezno. A biały orzeł na czerwonym tle został znakiem jego ludzi."
- },
- "outro.card.2b": {
-  "speaker": "narrator",
-  "text": "Do dziś jest w godle Polski. A barwy naszej flagi to biel i czerwień."
- },
- "outro.card.2c": {
-  "speaker": "narrator",
-  "text": "Tak mówi legenda. A wzgórze w Gnieźnie do dziś nazywa się Wzgórzem Lecha."
- },
- "outro.card.3": {
-  "speaker": "lech",
-  "text": "Dziękuję, Gucio. Dziękuję, Julku. Bez was by się nie udało."
- },
- "outro.card.3b": {
-  "speaker": "julek",
-  "text": "Goło! Pa pa!",
-  "direction": "[waving]",
-  "model": "eleven_v3"
- },
- "outro.card.chicks": {
-  "speaker": "narrator",
-  "text": "A z trzech uratowanych jajek wykluły się trzy małe orlęta."
- },
- "outro.card.chicks.b": {
-  "speaker": "julek",
-  "text": "Goło! Trzy!",
-  "direction": "[delighted]",
-  "model": "eleven_v3"
- },
- "outro.card.4": {
-  "speaker": "julek",
-  "text": "Gucio! Piórko!",
-  "direction": "[proudly]",
-  "model": "eleven_v3"
- },
- "outro.card.4b": {
-  "speaker": "gucio",
-  "text": "To chyba nie był zwykły sen…"
- },
- "outro.end": {
-  "speaker": "narrator",
-  "text": "Koniec"
- }
+  "outro.reunion.shepherd": {"speaker": "shepherd", "text": "Kłębuszku!… Dotrzymałeś słowa, chłopcze."},
+  "outro.reunion.gucio": {"speaker": "gucio", "text": "Obiecałem."},
+  "outro.hero.krak": {"speaker": "krak", "text": "Szewczyku, byłeś mądrzejszy niż wszyscy moi rycerze."},
+  "outro.hero.dratewka": {"speaker": "dratewka", "text": "Sam bym nie dał rady. To oni!"},
+  "outro.feast.narrator": {"speaker": "narrator", "text": "Na cześć dobrego króla gród nazwano Krakowem."},
+  "outro.feast.crowd": {"speaker": "crowd", "text": "Kraków! Kraków!"},
+  "outro.feast.julek": {"speaker": "julek", "text": "Kako!", "direction": "[shouting happily]", "model": "eleven_v3"},
+  "outro.feast.gucio": {"speaker": "gucio", "text": "Kraków, Julcio!"},
+  "outro.gift.shepherd": {"speaker": "shepherd", "text": "Dla najlepszego beczącego pomocnika."},
+  "outro.gift.julek": {"speaker": "julek", "text": "Beee!", "direction": "[softly, proud]", "model": "eleven_v3"},
+  "outro.bonus.shepherd": {"speaker": "shepherd", "text": "Znowu skacze!"},
+  "outro.today.narrator": {"speaker": "narrator", "text": "Pod Wawelem, nad Wisłą, do dziś stoi smok. I naprawdę zieje ogniem. Ale owiec już nie zabiera."},
+  "outro.morning.1": {"speaker": "julek", "text": "Beee!", "direction": "[proud]", "model": "eleven_v3"},
+  "outro.morning.2": {"speaker": "mama", "text": "Dzień dobry, owieczki! To co, dokończymy legendę?"},
+  "outro.morning.3": {"speaker": "gucio", "text": "Mamo, ja wiem, jak się skończyła!"},
+  "outro.morning.4": {"speaker": "julek", "text": "Smok! Bum!", "direction": "[puffing out his cheeks]", "model": "eleven_v3"},
+  "outro.morning.5": {"speaker": "mama", "text": "Skąd ta wełna?… W wakacje pojedziemy do Krakowa. Zobaczycie prawdziwego smoka."},
+  "outro.end.gucio": {"speaker": "gucio", "text": "To chyba nie był zwykły sen…"},
+  "outro.end": {"speaker": "narrator", "text": "Koniec"}
 }
