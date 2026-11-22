@@ -1,0 +1,6 @@
+{"start": {"scene": "market", "set": ["dreaming", "plan_told", "needle_found", "dratwa_found", "dratewka_ready", "baby_laughed"]},
+ "steps": [
+   {"expect": "baby_asleep"},
+   {"look": "cradle", "said": "market.cradle.look.asleep"},
+   {"item": "julek", "on": "cradle", "said": "market.cradle.julek.asleep"}
+ ]}

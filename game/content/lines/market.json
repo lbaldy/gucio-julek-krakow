@@ -24,6 +24,8 @@
   "market.baker.talk.bye.2": {"speaker": "baker", "text": "Do widzenia, dzieci."},
   "market.cradle.look": {"speaker": "gucio", "text": "Maluszek płacze i płacze."},
   "market.cradle.look.after": {"speaker": "gucio", "text": "Maluszek się śmieje!"},
+  "market.cradle.look.asleep": {"speaker": "gucio", "text": "Maluszek śpi. Ćśś…", "direction": "[whispers]"},
+  "market.cradle.julek.asleep": {"speaker": "gucio", "text": "Ćśś, Julcio. Nie budź go.", "direction": "[whispers]"},
   "market.cradle.use.1": {"speaker": "gucio", "text": "Ble-ble-ble!", "direction": "[funny face]"},
   "market.cradle.use.2": {"speaker": "gucio", "text": "Jeszcze głośniej płacze… Może woli kogoś mniejszego?"},
   "market.cradle.julek.1": {"speaker": "julek", "text": "Kuku!", "direction": "[hiding his eyes]", "model": "eleven_v3"},

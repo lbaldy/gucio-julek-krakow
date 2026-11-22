@@ -6,6 +6,7 @@ import { woolTargets } from "../../globals";
 // stone and going "Fuj!" is an optional gag (it plays after the trade if the player skipped it).
 
 async function peekaboo(g: GameAPI) {
+  if (g.flag("baby_asleep")) return g.say("market.cradle.julek.asleep");
   if (g.flag("baby_laughed")) return g.say("market.cradle.julek.after");
   await g.cutscene(async () => {
     void g.anim("julek", "peekaboo");
@@ -41,10 +42,14 @@ async function trade(g: GameAPI) {
   });
 }
 
+/** After the laugh, the baby stays happy until the player leaves; on later visits it sleeps. */
+const cradleLine = (g: GameAPI) =>
+  g.flag("baby_asleep") ? "market.cradle.look.asleep" : g.flag("baby_laughed") ? "market.cradle.look.after" : "market.cradle.look";
+
 const cradle = {
-  look: (g: GameAPI) => g.say(g.flag("baby_laughed") ? "market.cradle.look.after" : "market.cradle.look"),
+  look: (g: GameAPI) => g.say(cradleLine(g)),
   use: async (g: GameAPI) => {
-    if (g.flag("baby_laughed")) return g.say("market.cradle.look.after");
+    if (g.flag("baby_laughed")) return g.say(cradleLine(g));
     await g.say("market.cradle.use.1");
     await g.say("market.cradle.use.2");
   },
@@ -53,6 +58,7 @@ const cradle = {
 
 export default defineScene("market", {
   async enter(g) {
+    if (g.flag("baby_laughed")) g.set("baby_asleep");
     if (g.visited("market")) return;
     await g.say("market.enter.first.1");
     await g.say("market.enter.first.2");

@@ -122,4 +122,5 @@ No people, no baby, no animals, no text.
 - [x] Chrome pass: cradle (Gucio) → Julek peekaboo → pretzel → merchant → sulphur → fuj gag
 - [ ] Optional: the merchant stands beside his counter, not behind it (no occluder)
 - [ ] Lines locked → VO
+- [x] Sleeping baby on later visits (`baby_asleep`, set on entry after the laugh)
 - [ ] Music and ambience (crying stops after Julek)

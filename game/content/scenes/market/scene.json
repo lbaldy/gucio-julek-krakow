@@ -399,7 +399,13 @@
       "image": "scenes/market/baby_laugh.png",
       "x": 1480,
       "y": 700,
-      "visible_if": "baby_laughed"
+      "visible_if": "baby_laughed && !baby_asleep"
+    },
+    {
+      "image": "scenes/market/baby_sleep.png",
+      "x": 1480,
+      "y": 700,
+      "visible_if": "baby_asleep"
     }
   ]
 }
