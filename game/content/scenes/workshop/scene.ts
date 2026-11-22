@@ -136,6 +136,7 @@ export default defineScene("workshop", {
     fake_1: benchTarget,
     fake_2: benchTarget,
     fake_3: benchTarget,
+    fake_4: { look: (g: GameAPI) => g.say("workshop.workbench.look.assembly") },
     crack: {
       look: (g) => g.say(g.flag("needle_found") ? "workshop.crack.look.empty" : "workshop.crack.look"),
       use: (g) => g.say(g.flag("needle_found") ? "workshop.crack.look.empty" : "workshop.crack.use"),

@@ -152,8 +152,13 @@
       "sad_talk_r": {
         "frames": 2,
         "fps": 6
+      },
+      "walk_r": {
+        "frames": 6,
+        "fps": 6
       }
-    }
+    },
+    "speed": 200
   },
   "shepherd": {
     "name": "Pasterz",

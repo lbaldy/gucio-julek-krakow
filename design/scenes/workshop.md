@@ -132,3 +132,13 @@ No people, no needle, no fake sheep, no text.
 - `workshop.pegs.look`: gucio: "Drewniane kołeczki. Szewc nimi przybija podeszwy."
 - `workshop.pegs.use`: gucio: "To Dratewki. Nie bierzemy bez pytania."
 - `workshop.door.look`: gucio: "Na ulicę."
+
+## Build status
+- [x] Greybox + walkthrough (full.json)
+- [x] Background: 1K draft → 2K final (old leather boots, 3 empty spools) → `scenes/workshop/bg.png`
+- [x] Geometry: walkable floor band, hotspots, door, scale (0.86 at y850 → 1.06 at y1060)
+- [x] State art: tangle → neat spools patch (`spools.png`, crop-edit, colour-matched); fake sheep
+      `fake_1`…`fake_4` (flat → stuffed → glowing → sewn and standing)
+- [x] Characters: Dratewka (idle, talk ×3, sew, scared, cheer), Krak standing (idle, talk, 6-frame walk)
+- [ ] Tangle mini-game close-up background (optional; the code-drawn table works)
+- [ ] Lines locked → VO; ambience `workshop_loop.mp3`

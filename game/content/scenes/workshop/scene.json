@@ -3,36 +3,413 @@
   "background": "scenes/workshop/bg.png",
   "music": "music/town.mp3",
   "ambience": "amb/workshop_loop.mp3",
-  "walkable": [[[60, 840], [1860, 840], [1860, 1075], [60, 1075]]],
-  "scale": {"near_y": 1050, "near": 1.1, "far_y": 840, "far": 0.95},
+  "walkable": [
+    [
+      [
+        0,
+        1075
+      ],
+      [
+        1920,
+        1075
+      ],
+      [
+        1920,
+        860
+      ],
+      [
+        1640,
+        835
+      ],
+      [
+        1605,
+        965
+      ],
+      [
+        1110,
+        965
+      ],
+      [
+        1100,
+        940
+      ],
+      [
+        600,
+        940
+      ],
+      [
+        590,
+        830
+      ],
+      [
+        0,
+        830
+      ]
+    ]
+  ],
+  "scale": {
+    "near_y": 1060,
+    "near": 1.06,
+    "far_y": 850,
+    "far": 0.86
+  },
   "spawns": {
-    "default": {"x": 1700, "y": 960, "facing": "left"}
+    "default": {
+      "x": 1760,
+      "y": 900,
+      "facing": "left"
+    }
   },
   "hotspots": [
-    {"id": "workbench", "name": "stół szewski", "polygon": [[700, 560], [1250, 560], [1250, 790], [700, 790]], "walk_to": [980, 880], "face": "up"},
-    {"id": "crack", "name": "szpara w podłodze", "polygon": [[850, 790], [1100, 790], [1100, 845], [850, 845]], "walk_to": [980, 880], "face": "down"},
-    {"id": "tangle", "name": "splątane nici", "polygon": [[1430, 580], [1640, 580], [1640, 830], [1430, 830]], "walk_to": [1500, 900], "face": "right"},
-    {"id": "window", "name": "okno", "polygon": [[150, 260], [400, 260], [400, 520], [150, 520]], "walk_to": [300, 880], "face": "up"},
-    {"id": "shoes", "name": "buty na ścianie", "polygon": [[480, 120], [1300, 120], [1300, 400], [480, 400]], "walk_to": [900, 880], "face": "up"},
-    {"id": "lasts", "name": "kopyta szewskie", "polygon": [[1320, 260], [1560, 260], [1560, 400], [1320, 400]], "walk_to": [1440, 880], "face": "up"},
-    {"id": "pegs", "name": "beczułka kołków", "polygon": [[1660, 760], [1790, 760], [1790, 860], [1660, 860]], "walk_to": [1700, 900], "face": "right"}
+    {
+      "id": "workbench",
+      "name": "stół szewski",
+      "polygon": [
+        [
+          595,
+          600
+        ],
+        [
+          640,
+          550
+        ],
+        [
+          1200,
+          565
+        ],
+        [
+          1200,
+          640
+        ],
+        [
+          1150,
+          920
+        ],
+        [
+          625,
+          880
+        ]
+      ],
+      "walk_to": [
+        880,
+        985
+      ],
+      "face": "up"
+    },
+    {
+      "id": "crack",
+      "name": "szpara w podłodze",
+      "polygon": [
+        [
+          690,
+          890
+        ],
+        [
+          935,
+          812
+        ],
+        [
+          965,
+          838
+        ],
+        [
+          770,
+          955
+        ],
+        [
+          695,
+          990
+        ]
+      ],
+      "walk_to": [
+        820,
+        1010
+      ],
+      "face": "left"
+    },
+    {
+      "id": "tangle",
+      "name": "splątane nici",
+      "polygon": [
+        [
+          1295,
+          515
+        ],
+        [
+          1545,
+          515
+        ],
+        [
+          1565,
+          705
+        ],
+        [
+          1295,
+          705
+        ]
+      ],
+      "walk_to": [
+        1440,
+        1000
+      ],
+      "face": "right"
+    },
+    {
+      "id": "window",
+      "name": "okno",
+      "polygon": [
+        [
+          50,
+          125
+        ],
+        [
+          460,
+          90
+        ],
+        [
+          475,
+          575
+        ],
+        [
+          50,
+          585
+        ]
+      ],
+      "walk_to": [
+        320,
+        900
+      ],
+      "face": "up"
+    },
+    {
+      "id": "shoes",
+      "name": "buty na ścianie",
+      "polygon": [
+        [
+          680,
+          90
+        ],
+        [
+          1600,
+          80
+        ],
+        [
+          1600,
+          228
+        ],
+        [
+          1100,
+          228
+        ],
+        [
+          1100,
+          335
+        ],
+        [
+          1600,
+          335
+        ],
+        [
+          1600,
+          470
+        ],
+        [
+          680,
+          470
+        ]
+      ],
+      "walk_to": [
+        950,
+        975
+      ],
+      "face": "up"
+    },
+    {
+      "id": "lasts",
+      "name": "kopyta szewskie",
+      "polygon": [
+        [
+          1105,
+          228
+        ],
+        [
+          1595,
+          228
+        ],
+        [
+          1595,
+          335
+        ],
+        [
+          1105,
+          335
+        ]
+      ],
+      "walk_to": [
+        1350,
+        985
+      ],
+      "face": "up"
+    },
+    {
+      "id": "pegs",
+      "name": "beczułka kołków",
+      "polygon": [
+        [
+          1155,
+          765
+        ],
+        [
+          1305,
+          765
+        ],
+        [
+          1310,
+          935
+        ],
+        [
+          1155,
+          935
+        ]
+      ],
+      "walk_to": [
+        1230,
+        1000
+      ],
+      "face": "up"
+    }
   ],
   "objects": [
-    {"id": "fake_1", "name": "owca na stole", "sprite": "scenes/workshop/fake_1.png", "x": 975, "y": 700, "walk_to": [980, 880], "visible_if": "bench_1 && !bench_2"},
-    {"id": "fake_2", "name": "owca na stole", "sprite": "scenes/workshop/fake_2.png", "x": 975, "y": 700, "walk_to": [980, 880], "visible_if": "bench_2 && !bench_3"},
-    {"id": "fake_3", "name": "owca na stole", "sprite": "scenes/workshop/fake_3.png", "x": 975, "y": 700, "walk_to": [980, 880], "visible_if": "bench_3"}
+    {
+      "id": "fake_1",
+      "name": "owca na stole",
+      "sprite": "scenes/workshop/fake_1.png",
+      "x": 778,
+      "y": 478,
+      "walk_to": [
+        880,
+        985
+      ],
+      "visible_if": "bench_1 && !bench_2"
+    },
+    {
+      "id": "fake_2",
+      "name": "owca na stole",
+      "sprite": "scenes/workshop/fake_2.png",
+      "x": 754,
+      "y": 452,
+      "walk_to": [
+        880,
+        985
+      ],
+      "visible_if": "bench_2 && !bench_3"
+    },
+    {
+      "id": "fake_3",
+      "name": "owca na stole",
+      "sprite": "scenes/workshop/fake_3.png",
+      "x": 754,
+      "y": 452,
+      "walk_to": [
+        880,
+        985
+      ],
+      "visible_if": "bench_3 && !sheep_sewn"
+    },
+    {
+      "id": "fake_4",
+      "name": "owca na stole",
+      "sprite": "scenes/workshop/fake_4.png",
+      "x": 726,
+      "y": 347,
+      "walk_to": [
+        880,
+        985
+      ],
+      "visible_if": "sheep_sewn"
+    }
   ],
   "exits": [
-    {"id": "door", "name": "drzwi na ulicę", "polygon": [[1790, 240], [1920, 240], [1920, 960], [1790, 960]], "walk_to": [1760, 960], "target": "town", "spawn": "from_workshop"}
+    {
+      "id": "door",
+      "name": "drzwi na ulicę",
+      "polygon": [
+        [
+          1700,
+          130
+        ],
+        [
+          1900,
+          140
+        ],
+        [
+          1900,
+          845
+        ],
+        [
+          1700,
+          825
+        ]
+      ],
+      "walk_to": [
+        1780,
+        890
+      ],
+      "target": "town",
+      "spawn": "from_workshop"
+    }
   ],
   "actors": [
-    {"id": "dratewka", "x": 600, "y": 920, "facing": "right"},
-    {"id": "krak", "x": 1640, "y": 940, "facing": "left", "visible_if": "krak_in_workshop"},
-    {"id": "merchant", "x": 220, "y": 520, "facing": "right", "visible_if": "peeking", "scale": 0.5, "look": "merchant_window"},
-    {"id": "baker", "x": 320, "y": 520, "facing": "right", "visible_if": "peeking", "scale": 0.5, "look": "baker_window"}
+    {
+      "id": "dratewka",
+      "x": 470,
+      "y": 925,
+      "facing": "right"
+    },
+    {
+      "id": "krak",
+      "x": 1500,
+      "y": 1000,
+      "facing": "left",
+      "visible_if": "krak_in_workshop"
+    },
+    {
+      "id": "merchant",
+      "x": 262,
+      "y": 478,
+      "facing": "right",
+      "visible_if": "peeking",
+      "scale": 0.55,
+      "look": "merchant_window",
+      "height_px": 280
+    },
+    {
+      "id": "baker",
+      "x": 385,
+      "y": 478,
+      "facing": "right",
+      "visible_if": "peeking",
+      "scale": 0.55,
+      "look": "baker_window",
+      "height_px": 280
+    }
   ],
   "points": {
-    "krak_door": [1820, 960],
-    "krak_in": [1500, 950]
-  }
+    "krak_door": [
+      1800,
+      885
+    ],
+    "krak_in": [
+      1480,
+      1005
+    ]
+  },
+  "patches": [
+    {
+      "image": "scenes/workshop/spools.png",
+      "x": 1260,
+      "y": 470,
+      "visible_if": "dratwa_found"
+    }
+  ]
 }
