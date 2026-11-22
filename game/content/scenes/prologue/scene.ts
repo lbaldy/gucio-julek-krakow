@@ -15,7 +15,9 @@ export default defineScene("prologue", {
       await g.say("prologue.fold.shepherd");
       g.set("pro_eyes");
       g.music(null);
-      await g.wait(1400);
+      await g.wait(900);
+      g.sfx("sniff");
+      await g.wait(1600);
       await g.say("prologue.eyes.dragon");
       g.set("pro_empty");
       await g.wait(1000);
@@ -23,7 +25,8 @@ export default defineScene("prologue", {
       g.set("pro_knights");
       await g.wait(900);
       await g.say("prologue.knights.narrator");
-      g.sfx("boing");
+      g.sfx("knights");
+      await g.wait(1200);
       await g.say("prologue.knights.krak");
       g.set("pro_bank");
       g.sfx("magic");

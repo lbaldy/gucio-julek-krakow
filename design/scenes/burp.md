@@ -33,4 +33,4 @@ his mouth; nothing gory. In card 4 the smoke rings are big, round and comic.
 ## Build status
 - [x] Cards: 1K drafts → 2K finals (all in `assets/game/scenes/burp/`)
 - [ ] Lines locked → VO
-- [ ] Music and per-card sfx
+- [x] Music and per-card sfx

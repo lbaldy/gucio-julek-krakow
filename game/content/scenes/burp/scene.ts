@@ -6,7 +6,7 @@ export default defineScene("burp", {
   async enter(g) {
     await g.cutscene(async () => {
       g.set("burp_gulp");
-      g.sfx("pop");
+      g.sfx("gulp");
       await g.wait(700);
       await g.say("burp.gulp.dragon");
       await g.say("burp.gulp.julek");
@@ -18,10 +18,12 @@ export default defineScene("burp", {
       g.music(null);
       await g.wait(2200);
       g.set("burp_beeek");
-      g.sfx("boing");
+      g.sfx("beeek");
+      await g.wait(1400);
       await g.wait(900);
       await g.say("burp.beeek.julek");
       g.set("burp_fly");
+      g.music("legend"); // the flight: the legend theme returns
       await g.wait(900);
       await g.say("burp.fly.narrator");
       await g.say("burp.fly.julek");

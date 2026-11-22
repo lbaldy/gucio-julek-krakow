@@ -55,5 +55,5 @@ Then → **the bedroom morning** (`bedroom`, `bg_morning`, scripted, no player c
 ## Build status
 - [x] Cards: 1K drafts → 2K finals (all in `assets/game/scenes/outro/`)
 - [ ] Lines locked → VO
-- [ ] Music and per-card sfx
+- [x] Music and per-card sfx
 - The morning beat is the `outro/morning` card (boys in it) rather than the bare `bg_morning` with sprites.

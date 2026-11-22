@@ -40,4 +40,4 @@ boys' refs. No text in any card.
 ## Build status
 - [x] Cards: 1K drafts → 2K finals (all in `assets/game/scenes/prologue/`)
 - [ ] Lines locked → VO
-- [ ] Music and per-card sfx
+- [x] Music and per-card sfx

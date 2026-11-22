@@ -30,6 +30,7 @@ export default defineScene("outro", {
         await g.say("outro.bonus.shepherd");
       }
       g.set("out_today");
+      g.sfx("fire");
       await g.wait(1000);
       await g.say("outro.today.narrator");
       g.set("out_morning");
