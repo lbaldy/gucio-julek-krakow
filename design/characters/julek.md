@@ -1,25 +1,33 @@
 # Julek (`julek`)
 
-> **Carried over from games 1–2** ("Gucio i Julek ratują święta", "…ratują Nowy Rok") on 2026-11-21.
+> **Series character.** Look, voice and speech rules carried over unchanged.
 
-## Role in this game
-Follows Gucio through the dream forest, in his fleece footed pyjamas. His powers here:
-- **crawl:** under his crib (the book), into the hollow log (a feather), under the bush
-  (a plank), into the oak's hollow (an egg),
-- **noise:** "Buuu! Kra kra!" scares the jay off Ruda's acorns,
-- **low reach:** the blueberries (the first handful goes into his mouth),
-- **grab what he shouldn't:** the toadstool, and Gucio stops him.
-He helps name the town: Gucio "Gniazdo!", Julek "Nieźdo!", Lech "Gniezno!". He also gets the last beat of the game: he's holding the white feather in the morning.
+## Role in this game (Kraków)
+Follows Gucio through the legend in his fleece footed pyjamas. One trick per puzzle,
+never the same twice in a row:
+- **bounce** (bedroom): "Beee! Beee! Hop!" in his crib shakes the book off the shelf.
+  It sets up the climax.
+- **crawl** (workshop): under the workbench for Dratewka's needle.
+- **charm** (meadow): gives the grumpy ram Bodzio a dandelion and strokes his nose ("Kotek!").
+- **peekaboo** (market): "Kuku!" makes the baker's crying baby laugh.
+- **grab** (market, optional gag): snatches a sulphur stone and sniffs it: "Fuj!"
+- **noise** (cave): "Beee!" from behind the fake sheep. The dragon is fooled. His only
+  noise trick in the game, and the payoff of the bedroom.
+- **crawl** again (den): into the hollow for Kłębuszek, the emotional twin of the needle.
+He shouts "Kako!" when the town is named Kraków, receives Kłębuszek's tuft of wool
+("dla najlepszego beczącego pomocnika"), and holds it in the morning.
 
-**A bird is always "Goło"** (user, 2026-11-21): Julek never says "ptak"; plural too ("Goło! Trzy!").
+**A bird is always "Goło"** (user, 2026-11-21): Julek never says "ptak"; plural too.
 
-New words in this game are only simple real words (las, broda, piórko, kotek,
-jagody, kropki, jajo) and noises (kra kra, buuu, plum plum, kum kum, mniam, szur szur,
-tok). No new toddler words. "Kapko" (apple) is used at the apple tree.
+Words in this game: approved toddler words (kuku, jeś, katko, ato, aaa, nie ma), the
+user's new words for this game (Kako, Cima, Faitek, Kuj, Alo; table below), simple real
+words (smok, but, kotek, pa pa) and noises (beee, bum,
+fuj, mniam, hop, ojej, apsik, ha ha).
 
-**New poses:** `shout_r` (hands round his mouth), `eat_r` (blueberry-purple face,
-cheeks full), `feather_r` (holding up the feather, for the outro card only). `crawl_r`
-and `dig_r` are reused.
+**New poses:** `bounce_r` (hopping, arms up; or `cheer_r` with a hop tween if it reads),
+`offer_r` (holding out a dandelion), `peekaboo_r` (hands over his eyes), `fuj_r`
+(scrunched face, holding a stone at arm's length), `hug_r` (hugging the lamb),
+`wool_r` (holding up the tuft, morning). `crawl_r`, `shout_r`, `cheer_r` are reused.
 
 Gucio's little brother, 2 years old. The second protagonist: he follows Gucio
 everywhere, and the player uses him as a "power" on things (crawl into small
@@ -71,7 +79,11 @@ Before writing any Julek line, check it:
 | (sleepy, wants to sleep) | **aaa** |
 | jest (found something) | **jeś** |
 | a kuku (peekaboo) | **kuku** (approved 2026-11-10) |
-| gniazdo (nest) | **nieźdo** (approved 2026-11-21; his part in naming Gniezno, outro card 1) |
+| Kraków | **Kako** (user, 2026-11-22; his part in naming Kraków, outro card 3) |
+| ciemno (dark) | **cima** (user, 2026-11-22) |
+| kwiatek (flower) | **faitek** (user, 2026-11-22) |
+| król (king) | **kuj** (user, 2026-11-22) |
+| halo (hello) | **alo** (user, 2026-11-22) |
 | nie ma (gone, none left) | **nie ma** (approved 2026-11-10) |
 
 Rules:

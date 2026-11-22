@@ -1,16 +1,19 @@
 # Gucio (`gucio`)
 
-> **Carried over from games 1–2** ("Gucio i Julek ratują święta", "…ratują Nowy Rok") on 2026-11-21.
+> **Series character.** Look, voice and speech rules carried over unchanged.
 
-## Role in this game
-The hero again, in his dinosaur pyjamas all through the dream. He asks the big question
-("Skąd się wzięła Polska?"), talks to Lech and Ruda, and wields the long stick (acorn,
-plank, apples). He climbs the oak, carries the eggs up to the nest, and asks Lech before
-picking a mushroom. He also stops Julek from touching the toadstool. He says "Gniazdo!"
-at the end, which gives Gniezno its name.
+## Role in this game (Kraków)
+The hero, in his dinosaur pyjamas all through the dream. "Ja bym coś wymyślił…" at
+bedtime is his want; in the dream he gets to. He makes **the promise** to the old shepherd
+("Przyprowadzimy go. Obiecuję."), believes Dratewka when the town laughs, solves the
+tangle, gets past the ram with Julek's help, trades at the market, fixes Krak's cart
+and pushes it to the cave. At the low point he doesn't know what to do, and works out
+that the dragon is waiting for a bleat. He opens the dragon's gate, counts the sheep,
+and hears "Dotrzymałeś słowa, chłopcze." His arc: from a boy who'd "think of
+something" to a boy who keeps his word, and knows his little brother is the hero too.
 
-**New poses:** `climb_r` (on the oak), `stick_r` (swing/poke), `carry_r` (holding the
-eggs carefully). Everything else is reused.
+**New poses:** `push_r` (pushing the cart), `lift_r` (lifting the gate bar, arms up).
+`pickup_r`, `cheer_r`, `talk_r` and the walk cycle are reused.
 
 The hero, 6 years old, the big brother. The player controls him directly.
 
