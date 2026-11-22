@@ -17,7 +17,8 @@
       "offset": [
         150,
         10
-      ]
+      ],
+      "stay_if": "julek_hiding"
     }
   ],
   "one_tap": true,

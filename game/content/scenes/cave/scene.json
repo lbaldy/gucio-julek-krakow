@@ -3,38 +3,462 @@
   "background": "scenes/cave/bg.png",
   "music": "music/cave.mp3",
   "ambience": "amb/cave_dusk_loop.mp3",
-  "walkable": [[[0, 1075], [1600, 1075], [1600, 820], [1200, 780], [400, 760], [0, 800]]],
-  "scale": {"near_y": 1050, "near": 1.0, "far_y": 760, "far": 0.75},
+  "walkable": [
+    [
+      [
+        230,
+        1075
+      ],
+      [
+        1700,
+        1075
+      ],
+      [
+        1700,
+        820
+      ],
+      [
+        1600,
+        775
+      ],
+      [
+        1450,
+        762
+      ],
+      [
+        1200,
+        752
+      ],
+      [
+        1000,
+        728
+      ],
+      [
+        760,
+        718
+      ],
+      [
+        600,
+        752
+      ],
+      [
+        480,
+        795
+      ],
+      [
+        330,
+        862
+      ],
+      [
+        230,
+        960
+      ]
+    ]
+  ],
+  "scale": {
+    "near_y": 1060,
+    "near": 0.75,
+    "far_y": 740,
+    "far": 0.42
+  },
   "spawns": {
-    "default": {"x": 560, "y": 940, "facing": "right"}
+    "default": {
+      "x": 720,
+      "y": 960,
+      "facing": "right"
+    }
   },
   "hotspots": [
-    {"id": "cave_mouth", "name": "smocza jama", "polygon": [[1150, 300], [1650, 300], [1650, 760], [1150, 760]], "walk_to": [1250, 820], "face": "right"},
-    {"id": "smoke", "name": "dym", "polygon": [[1250, 100], [1560, 100], [1560, 290], [1250, 290]], "walk_to": [1250, 820], "face": "up"},
-    {"id": "reeds", "name": "trzciny", "polygon": [[0, 500], [380, 500], [380, 860], [0, 860]], "walk_to": [300, 900], "face": "left"},
-    {"id": "river", "name": "Wisła", "polygon": [[0, 330], [600, 330], [600, 500], [0, 500]], "walk_to": [400, 820], "face": "left"},
-    {"id": "boulder", "name": "głaz", "polygon": [[1620, 700], [1920, 700], [1920, 1060], [1620, 1060]], "walk_to": [1560, 980], "face": "right"},
-    {"id": "path_back", "name": "droga do osady", "polygon": [[0, 860], [60, 860], [60, 1075], [0, 1075]], "walk_to": [90, 980], "face": "left"}
+    {
+      "id": "cave_mouth",
+      "name": "smocza jama",
+      "polygon": [
+        [
+          1195,
+          752
+        ],
+        [
+          1200,
+          480
+        ],
+        [
+          1300,
+          400
+        ],
+        [
+          1450,
+          390
+        ],
+        [
+          1580,
+          480
+        ],
+        [
+          1592,
+          752
+        ]
+      ],
+      "walk_to": [
+        1300,
+        800
+      ],
+      "face": "right",
+      "visible_if": "!dragon_out"
+    },
+    {
+      "id": "smoke",
+      "name": "dym",
+      "polygon": [
+        [
+          1250,
+          60
+        ],
+        [
+          1460,
+          60
+        ],
+        [
+          1420,
+          385
+        ],
+        [
+          1280,
+          385
+        ]
+      ],
+      "walk_to": [
+        1300,
+        800
+      ],
+      "face": "up"
+    },
+    {
+      "id": "reeds",
+      "name": "trzciny",
+      "polygon": [
+        [
+          250,
+          600
+        ],
+        [
+          700,
+          600
+        ],
+        [
+          700,
+          700
+        ],
+        [
+          480,
+          790
+        ],
+        [
+          300,
+          830
+        ],
+        [
+          250,
+          780
+        ]
+      ],
+      "walk_to": [
+        440,
+        860
+      ],
+      "face": "left"
+    },
+    {
+      "id": "river",
+      "name": "Wisła",
+      "polygon": [
+        [
+          0,
+          470
+        ],
+        [
+          600,
+          470
+        ],
+        [
+          480,
+          780
+        ],
+        [
+          180,
+          850
+        ],
+        [
+          0,
+          860
+        ]
+      ],
+      "walk_to": [
+        420,
+        880
+      ],
+      "face": "left"
+    },
+    {
+      "id": "boulder",
+      "name": "głaz",
+      "polygon": [
+        [
+          1420,
+          1060
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          1530,
+          820
+        ],
+        [
+          1700,
+          790
+        ],
+        [
+          1800,
+          840
+        ],
+        [
+          1850,
+          1000
+        ],
+        [
+          1800,
+          1060
+        ]
+      ],
+      "walk_to": [
+        1380,
+        990
+      ],
+      "face": "right"
+    },
+    {
+      "id": "path_back",
+      "name": "droga do osady",
+      "polygon": [
+        [
+          0,
+          880
+        ],
+        [
+          90,
+          880
+        ],
+        [
+          90,
+          1080
+        ],
+        [
+          0,
+          1080
+        ]
+      ],
+      "walk_to": [
+        270,
+        1040
+      ],
+      "face": "left"
+    },
+    {
+      "id": "dragon",
+      "name": "smok",
+      "polygon": [
+        [
+          1195,
+          752
+        ],
+        [
+          1200,
+          480
+        ],
+        [
+          1300,
+          400
+        ],
+        [
+          1450,
+          390
+        ],
+        [
+          1580,
+          480
+        ],
+        [
+          1592,
+          752
+        ]
+      ],
+      "walk_to": [
+        1610,
+        960
+      ],
+      "face": "left",
+      "visible_if": "dragon_out"
+    }
   ],
   "objects": [
-    {"id": "wheel", "name": "koło od wozu", "sprite": "items/wheel_world.png", "x": 220, "y": 820, "walk_to": [300, 900], "visible_if": "!taken:wheel", "pickup": true},
-    {"id": "cart_a", "name": "wóz króla", "sprite": "scenes/cave/cart_nowheel.png", "x": 760, "y": 880, "walk_to": [640, 940], "visible_if": "!cart_wheel_on"},
-    {"id": "cart_b", "name": "wóz króla", "sprite": "scenes/cave/cart_wheel.png", "x": 760, "y": 880, "walk_to": [640, 940], "visible_if": "cart_wheel_on && !cart_fixed"},
-    {"id": "cart_c", "name": "wóz króla", "sprite": "scenes/cave/cart_fixed.png", "x": 760, "y": 880, "walk_to": [640, 940], "visible_if": "cart_fixed && !cart_pushed"},
-    {"id": "fake_sheep", "name": "nasza owca", "sprite": "scenes/cave/cart_fixed.png", "x": 1080, "y": 850, "walk_to": [980, 920], "visible_if": "cart_pushed && !beee_done"},
-    {"id": "wool_cave_reeds", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 330, "y": 840, "walk_to": [330, 900], "visible_if": "!wool_cave_reeds", "pickup": true},
-    {"id": "wool_cave_bush", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 1560, "y": 760, "walk_to": [1520, 840], "visible_if": "!wool_cave_bush", "pickup": true},
-    {"id": "wool_cave_crack", "name": "kłębek wełny", "sprite": "items/wool_world.png", "x": 1120, "y": 760, "walk_to": [1100, 820], "visible_if": "!wool_cave_crack"}
+    {
+      "id": "wheel",
+      "name": "koło od wozu",
+      "sprite": "items/wheel_world.png",
+      "x": 350,
+      "y": 690,
+      "walk_to": [
+        440,
+        860
+      ],
+      "visible_if": "!taken:wheel",
+      "pickup": true
+    },
+    {
+      "id": "cart_a",
+      "name": "wóz króla",
+      "sprite": "scenes/cave/cart_nowheel.png",
+      "x": 500,
+      "y": 650,
+      "walk_to": [
+        470,
+        915
+      ],
+      "visible_if": "!cart_wheel_on"
+    },
+    {
+      "id": "cart_b",
+      "name": "wóz króla",
+      "sprite": "scenes/cave/cart_wheel.png",
+      "x": 500,
+      "y": 650,
+      "walk_to": [
+        470,
+        915
+      ],
+      "visible_if": "cart_wheel_on && !cart_fixed"
+    },
+    {
+      "id": "cart_c",
+      "name": "wóz króla",
+      "sprite": "scenes/cave/cart_fixed.png",
+      "x": 500,
+      "y": 650,
+      "walk_to": [
+        470,
+        915
+      ],
+      "visible_if": "cart_fixed && !cart_pushed"
+    },
+    {
+      "id": "fake_sheep",
+      "name": "nasza owca",
+      "sprite": "scenes/cave/cart_fixed_far.png",
+      "x": 1080,
+      "y": 590,
+      "walk_to": [
+        1610,
+        960
+      ],
+      "visible_if": "cart_pushed && !beee_done",
+      "face": "left"
+    },
+    {
+      "id": "wool_cave_reeds",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 470,
+      "y": 735,
+      "walk_to": [
+        440,
+        860
+      ],
+      "visible_if": "!wool_cave_reeds",
+      "pickup": true
+    },
+    {
+      "id": "wool_cave_bush",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 1790,
+      "y": 640,
+      "walk_to": [
+        1650,
+        880
+      ],
+      "visible_if": "!wool_cave_bush",
+      "pickup": true
+    },
+    {
+      "id": "wool_cave_crack",
+      "name": "kłębek wełny",
+      "sprite": "items/wool_world.png",
+      "x": 925,
+      "y": 648,
+      "walk_to": [
+        950,
+        770
+      ],
+      "visible_if": "!wool_cave_crack"
+    }
   ],
   "actors": [
-    {"id": "dratewka", "x": 420, "y": 930, "facing": "right"},
-    {"id": "dragon", "x": 1400, "y": 820, "facing": "left", "visible_if": "dragon_out", "scale": 1.0}
+    {
+      "id": "dratewka",
+      "x": 330,
+      "y": 1010,
+      "facing": "right"
+    }
   ],
   "points": {
-    "push_from": [640, 940],
-    "push_to": [960, 920],
-    "gucio_hide": [1560, 1000],
-    "dratewka_hide": [1480, 1040],
-    "julek_hide": [1180, 900]
-  }
+    "push_from": [
+      470,
+      915
+    ],
+    "push_to": [
+      960,
+      920
+    ],
+    "gucio_hide": [
+      1610,
+      960
+    ],
+    "dratewka_hide": [
+      1520,
+      930
+    ],
+    "julek_hide": [
+      1395,
+      785
+    ]
+  },
+  "patches": [
+    {
+      "image": "scenes/cave/dragon_sniff.png",
+      "x": 1205,
+      "y": 393,
+      "visible_if": "dragon_sniff"
+    },
+    {
+      "image": "scenes/cave/dragon_doubt.png",
+      "x": 1205,
+      "y": 393,
+      "visible_if": "dragon_doubt"
+    },
+    {
+      "image": "scenes/cave/dragon_happy.png",
+      "x": 1205,
+      "y": 393,
+      "visible_if": "dragon_happy"
+    }
+  ],
+  "fg": [
+    {
+      "image": "scenes/cave/fg_boulder.png",
+      "x": 1400,
+      "y": 760,
+      "baseline": 1050
+    }
+  ]
 }

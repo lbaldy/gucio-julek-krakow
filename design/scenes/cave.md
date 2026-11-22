@@ -111,3 +111,16 @@ No people, no dragon, no cart, no wheel, no text.
 - `cave.beee.1`: julek: "Beee! Beee!" `[loud, proud]`
 - `cave.beee.2`: dragon: "Beczy! Owca! Moja!"
 - `cave.beee.3`: gucio: "Julek! Udało się!" `[whispering, amazed]`
+
+## Build status
+- [x] Greybox and walkthroughs
+- [x] Background: 1K draft → 2K final; smoke painted back in with a crop-edit
+- [x] Geometry: scale 0.75 @1060 → 0.42 @740; boulder is an fg occluder (hand-masked) so the hide works
+- [x] Cart: no wheel / wobbly wheel / fixed (with the fake sheep), plus a smaller copy at the cave mouth
+- [x] Wheel (world + icon), peg icon, Gucio `push_r`
+- [x] Dragon painted into the cave mouth as bg patches: sniff / doubt / happy (flags `dragon_sniff|doubt|happy`)
+- [x] Engine: companion `stay_if` keeps Julek hidden behind the cart while `julek_hiding`
+- [x] Chrome pass: wheel → peg → push → hide → sniff → doubt → Julek's Beee → happy → burp → den
+- [ ] Optional: a gulp frame (the sheep vanishes on the cut to the cards)
+- [ ] Lines locked → VO
+- [ ] Music, ambience, the silence at the sniff

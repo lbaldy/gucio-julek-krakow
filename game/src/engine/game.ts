@@ -274,6 +274,7 @@ export class Game {
       const a = this.actors.find((x) => x.id === c.id && x.companion);
       // Never override a scripted walk (actorWalk sets `arrive`); only trail the hero when free.
       if (!a || a.anim || a.arrive) continue;
+      if (c.stay_if && evalCond(c.stay_if, this.state)) continue;
       const goal = this.companionSpot(c, h);
       if (Math.hypot(goal[0] - a.x, goal[1] - a.y) < FOLLOW_SLACK) continue;
       const end = a.path.at(-1);

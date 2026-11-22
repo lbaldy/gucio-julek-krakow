@@ -47,11 +47,13 @@ async function push(g: GameAPI) {
     await g.say("cave.push.4");
     // the low point
     await g.wait(1200);
+    // the dragon is painted into the cave mouth: one background patch per mood
     g.set("dragon_out");
-    g.pose("dragon", "sniff");
+    g.set("dragon_sniff");
     g.sfx("rustle");
     await g.say("cave.dragon.1");
-    g.pose("dragon", "doubt");
+    g.unset("dragon_sniff");
+    g.set("dragon_doubt");
     g.music(null);
     await g.say("cave.dragon.2");
     await g.wait(1500);
@@ -75,7 +77,8 @@ async function beee(g: GameAPI) {
     g.place("julek", g.point("julek_hide"));
     void g.anim("julek", "shout");
     await g.say("cave.beee.1");
-    g.pose("dragon", "happy");
+    g.unset("dragon_doubt");
+    g.set("dragon_happy");
     await g.say("cave.beee.2");
     g.unset("dragon_waiting");
     g.set("beee_done");

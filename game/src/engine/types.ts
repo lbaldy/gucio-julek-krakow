@@ -210,6 +210,8 @@ export interface CompanionConfig {
   id: string;
   /** Only present while this condition holds. */
   if?: string;
+  /** While this holds, the companion stays where a script put it instead of trailing the hero. */
+  stay_if?: string;
   /** Where it stands relative to the hero: px behind (along facing), and px towards the back. */
   offset?: Pt;
 }

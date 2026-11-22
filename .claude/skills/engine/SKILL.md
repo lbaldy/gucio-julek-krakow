@@ -137,6 +137,8 @@ Optional extras (all off unless set):
   and added or removed whenever their `if` changes. A scene that places the same id as an
   actor keeps its own actor; `"no_companions": true` on a scene (or `no_hero`) drops them.
   Companion ids are valid targets in every scene that has them (handlers live in `globals.ts`).
+  `"stay_if": "julek_hiding"` keeps a companion where a script placed it (hiding behind a prop) while
+  the condition holds, instead of trailing the hero.
 - `"one_tap": true`: for pre-readers. The first tap on a hotspot/object looks (flag
   `looked:<scene>/<id>`), later taps use; a `use` with no line falls back to the look. An object with `"pickup": true`
   skips the look tap (children read "nothing happened" into a look line on a pickup). Tapping
