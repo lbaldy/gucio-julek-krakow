@@ -81,6 +81,7 @@ async function film(
   void Promise.resolve(action()).catch((e) => (failed = String(e)));
   await breathe();
   await run(from);
+  r.draw(0); // sizes the canvas
   const s = r.canvas;
   const k = Math.min(s.width / 1920, s.height / 1080);
   const [ox, oy] = [(s.width - 1920 * k) / 2, (s.height - 1080 * k) / 2];

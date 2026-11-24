@@ -7,9 +7,10 @@ import { defineScene, type GameAPI } from "../../../src/engine/api";
 async function bounce(g: GameAPI) {
   if (g.flag("book_down")) return g.say("bedroom.crib.julek.after");
   await g.cutscene(async () => {
-    // into the crib (its front rails are an fg layer, so he's behind them) and up and down
+    // in through the crib's entry, under the top rail (the front rails are an fg layer, so he ends
+    // up behind them), and up and down
     await g.actorWalk("julek", g.point("julek_by_crib"), "run");
-    await g.jump("julek", g.point("julek_in_crib"), { pose: "cheer", scale: 0.66, arc: 150 });
+    await g.jump("julek", g.point("julek_in_crib"), { pose: "crawl", scale: 0.66, arc: 20, ms: 900 });
     g.pose("julek", "cheer");
     void g.motion("julek", "hop", { loop: true, amp: 0.2, ms: 560 });
     g.sfx("boing");
@@ -25,7 +26,7 @@ async function bounce(g: GameAPI) {
     await g.motion("julek", null);
     await g.say("bedroom.crib.julek.4");
     g.pose("julek", null);
-    await g.jump("julek", g.point("julek_by_crib"), { pose: "cheer", scale: null, arc: 150 });
+    await g.jump("julek", g.point("julek_by_crib"), { pose: "crawl", scale: null, arc: 20, ms: 900 });
   });
 }
 

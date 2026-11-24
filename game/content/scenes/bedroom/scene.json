@@ -303,8 +303,8 @@
       "id": "book",
       "name": "książka o Polsce",
       "sprite": "scenes/bedroom/book_world.png",
-      "x": 1180,
-      "y": 960,
+      "x": 1160,
+      "y": 949,
       "walk_to": [
         1100,
         990
@@ -340,7 +340,7 @@
     ],
     "book_lands": [
       1222,
-      1014
+      1015
     ]
   },
   "music": "music/home.mp3",

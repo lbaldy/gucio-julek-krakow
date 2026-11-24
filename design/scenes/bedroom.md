@@ -16,6 +16,8 @@ camera and furniture, changed to **summer**:
 - **Patterns:** keep the folk flowers; add little summer motifs (poppies, cornflowers).
 - **Shelf** above the toy chest, right of the crib: unchanged. Its books are the
   hotspot; the `book` is a sprite standing at the shelf's left end, spine out.
+- **The crib always has its entry**: no front bars between the left post and the quilt, under a
+  whole top rail. Julek climbs in and out there. Every picture with the crib shows it.
 - Everything else stays: Gucio's dinosaur bed (left), the lamp on the stool, the crib
   (right of the window), the toy chest, the rug, the door, the drawing on the door.
 - No people, no text.
