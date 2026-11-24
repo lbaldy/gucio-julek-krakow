@@ -48,7 +48,7 @@ None in the background. The book sprite moves from the shelf to the rug.
 
 ## Puzzles
 1. **The book:** Gucio can't reach the shelf. Julek on the crib → he climbs in and
-   bounces: "Beee! Beee! Hop!" (pose `bounce_r`, a hop tween) → the shelf wobbles →
+   bounces: "Beee! Beee! Hop!" (`cheer` pose, a looped `hop`, behind the crib-rails layer) → the shelf wobbles →
    the book slides off and lands on the rug, open. Mama (off): "Julek! Owieczki nie
    skaczą po łóżeczku!"
 2. **Read it:** tap the book → Mama's voice: "No dobrze, przeczytam wam legendę." The

@@ -7,24 +7,48 @@ import { defineScene, type GameAPI } from "../../../src/engine/api";
 async function bounce(g: GameAPI) {
   if (g.flag("book_down")) return g.say("bedroom.crib.julek.after");
   await g.cutscene(async () => {
-    // Julek is painted into the crib (a patch) while he bounces; the companion steps out meanwhile
-    g.set("julek_bouncing");
+    // into the crib (its front rails are an fg layer, so he's behind them) and up and down
+    await g.actorWalk("julek", g.point("julek_by_crib"), "run");
+    await g.jump("julek", g.point("julek_in_crib"), { pose: "cheer", scale: 0.66, arc: 150 });
+    g.pose("julek", "cheer");
+    void g.motion("julek", "hop", { loop: true, amp: 0.2, ms: 560 });
+    g.sfx("boing");
     await g.say("bedroom.crib.julek.1");
     g.sfx("boing");
+    void g.motion("book_shelf", "shake", { times: 4 });
     await g.say("bedroom.crib.julek.2");
+    await g.move("book_shelf", g.point("book_lands"), { arc: 60, spin: 1, ease: "in", ms: 750 });
+    g.restore("book_shelf");
     g.set("book_down");
     g.sfx("pop");
     await g.say("bedroom.crib.julek.3");
+    await g.motion("julek", null);
     await g.say("bedroom.crib.julek.4");
-    g.unset("julek_bouncing");
+    g.pose("julek", null);
+    await g.jump("julek", g.point("julek_by_crib"), { pose: "cheer", scale: null, arc: 150 });
   });
+}
+
+/** Gucio tries on tiptoe: the shelf is too high. */
+async function tryShelf(g: GameAPI) {
+  if (g.flag("book_down")) return g.say("bedroom.shelf.look.after");
+  await g.anim("gucio", "reach_up", { motion: "tiptoe", ms: 1300 });
+  await g.say("bedroom.shelf.use");
+}
+
+async function julekTriesShelf(g: GameAPI) {
+  void g.motion("julek", "hop", { times: 2 });
+  await g.say("bedroom.shelf.julek");
 }
 
 async function read(g: GameAPI) {
   await g.cutscene(async () => {
-    await g.anim("gucio", "pickup");
-    g.set("reading_book");
-    g.sfx("magic");
+    await g.reach("book", {
+      onContact: () => {
+        g.set("reading_book");
+        g.sfx("magic");
+      },
+    });
     await g.wait(700);
     await g.say("bedroom.book.read.1");
     await g.say("bedroom.book.read.2");
@@ -48,13 +72,13 @@ export default defineScene("bedroom", {
   targets: {
     shelf: {
       look: (g) => g.say(g.flag("book_down") ? "bedroom.shelf.look.after" : "bedroom.shelf.look"),
-      use: (g) => g.say(g.flag("book_down") ? "bedroom.shelf.look.after" : "bedroom.shelf.use"),
-      items: { julek: (g) => g.say("bedroom.shelf.julek") },
+      use: tryShelf,
+      items: { julek: julekTriesShelf },
     },
     book_shelf: {
       look: (g) => g.say("bedroom.shelf.look"),
-      use: (g) => g.say("bedroom.shelf.use"),
-      items: { julek: (g) => g.say("bedroom.shelf.julek") },
+      use: tryShelf,
+      items: { julek: julekTriesShelf },
     },
     crib: {
       use: (g) => g.say("bedroom.crib.use"),

@@ -10,6 +10,12 @@ export interface TargetBase {
   walk_to?: Pt;
   face?: Facing | "up" | "down";
   visible_if?: string;
+  /** Where the hand goes in g.reach (default: an object's centre; a hotspot's nearest part). */
+  reach_at?: Pt;
+  /** Who reaches for it when the script doesn't say (default: the hero). */
+  reach_by?: string;
+  /** The pose to reach it with, when the geometry misleads (something drawn high because it's far). */
+  reach_pose?: string;
 }
 
 export interface HotspotData extends TargetBase {
@@ -72,6 +78,8 @@ export interface PatchData {
 export type Drift = [number, number, number];
 
 export interface FgData {
+  /** For g.move / g.motion. */
+  id?: string;
   image: string;
   x: number;
   y: number;
@@ -131,6 +139,13 @@ export interface AnimData {
   offset?: Pt;
   /** Extra size factor for this anim's frames (a pose drawn at another size). */
   scale?: number;
+  /** Where the hand is: px forward and up from the feet, at scale 1, as drawn (after offset and scale).
+   *  Poses with a hand are the ones g.reach chooses from. */
+  hand?: Pt;
+  /** Has a hand but isn't a general reaching pose (it holds a prop): only used when named. */
+  no_reach?: boolean;
+  /** Motion played with the pose whenever it's a one-shot (g.anim). */
+  motion?: string;
 }
 
 export interface CharacterData {

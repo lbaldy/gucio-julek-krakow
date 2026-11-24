@@ -29,6 +29,8 @@ async function readyIfBoth(g: GameAPI) {
   await g.cutscene(async () => {
     await g.wait(600);
     g.sfx("boing");
+    // the rumble makes everybody jump
+    for (const who of ["gucio", "julek", "dratewka"]) void g.motion(who, "hop", { amp: 0.08, ms: 480 });
     await g.say("workshop.ready.1");
     await g.say("workshop.ready.2");
     g.set("dratewka_ready");
@@ -41,7 +43,8 @@ async function needle(g: GameAPI) {
   if (!g.flag("plan_told")) return g.say("workshop.crack.early");
   await g.cutscene(async () => {
     await g.say("workshop.crack.julek.1");
-    await g.anim("julek", "crawl");
+    await g.reach("crack", { by: "julek", pose: "crawl" });
+    void g.motion("julek", "hop", { amp: 0.15 });
     await g.say("workshop.crack.julek.2");
     g.sfx("pickup");
     g.set("needle_found");
@@ -84,7 +87,7 @@ async function sew(g: GameAPI) {
 }
 
 async function putOnBench(g: GameAPI, item: BenchItem) {
-  g.drop(item);
+  await g.toss(item, g.point("bench"));
   g.set(`bench_${item}`);
   g.set(`bench_${benchCount(g)}`);
   g.sfx("pickup");

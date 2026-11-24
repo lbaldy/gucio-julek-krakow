@@ -7,9 +7,16 @@ import { defineScene, type GameAPI } from "../../../src/engine/api";
 async function openGate(g: GameAPI) {
   if (g.flag("gate_open")) return g.say("den.gate.look.open");
   await g.cutscene(async () => {
-    await g.anim("gucio", "lift");
-    g.set("gate_open");
-    g.sfx("pop");
+    // he heaves the bar out of its brackets: it drops and the gate swings open
+    await g.reach("gate", {
+      pose: "push",
+      ms: 1300,
+      onContact: () => {
+        g.set("gate_open");
+        g.sfx("pop");
+      },
+    });
+    void g.anim("gucio", "cheer");
     await g.say("den.gate.use");
     // the pen is off the walkable floor: out through the gate in a straight line, then to the mouth
     const out = ["sheep_a", "sheep_b", "sheep_c"].map(async (s, i) => {
@@ -35,15 +42,18 @@ async function findLamb(g: GameAPI) {
     await g.actorWalk("julek", g.point("julek_hollow"));
     g.actorFace("julek", "right");
     await g.say("den.hollow.julek.1");
-    await g.anim("julek", "crawl");
+    await g.move("julek", g.point("julek_in_hollow"), { pose: "crawl", ms: 1300, fade: 0 });
     await g.say("den.hollow.julek.2");
     // Julek backs out hugging him; then Kłębuszek stands on his own beside the boys
     g.set("klebuszek_found");
     g.set("lamb_hugged");
     g.pose("julek", "hug");
     g.sfx("magic");
+    await g.move("julek", g.point("julek_hollow"), { pose: "hug", ms: 900, fade: 1 });
+    void g.motion("julek", "sway", { loop: true, amp: 0.04 });
     await g.say("den.hollow.julek.3");
     await g.say("den.hollow.julek.4");
+    await g.motion("julek", null);
     g.pose("julek", null);
     g.unset("lamb_hugged");
   });

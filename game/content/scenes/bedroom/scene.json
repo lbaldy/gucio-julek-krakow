@@ -314,13 +314,6 @@
   ],
   "patches": [
     {
-      "id": "crib_bounce",
-      "image": "scenes/bedroom/crib_bounce.png",
-      "x": 1050,
-      "y": 430,
-      "visible_if": "julek_bouncing"
-    },
-    {
       "id": "book_page",
       "image": "scenes/bedroom/book_page.png",
       "x": 0,
@@ -336,7 +329,28 @@
     "gucio_bed": [
       600,
       985
+    ],
+    "julek_by_crib": [
+      1165,
+      840
+    ],
+    "julek_in_crib": [
+      1187,
+      652
+    ],
+    "book_lands": [
+      1222,
+      1014
     ]
   },
-  "music": "music/home.mp3"
+  "music": "music/home.mp3",
+  "fg": [
+    {
+      "id": "crib_rails",
+      "image": "scenes/bedroom/fg_crib.png",
+      "x": 1100,
+      "y": 500,
+      "baseline": 700
+    }
+  ]
 }

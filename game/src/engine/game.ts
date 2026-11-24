@@ -8,7 +8,8 @@ import { deserialize, hiddenKey, newState, serialize, type State } from "./state
 import type { CharacterData, Facing, GameConfig, ItemData, LineData, Pt, SceneData } from "./types";
 import { INV_BAR, INV_REVEAL_Y, SKIP_HINT, choiceRects, hit, invSlots, menuRects, MENU_ITEMS } from "./ui/layout";
 import type { CompanionConfig } from "./types";
-import { actorScale, centroid, targetAt, targets, type Actor, type SizeOf, type Target } from "./world";
+import { finishStage, flyToCounter, flyToInventory, moveThing, playAnim, playMotion, propOf, reach, spotOf, stepActorStage, stepProps, tossItem, type Flight } from "./stage";
+import { actorHeight, actorScale, centroid, targetAt, targets, type Actor, type Prop, type SizeOf, type Target } from "./world";
 
 export interface Content {
   config: GameConfig;
@@ -86,6 +87,14 @@ export class Game {
   scene!: SceneData;
   walk!: WalkArea;
   actors: Actor[] = [];
+  /** Objects, patches and fg layers a script has moved in this scene. */
+  props = new Map<string, Prop>();
+  /** Items flying to the inventory, the counter or a spot in the scene. */
+  flights: Flight[] = [];
+  /** Where the hand is, while an onContact callback runs: what it gives flies from there. */
+  contactAt: Pt | null = null;
+  /** Dev filmstrips step the game by hand: the frame loop stands still and lines are timed, not voiced. */
+  manual = false;
   speech: Speech | null = null;
   choice: { options: { lineId: string; text: string }[]; pick: (i: number) => void } | null = null;
   /** The dialogue option being read aloud (hovered with a mouse, or tapped once on touch); -1 for none. */
@@ -208,6 +217,8 @@ export class Game {
   private enterScene(id: string, spawn: string | null) {
     const data = this.content.scenes[id];
     if (!data) throw new Error(`unknown scene: ${id}`);
+    for (const f of [...this.flights]) f.done();
+    this.props = new Map();
     this.scene = data;
     this.state.scene = id;
     this.walk = new WalkArea(data.walkable, data.blocked);
@@ -278,7 +289,7 @@ export class Game {
     for (const c of this.content.config.companions ?? []) {
       const a = this.actors.find((x) => x.id === c.id && x.companion);
       // Never override a scripted walk (actorWalk sets `arrive`); only trail the hero when free.
-      if (!a || a.anim || a.arrive) continue;
+      if (!a || a.anim || a.arrive || a.tween) continue;
       if (c.stay_if && evalCond(c.stay_if, this.state)) continue;
       const goal = this.companionSpot(c, h);
       if (Math.hypot(goal[0] - a.x, goal[1] - a.y) < FOLLOW_SLACK) continue;
@@ -303,7 +314,7 @@ export class Game {
   }
 
   private newActor(id: string, x: number, y: number, facing: Facing): Actor {
-    return { id, x, y, facing, path: [], arrive: null, anim: null, pose: null, talking: false, walkT: 0 };
+    return { id, x, y, facing, path: [], arrive: null, anim: null, motion: null, tween: null, lift: 0, alpha: 1, pose: null, talking: false, walkT: 0 };
   }
 
   private log(e: GameEvent) {
@@ -322,6 +333,7 @@ export class Game {
     }
     this.follow();
     for (const a of this.actors) this.stepActor(a, dtMs);
+    stepProps(this, dtMs);
     this.tickIdle(dtMs);
     for (const t of [...this.timers]) {
       t.t -= dtMs;
@@ -352,11 +364,8 @@ export class Game {
   }
 
   private stepActor(a: Actor, dtMs: number) {
-    if (a.anim) {
-      a.anim.t -= dtMs;
-      if (a.anim.t <= 0) a.anim.done();
-    }
-    if (!a.path.length) return;
+    stepActorStage(this, a, dtMs);
+    if (!a.path.length || a.tween) return;
     const ch = this.content.characters[a.id];
     // A character with its own run cycle runs at run_speed, and the cycle plays in real time.
     const ownRun = a.running && !!ch?.run_speed && !!ch.anims.run_r;
@@ -382,7 +391,7 @@ export class Game {
     if (!a.path.length) this.settle(a, true);
   }
 
-  private settle(a: Actor, arrived: boolean) {
+  settle(a: Actor, arrived: boolean) {
     a.path = [];
     a.walkT = 0;
     a.running = false;
@@ -391,7 +400,7 @@ export class Game {
     cb?.(arrived);
   }
 
-  private get instant() {
+  get instant() {
     return this.fast || this.skipping;
   }
 
@@ -399,14 +408,14 @@ export class Game {
 
   targets(): Target[] {
     const heroClickable = !!(this.content.scripts[this.scene.id]?.targets?.[this.heroId] ?? this.content.globals.targets?.[this.heroId]);
-    return targets(this.scene, this.state, this.actors, this.heroId, this.content.characters, this.io.sizeOf, heroClickable);
+    return targets(this.scene, this.state, this.actors, this.heroId, this.content.characters, this.io.sizeOf, heroClickable, this.props);
   }
 
   targetAt(p: Pt): Target | null {
     return targetAt(this.targets(), p);
   }
 
-  private walkActor(a: Actor, to: Pt, how: Approach = "walk"): Promise<boolean> {
+  walkActor(a: Actor, to: Pt, how: Approach = "walk"): Promise<boolean> {
     if (a.arrive) this.settle(a, false);
     const path = how === "free" ? [to] : this.walk.find([a.x, a.y], to);
     if (!path.length) return Promise.resolve(true);
@@ -690,8 +699,8 @@ export class Game {
     this.speech?.finish();
     this.card?.finish?.();
     for (const t of [...this.timers]) t.done();
+    finishStage(this);
     for (const a of this.actors) {
-      a.anim?.done();
       if (a.path.length) {
         [a.x, a.y] = a.path[a.path.length - 1];
         this.settle(a, true);
@@ -727,6 +736,8 @@ export class Game {
       });
     };
     const setFlag = (name: string, value: boolean) => {
+      const prefix = g.content.config.counter?.prefix;
+      if (value && g.contactAt && prefix && name.startsWith(prefix) && !g.state.flags[name]) flyToCounter(g, g.contactAt);
       g.state.flags[name] = value;
       g.log({ t: "flag", name, value });
       // A companion's `if` may hinge on this flag (Julek steps into a painted crib): update at once,
@@ -740,7 +751,7 @@ export class Game {
         g.log({ t: "say", id: lineId, speaker: l.speaker, text: l.text });
         if (g.instant) return;
         const speaker = g.actors.find((a) => a.id === l.speaker);
-        const voice = await g.io.audio.voice(lineId);
+        const voice = g.manual ? null : await g.io.audio.voice(lineId);
         await new Promise<void>((res) => {
           const finish = () => {
             if (g.speech !== s) return;
@@ -811,16 +822,33 @@ export class Game {
         actor(id).facing = dir;
       },
       place(id, [x, y]) {
-        Object.assign(actor(id), { x, y, path: [] });
-      },
-      anim(id, name) {
         const a = actor(id);
-        const data = g.content.characters[id]?.anims[name] ?? g.content.characters[id]?.anims[`${name}_r`];
-        const ms = data ? data.hold_ms ?? (data.frames / data.fps) * 1000 : 500;
-        if (g.instant) return Promise.resolve();
-        return new Promise<void>((res) => {
-          a.anim = { name, t: ms, ms, done: () => { a.anim = null; res(); } };
-        });
+        a.tween?.done();
+        Object.assign(a, { x, y, path: [], lift: 0, alpha: 1 });
+      },
+      anim: (id, name, opts) => playAnim(g, actor(id), name, opts),
+      reach: (target, opts) => reach(g, target, opts),
+      async motion(id, name, opts) {
+        await playMotion(g, g.actors.find((a) => a.id === id) ?? propOf(g, id), name, opts);
+      },
+      async move(id, to, opts) {
+        await moveThing(g, id, to, opts);
+      },
+      async jump(id, to, opts) {
+        const a = actor(id);
+        const h = actorHeight(a, g.content.characters[id]) * actorScale(a, g.scene);
+        await moveThing(g, id, to, { leap: true, ms: 800, arc: h * 0.4, ...opts });
+      },
+      restore(id) {
+        g.props.get(id)?.tween?.done();
+        g.props.delete(id);
+        const a = g.actors.find((x) => x.id === id);
+        if (a) Object.assign(a, { alpha: 1, lift: 0, fixedScale: g.scene.actors?.find((p) => p.id === id)?.scale });
+      },
+      async toss(item, to) {
+        const there = spotOf(g, to);
+        api.drop(item);
+        await tossItem(g, item, there);
       },
       pose(id, name) {
         actor(id).pose = name;
@@ -836,16 +864,18 @@ export class Game {
       unset: (name) => setFlag(name, false),
       visited: (scene) => g.state.visited.includes(scene),
       has: (item) => g.state.inventory.includes(item),
-      give(item) {
+      give(item, from) {
         if (!g.content.items[item]) throw new Error(`unknown item: ${item}`);
         if (!g.state.inventory.includes(item)) {
           g.state.inventory.push(item);
           api.sfx("pickup");
+          const at = from !== undefined ? spotOf(g, from) : g.contactAt;
+          if (at) flyToInventory(g, item, at);
         }
         g.log({ t: "item", op: "give", item });
       },
       take(item) {
-        api.give(item);
+        api.give(item, g.contactAt ?? ((g.scene.objects ?? []).some((o) => o.id === item) ? item : undefined));
         setFlag(`taken:${item}`, true);
       },
       drop(item) {

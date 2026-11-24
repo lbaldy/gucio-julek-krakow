@@ -17,7 +17,7 @@ async function cartLook(g: GameAPI) {
 }
 
 async function wheelOn(g: GameAPI) {
-  g.drop("wheel");
+  await g.toss("wheel", "cart_a");
   g.set("cart_wheel_on");
   g.set("wheel_seen");
   g.sfx("pop");
@@ -26,7 +26,7 @@ async function wheelOn(g: GameAPI) {
 
 async function pegOn(g: GameAPI) {
   if (!g.flag("cart_wheel_on")) return g.say("cave.cart.use.peg.early");
-  g.drop("peg");
+  await g.toss("peg", "cart_b");
   g.set("cart_fixed");
   g.sfx("ding");
   await g.say("cave.cart.use.peg");
@@ -35,13 +35,24 @@ async function pegOn(g: GameAPI) {
 async function push(g: GameAPI) {
   await g.cutscene(async () => {
     await g.walkTo(g.point("push_from"));
-    void g.anim("gucio", "push");
-    g.set("cart_pushed");
+    g.face("right");
     g.sfx("rustle");
-    await g.say("cave.push.1");
-    await g.walkTo(g.point("gucio_hide"));
-    g.place("julek", g.point("julek_hide"));
+    void g.say("cave.push.1");
+    // "Raz, dwa… hop!": two heaves, then the cart rolls to the cave mouth
+    await g.anim("gucio", "push", { ms: 1500 });
+    void g.motion("cart_c", "rattle", { loop: true });
+    const roll = { ms: 2600, ease: "both" } as const;
+    await Promise.all([
+      g.move("cart_c", g.point("cart_to"), { ...roll, scale: 0.82 }),
+      g.move("gucio", g.point("push_to"), { ...roll, pose: "push" }),
+      g.wait(500).then(() => g.actorWalk("julek", g.point("julek_hide"), "run")),
+    ]);
+    g.set("cart_pushed");
+    g.restore("cart_c");
     g.set("julek_hiding");
+    await g.walkTo(g.point("gucio_hide"));
+    g.actorFace("julek", "right");
+    g.face("left");
     await g.say("cave.push.2");
     await g.say("cave.push.3");
     await g.say("cave.push.4");
@@ -116,9 +127,12 @@ export default defineScene("cave", {
     },
     wheel: {
       use: async (g) => {
-        await g.anim("gucio", "pickup");
-        g.take("wheel");
-        g.set("wheel_seen");
+        await g.reach("wheel", {
+          onContact: () => {
+            g.take("wheel");
+            g.set("wheel_seen");
+          },
+        });
         await g.say("cave.wheel.pickup");
       },
     },

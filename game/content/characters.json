@@ -24,22 +24,44 @@
         "offset": [
           24,
           0
+        ],
+        "hand": [
+          75,
+          45
         ]
       },
       "cheer_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1400
+        "hold_ms": 800,
+        "motion": "hop"
       },
       "push_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1200
+        "hold_ms": 1200,
+        "hand": [
+          148,
+          313
+        ],
+        "motion": "strain"
       },
       "lift_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1200
+        "hold_ms": 1200,
+        "scale": 1.17,
+        "motion": "strain"
+      },
+      "reach_up_r": {
+        "frames": 1,
+        "fps": 1,
+        "hold_ms": 900,
+        "scale": 1.17,
+        "hand": [
+          8,
+          500
+        ]
       }
     }
   },
@@ -64,32 +86,51 @@
       "crawl_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 900
+        "hold_ms": 900,
+        "hand": [
+          85,
+          30
+        ],
+        "motion": "dip"
       },
       "cheer_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1400
+        "hold_ms": 800,
+        "hand": [
+          45,
+          238
+        ],
+        "motion": "hop"
       },
       "shout_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1200
+        "hold_ms": 1200,
+        "motion": "stretch"
       },
       "offer_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1400
+        "hold_ms": 1400,
+        "hand": [
+          58,
+          170
+        ],
+        "no_reach": true,
+        "motion": "stretch"
       },
       "peekaboo_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1200
+        "hold_ms": 1200,
+        "motion": "nod"
       },
       "fuj_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1400
+        "hold_ms": 1400,
+        "motion": "shake"
       },
       "hug_r": {
         "frames": 1,
@@ -186,7 +227,8 @@
       "sew_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1600
+        "hold_ms": 1600,
+        "motion": "nod"
       },
       "scared_r": {
         "frames": 1,
@@ -195,7 +237,8 @@
       "cheer_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1400
+        "hold_ms": 800,
+        "motion": "hop"
       }
     }
   },
@@ -221,7 +264,8 @@
       "eat_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1400
+        "hold_ms": 1400,
+        "motion": "nod"
       }
     }
   },
@@ -241,7 +285,8 @@
       "give_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 1200
+        "hold_ms": 1200,
+        "motion": "stretch"
       }
     }
   },
@@ -281,7 +326,8 @@
       "butt_r": {
         "frames": 1,
         "fps": 1,
-        "hold_ms": 700
+        "hold_ms": 700,
+        "motion": "lunge"
       }
     }
   },

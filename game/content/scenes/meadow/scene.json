@@ -213,7 +213,7 @@
         ]
       ],
       "walk_to": [
-        700,
+        738,
         640
       ],
       "face": "right"
@@ -350,10 +350,10 @@
       "id": "wool_meadow_gate",
       "name": "kłębek wełny",
       "sprite": "items/wool_world.png",
-      "x": 330,
-      "y": 470,
+      "x": 557,
+      "y": 430,
       "walk_to": [
-        560,
+        590,
         640
       ],
       "visible_if": "!wool_meadow_gate",
@@ -364,7 +364,7 @@
       "name": "kłębek wełny",
       "sprite": "items/wool_world.png",
       "x": 1740,
-      "y": 760,
+      "y": 778,
       "walk_to": [
         1700,
         870
@@ -376,13 +376,14 @@
       "id": "wool_meadow_willow",
       "name": "kłębek wełny",
       "sprite": "items/wool_world.png",
-      "x": 1540,
-      "y": 620,
+      "x": 1467,
+      "y": 656,
       "walk_to": [
-        1500,
-        740
+        1455,
+        715
       ],
-      "visible_if": "!wool_meadow_willow"
+      "visible_if": "!wool_meadow_willow",
+      "reach_by": "julek"
     }
   ],
   "exits": [
@@ -451,6 +452,10 @@
     "butt_back": [
       520,
       965
+    ],
+    "julek_ram": [
+      650,
+      850
     ]
   }
 }

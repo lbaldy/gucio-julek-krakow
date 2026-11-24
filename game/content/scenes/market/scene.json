@@ -118,7 +118,11 @@
         800,
         900
       ],
-      "face": "left"
+      "face": "left",
+      "reach_at": [
+        625,
+        785
+      ]
     },
     {
       "id": "pretzels",
@@ -312,12 +316,13 @@
       "name": "kłębek wełny",
       "sprite": "items/wool_world.png",
       "x": 340,
-      "y": 880,
+      "y": 932,
       "walk_to": [
-        420,
-        1000
+        470,
+        1012
       ],
-      "visible_if": "!wool_market_counter"
+      "visible_if": "!wool_market_counter",
+      "reach_by": "julek"
     }
   ],
   "exits": [
@@ -407,5 +412,11 @@
       "y": 700,
       "visible_if": "baby_asleep"
     }
-  ]
+  ],
+  "points": {
+    "julek_cradle": [
+      1290,
+      990
+    ]
+  }
 }

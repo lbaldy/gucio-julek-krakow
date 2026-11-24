@@ -9,20 +9,24 @@ async function peekaboo(g: GameAPI) {
   if (g.flag("baby_asleep")) return g.say("market.cradle.julek.asleep");
   if (g.flag("baby_laughed")) return g.say("market.cradle.julek.after");
   await g.cutscene(async () => {
+    await g.actorWalk("julek", g.point("julek_cradle"), "run");
+    g.actorFace("julek", "right");
     void g.anim("julek", "peekaboo");
     await g.say("market.cradle.julek.1");
+    void g.anim("julek", "cheer");
     await g.say("market.cradle.julek.2");
     g.set("baby_laughed");
     g.ambience("market_loop"); // the crying stops
     void g.anim("baker", "give");
     await g.say("market.cradle.julek.3");
-    g.give("pretzel");
+    g.give("pretzel", "baker");
     g.sfx("pickup");
   });
 }
 
 async function fuj(g: GameAPI, after: boolean) {
   g.set("fuj_done");
+  if (!after) await g.reach("sulphur_box", { by: "julek" });
   void g.anim("julek", "fuj");
   await g.say(after ? "market.fuj.after.1" : "market.sulphur_box.julek.1");
   await g.say(after ? "market.fuj.after.2" : "market.sulphur_box.julek.2");
@@ -31,10 +35,10 @@ async function fuj(g: GameAPI, after: boolean) {
 async function trade(g: GameAPI) {
   if (g.flag("sulphur_got")) return g.say("market.merchant.after");
   await g.cutscene(async () => {
-    g.drop("pretzel");
+    await g.toss("pretzel", "merchant");
     void g.anim("merchant", "eat");
     await g.say("market.merchant.give.pretzel.1");
-    g.give("sulphur");
+    g.give("sulphur", "merchant");
     g.set("sulphur_got");
     g.sfx("pickup");
     await g.say("market.merchant.give.pretzel.2");

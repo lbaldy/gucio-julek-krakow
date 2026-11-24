@@ -9,6 +9,7 @@
     {"go": "path_meadow", "expect": "scene:meadow"},
     {"combine": ["dandelion", "julek"], "said": "meadow.ram.combo.3", "expect": "ram_calm && !has:dandelion"},
     {"use": "ram", "said": "meadow.ram.use.soft"},
+    {"talk": "ram", "said": "meadow.ram.use.soft"},
     {"use": "dandelions", "expect": "has:dandelion"},
     {"go": "path_town", "expect": "scene:town"},
     {"go": "workshop_door", "expect": "scene:workshop"},

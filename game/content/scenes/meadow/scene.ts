@@ -7,9 +7,14 @@ import { woolTargets } from "../../globals";
 
 async function butt(g: GameAPI, line: string) {
   await g.walkTo(g.point("ram_side"));
-  void g.anim("ram", "butt");
-  g.sfx("boing");
-  await g.walkTo(g.point("butt_back"));
+  g.face("right");
+  // the ram's butt sends Gucio flying back (he lands on his feet, facing the ram)
+  await g.anim("ram", "butt", {
+    onContact: () => {
+      g.sfx("boing");
+      return g.jump("gucio", g.point("butt_back"), { keepFacing: true, ms: 900 });
+    },
+  });
   await g.say(line);
 }
 
@@ -18,6 +23,8 @@ export async function calmRam(g: GameAPI) {
   if (g.flag("ram_calm")) return g.say("meadow.ram.use.soft");
   await g.cutscene(async () => {
     await g.walkTo(g.point("butt_back"));
+    await g.actorWalk("julek", g.point("julek_ram"), "run");
+    g.actorFace("julek", "right");
     void g.anim("julek", "offer");
     await g.say("meadow.ram.combo.1");
     g.drop("dandelion");
@@ -42,14 +49,18 @@ async function haystack(g: GameAPI) {
   if (g.flag("straw_got")) return g.say("meadow.haystack.look.done");
   if (!g.flag("ram_calm")) return butt(g, "meadow.ram.use");
   if (!g.has("sack")) return g.say("meadow.haystack.use.nosack");
-  await g.anim("gucio", "pickup");
-  g.drop("sack");
-  g.give("straw");
-  g.set("straw_got");
+  // the stack is behind the fence: the sack goes over it, and comes back full
+  void g.motion("gucio", "lunge", { amp: 0.15 });
+  await g.toss("sack", "haystack");
   g.sfx("rustle");
+  await g.wait(400);
+  g.give("straw", "haystack");
+  g.set("straw_got");
   await g.say("meadow.haystack.use.sack");
   await endBeat(g);
 }
+
+const ramTap = (g: GameAPI) => (g.flag("ram_calm") ? g.say("meadow.ram.use.soft") : butt(g, "meadow.ram.use"));
 
 export default defineScene("meadow", {
   async enter(g) {
@@ -70,7 +81,8 @@ export default defineScene("meadow", {
     },
     ram: {
       look: (g) => g.say(g.flag("ram_calm") ? "meadow.ram.look.soft" : "meadow.ram.look"),
-      use: (g) => (g.flag("ram_calm") ? g.say("meadow.ram.use.soft") : butt(g, "meadow.ram.use")),
+      use: ramTap,
+      talk: ramTap,
       items: {
         dandelion: (g) => (g.flag("ram_calm") ? g.say("meadow.ram.use.soft") : butt(g, "meadow.ram.use.dandelion")),
         julek: (g) => (g.has("dandelion") ? calmRam(g) : g.flag("ram_calm") ? g.say("meadow.ram.use.soft") : g.say("meadow.ram.julek.nodandelion")),
@@ -84,8 +96,7 @@ export default defineScene("meadow", {
     dandelions: {
       use: async (g) => {
         if (g.has("dandelion")) return g.say("meadow.dandelions.use.have");
-        await g.anim("gucio", "pickup");
-        g.give("dandelion");
+        await g.reach("dandelions", { pose: "pickup", onContact: () => g.give("dandelion") });
         await g.say("meadow.dandelions.use");
       },
       items: {
@@ -97,8 +108,7 @@ export default defineScene("meadow", {
     },
     sack: {
       use: async (g) => {
-        await g.anim("gucio", "pickup");
-        g.take("sack");
+        await g.reach("sack", { onContact: () => g.take("sack") });
         await g.say("meadow.sack.use");
       },
     },

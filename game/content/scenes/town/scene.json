@@ -275,7 +275,8 @@
         700,
         830
       ],
-      "visible_if": "!wool_town_flowerbox"
+      "visible_if": "!wool_town_flowerbox",
+      "reach_by": "julek"
     }
   ],
   "exits": [
@@ -447,8 +448,8 @@
       925
     ],
     "helmet_spot": [
-      700,
-      965
+      738,
+      1035
     ],
     "shepherd_from": [
       -60,
@@ -457,6 +458,10 @@
     "shepherd_to": [
       250,
       900
+    ],
+    "helmet_from": [
+      848,
+      815
     ]
   }
 }

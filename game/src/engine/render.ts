@@ -4,9 +4,10 @@ import type { Images } from "./assets";
 import type { Game } from "./game";
 import type { CharacterData, PatchData, Poly } from "./types";
 import { MENU_FONT, TITLE_FONT } from "./ui/fonts";
-import { H, INV_BAR, SKIP_HINT, W, choiceRects, hit, invSlots, menuRects, MENU_ITEMS } from "./ui/layout";
+import { H, INV_BAR, SKIP_HINT, W, choiceRects, counterIcon, counterLayout, hit, invSlots, menuRects, MENU_ITEMS } from "./ui/layout";
 import { clockMarks, clockMinutes, counterValue } from "./clock";
-import { actorHeight, actorScale, centroid, drawables, objectSize, type Actor } from "./world";
+import { EASE, along } from "./motion";
+import { actorHeight, actorScale, animShift, centroid, drawables, objectSize, patchKey, xfOf, type Actor, type Prop } from "./world";
 
 const FONT = `"Trebuchet MS", "Segoe UI", sans-serif`;
 
@@ -61,11 +62,19 @@ export class Renderer {
     } else if (g.scene) {
       this.background();
       const shown = new Set<string>();
-      for (const d of drawables(g.scene, g.state, g.actors, this.img.size)) {
+      for (const d of drawables(g.scene, g.state, g.actors, this.img.size, g.props)) {
         if (d.kind === "actor") this.actor(d.actor);
-        else if (d.kind === "object") this.image(d.obj.sprite, d.obj.x, d.obj.y, objectSize(d.obj, this.img.size), d.obj.id);
-        else if (d.kind === "patch") shown.add(this.patch(d.patch));
-        else this.image(d.image, d.x, d.y, null, "");
+        else if (d.kind === "object") {
+          const size = objectSize(d.obj, this.img.size);
+          this.moved(d.obj.id, { ...d.obj, ...size }, () => this.image(d.obj.sprite, d.obj.x, d.obj.y, size, d.obj.id));
+        } else if (d.kind === "patch") {
+          const size = this.img.size(d.patch.image);
+          const box = { x: d.patch.x, y: d.patch.y, w: d.patch.w ?? size?.w ?? 120, h: d.patch.h ?? size?.h ?? 120 };
+          this.moved(patchKey(d.patch), box, () => shown.add(this.patch(d.patch)));
+        } else {
+          const size = this.img.size(d.image);
+          this.moved(d.id, { x: d.x, y: d.y, w: size?.w ?? 120, h: size?.h ?? 120 }, () => this.image(d.image, d.x, d.y, null, ""));
+        }
       }
       for (const k of this.shownAt.keys()) if (!shown.has(k)) this.shownAt.delete(k);
       if (g.debug) this.debugOverlay();
@@ -75,6 +84,7 @@ export class Renderer {
       this.inventory();
       this.clock(dtMs);
       this.counter(dtMs);
+      this.flights();
       this.choices();
     }
     if (g.fade > 0) {
@@ -162,6 +172,44 @@ export class Renderer {
     this.label(label, x + size.w / 2, y + size.h / 2, "#fff", 18);
   }
 
+  /** Draws something with whatever scripts have done to it (g.move, g.motion). */
+  private moved(id: string | undefined, box: { x: number; y: number; w: number; h: number }, draw: () => void) {
+    const p: Prop | undefined = id ? this.g.props.get(id) : undefined;
+    if (!p) return draw();
+    const { ctx } = this;
+    const xf = xfOf(p);
+    const [cx, by] = [box.x + box.w / 2, box.y + box.h];
+    ctx.save();
+    ctx.globalAlpha *= p.alpha;
+    ctx.translate(cx + p.dx + xf.fwd * box.h, by + p.dy - p.lift - xf.up * box.h);
+    ctx.rotate(xf.rot);
+    ctx.scale(xf.sx * p.scale, xf.sy * p.scale);
+    if (p.rot) {
+      // A spin turns about the middle; motions pivot at the bottom.
+      ctx.translate(0, -box.h / 2);
+      ctx.rotate(p.rot);
+      ctx.translate(0, box.h / 2);
+    }
+    ctx.translate(-cx, -by);
+    draw();
+    ctx.restore();
+  }
+
+  /** Items on their way to the inventory, the counter or a spot in the scene. */
+  private flights() {
+    const { ctx, g } = this;
+    for (const f of g.flights) {
+      const im = this.img.get(f.image);
+      if (!im) continue;
+      const p = f.t / f.ms;
+      const u = EASE.both(p);
+      const [x, y] = along(f.from, f.to, u);
+      const s = f.size[0] + (f.size[1] - f.size[0]) * u;
+      const k = s / Math.max(im.naturalWidth, im.naturalHeight);
+      ctx.drawImage(im, x - (im.naturalWidth * k) / 2, y - 60 * 4 * p * (1 - p) - (im.naturalHeight * k) / 2, im.naturalWidth * k, im.naturalHeight * k);
+    }
+  }
+
   /** Draws a patch with its fade-in and drift, timed from when it became visible; returns its key. */
   private patch(p: PatchData): string {
     const { ctx, g } = this;
@@ -196,10 +244,17 @@ export class Renderer {
     const g = this.g;
     const has = (n: string) => !!ch?.anims[`${n}_r`];
     const cycle = (n: string, t: number) => Math.floor((t / 1000) * (ch?.anims[`${n}_r`]?.fps ?? 8)) % (ch?.anims[`${n}_r`]?.frames ?? 1);
-    if (a.anim && has(a.anim.name)) {
+    const at = a.anim ? a.anim.ms - a.anim.t : 0;
+    if (a.anim && has(a.anim.name) && at >= a.anim.show[0] && at <= a.anim.show[1]) {
       // One-shots play from their first frame and hold the last.
       const d = ch!.anims[`${a.anim.name}_r`];
-      return { name: a.anim.name, frame: Math.min(d.frames - 1, Math.floor(((a.anim.ms - a.anim.t) / 1000) * d.fps)) };
+      return { name: a.anim.name, frame: Math.min(d.frames - 1, Math.floor((at / 1000) * d.fps)) };
+    }
+    if (a.tween) {
+      // A scripted move shows its pose; a leap crouches and lands in the standing drawing.
+      const { o, t, ms } = a.tween;
+      const air = !o.leap || (t > ms * 0.18 && t < ms * 0.84);
+      if (o.pose && air && has(o.pose)) return { name: o.pose, frame: cycle(o.pose, t) };
     }
     if (a.path.length && a.running && has("run")) return { name: "run", frame: cycle("run", a.walkT) };
     // Walking beats a held pose, so a posed companion doesn't slide along on a still frame.
@@ -232,16 +287,24 @@ export class Renderer {
     const fakeWalk = a.path.length > 0 && name !== "walk" && !ch?.float_px;
     const hover = ch?.float_px ? -(ch.float_px + Math.sin(this.t / 420) * 12) * k : 0;
     const bob = (fakeWalk ? -Math.abs(Math.sin(a.walkT / 110)) * 10 * k : 0) + hover;
+    const xf = xfOf(a);
+    const unit = actorHeight(a, ch) * k;
+    const side = a.facing === "left" ? -1 : 1;
+    const x = a.x + animShift(a) + side * xf.fwd * unit;
+    const lift = a.lift + xf.up * unit;
+    ctx.save();
+    ctx.globalAlpha *= a.alpha;
     if (a.fixedScale === undefined) {
-      // Contact shadow keeps feet planted on the floor.
-      const w = actorHeight(a, ch) * k * 0.2;
+      // Contact shadow keeps feet planted on the floor; it stays there, smaller, while they're in the air.
+      const w = unit * 0.2 * (1 - Math.min(0.45, (lift / unit) * 0.8));
       ctx.fillStyle = "rgba(20,16,10,0.32)";
       ctx.beginPath();
-      ctx.ellipse(a.x, a.y - 2, w, w * 0.16, 0, 0, Math.PI * 2);
+      ctx.ellipse(x, a.y - 2, w, w * 0.16, 0, 0, Math.PI * 2);
       ctx.fill();
     }
-    ctx.save();
-    ctx.translate(a.x, a.y + bob);
+    ctx.translate(x, a.y + bob - lift);
+    ctx.rotate(xf.rot * side);
+    ctx.scale(xf.sx, xf.sy);
     if (fakeWalk) ctx.rotate(Math.sin(a.walkT / 110) * 0.03);
     if (mirrored) ctx.scale(-1, 1);
     if (ch?.glow && !g.poseOf(a)) {
@@ -333,7 +396,8 @@ export class Renderer {
 
   private inventory() {
     const { ctx, g } = this;
-    if (!g.inventoryOpen()) return;
+    // The bar also shows while something flies into it.
+    if (!g.inventoryOpen() && !g.flights.some((f) => f.slot)) return;
     ctx.fillStyle = "rgba(20,18,16,0.85)";
     ctx.fillRect(INV_BAR.x, INV_BAR.y, INV_BAR.w, INV_BAR.h);
     const slots = invSlots(g.state.inventory.length);
@@ -343,6 +407,7 @@ export class Renderer {
       ctx.fillRect(r.x, r.y, r.w, r.h);
       const item = g.content.items[id];
       const im = item && this.img.get(item.icon);
+      if (g.flights.some((f) => f.slot === id)) return; // still on its way
       if (im) ctx.drawImage(im, r.x + 4, r.y + 4, r.w - 8, r.h - 8);
       else this.wrapped(item?.name ?? id, r.x + r.w / 2, r.y + r.h / 2 + 10, r.w - 8, "#ddd", 16, "middle");
     });
@@ -421,12 +486,7 @@ export class Renderer {
     if (this.counterShown >= 0 && n > this.counterShown) this.counterPop = 600;
     this.counterShown = n;
     this.counterPop = Math.max(0, this.counterPop - dtMs);
-    const right = g.content.config.clock ? W - 160 : W - 30;
-    const perRow = Math.ceil(cfg.total / 2);
-    const [pip, gap] = [14, 8];
-    const pipsW = perRow * (pip + gap) - gap;
-    const x0 = right - pipsW;
-    const y0 = 40;
+    const { x0, y0, pip, gap, perRow, pipsW } = counterLayout(g.content.config);
     const s = 1 + (this.counterPop / 600) * 0.35;
     ctx.save();
     ctx.fillStyle = "rgba(241,230,207,0.82)";
@@ -437,7 +497,7 @@ export class Renderer {
     ctx.fill();
     ctx.stroke();
     // icon
-    ctx.translate(x0 - 52, y0 + 21);
+    ctx.translate(...counterIcon(g.content.config));
     ctx.scale(s, s);
     const im = cfg.icon ? this.img.get(cfg.icon) : null;
     if (im) ctx.drawImage(im, -30, -30, 60, 60);

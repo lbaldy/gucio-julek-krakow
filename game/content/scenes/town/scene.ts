@@ -11,9 +11,11 @@ async function knightBeat(g: GameAPI) {
   g.set("knight_running");
   g.sfx("honk");
   const run = g.actorWalk("knight", g.point("knight_to"), "run");
-  await g.wait(700);
+  await g.wait(2500); // he passes over the spot, and his helmet bounces off
   g.set("helmet_dropped");
   g.sfx("boing");
+  await g.move("helmet", g.point("helmet_spot"), { from: g.point("helmet_from"), arc: 90, spin: -1, ms: 650, ease: "in" });
+  void g.motion("helmet", "rattle", { times: 2 });
   await run;
   g.unset("knight_running");
   await g.say("town.knight.1");
@@ -38,6 +40,8 @@ async function promiseBeat(g: GameAPI) {
 
 async function laughBeat(g: GameAPI) {
   g.set("laughing");
+  void g.motion("merchant", "chuckle", { loop: true });
+  void g.motion("baker", "chuckle", { loop: true, ms: 520 });
   await g.say("town.laugh.1");
   await g.say("town.laugh.2");
   g.unset("laughing");
@@ -80,10 +84,12 @@ export default defineScene("town", {
       use: (g) => g.say("town.helmet.use"),
       items: {
         julek: async (g) => {
-          g.set("helmet_worn");
+          await g.reach("helmet", { by: "julek", onContact: () => g.set("helmet_worn") });
           g.pose("julek", "helmet");
+          void g.motion("julek", "sway", { loop: true, amp: 0.06 });
           await g.say("town.helmet.julek.1");
           await g.say("town.helmet.julek.2");
+          await g.motion("julek", null);
           g.pose("julek", null);
           g.unset("helmet_worn");
         },

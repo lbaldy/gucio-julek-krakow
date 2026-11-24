@@ -138,7 +138,11 @@
         720,
         985
       ],
-      "face": "up"
+      "face": "up",
+      "reach_at": [
+        828,
+        758
+      ]
     },
     {
       "id": "dragon_bed",
@@ -412,6 +416,10 @@
     "klebuszek_spot": [
       1470,
       985
+    ],
+    "julek_in_hollow": [
+      1668,
+      932
     ]
   }
 }

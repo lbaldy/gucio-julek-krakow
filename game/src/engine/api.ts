@@ -1,5 +1,7 @@
 // The scripting surface used by content/: scene scripts, dialogues, combos.
 
+import type { MoveOpts } from "./motion";
+import type { AnimOpts, ReachOpts } from "./stage";
 import type { Facing, Pt } from "./types";
 
 export type Handler = (g: GameAPI) => unknown | Promise<unknown>;
@@ -82,7 +84,21 @@ export interface GameAPI {
   place(actorId: string, at: Pt): void;
   /** A named position from the scene's `points`. */
   point(name: string): Pt;
-  anim(actorId: string, name: string): Promise<void>;
+  /** Play a pose once; `onContact` runs at its moment of contact. */
+  anim(actorId: string, name: string, opts?: AnimOpts): Promise<void>;
+  /** Reach for a target (or point): the pose, the hop or tiptoe and the facing come from the geometry. */
+  reach(target: string | Pt, opts?: ReachOpts): Promise<void>;
+  /** Move a drawing in place (hop, nod, shake…: motion.ts). `loop` runs until replaced or stopped with null. */
+  motion(id: string, name: string | null, opts?: { ms?: number; amp?: number; loop?: boolean; times?: number }): Promise<void>;
+  /** Move an actor (feet), object, patch or fg layer (bottom centre) without walking. Objects stay there
+   *  until the scene is left: end with a flag that shows the thing in its new place. */
+  move(id: string, to: Pt, opts?: MoveOpts): Promise<void>;
+  /** An arc from where the actor stands to a point, with a crouch and a landing. */
+  jump(actorId: string, to: Pt, opts?: MoveOpts): Promise<void>;
+  /** Put something moved or faded by g.move back as the scene has it (actors keep their position). */
+  restore(id: string): void;
+  /** Throw an inventory item to a target (the item leaves the inventory). */
+  toss(item: string, to: string | Pt): Promise<void>;
   pose(actorId: string, name: string | null): void;
   wait(ms: number): Promise<void>;
   flag(name: string): boolean;
@@ -90,7 +106,8 @@ export interface GameAPI {
   unset(name: string): void;
   visited(scene: string): boolean;
   has(item: string): boolean;
-  give(item: string): void;
+  /** `from`: who or what it flies from (default: the hand, inside an onContact). */
+  give(item: string, from?: string | Pt): void;
   take(item: string): void;
   drop(item: string): void;
   show(id: string): void;

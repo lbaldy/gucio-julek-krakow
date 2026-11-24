@@ -18,8 +18,7 @@
         150,
         10
       ],
-      "stay_if": "julek_hiding",
-      "if": "!julek_bouncing"
+      "stay_if": "julek_hiding"
     }
   ],
   "one_tap": true,

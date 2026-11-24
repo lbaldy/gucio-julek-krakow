@@ -28,6 +28,9 @@ game/
       cond.ts               condition strings: "door_open", "!has:key", "a && !b"
       path.ts               walkable polygons, blocked holes, visibility graph + A*
       world.ts              scene instance: targets, actors, scaling, z-order
+      motion.ts             motions (hop, lunge, nod…) and easing: pure math
+      reach.ts              planReach: which pose puts a hand on a target
+      stage.ts              one-shot poses with contact, reach, moves, jumps, items in flight
       script.ts             async script runner: input lock, skip, fast mode
       dialogue.ts           dialogue tree runtime
       game.ts               ties it together; implements GameAPI; emits events
@@ -182,6 +185,23 @@ true. It's derived from flags every frame, so it survives saves (a scripted `g.p
 but isn't saved). Walking beats any pose, so a posed companion uses its walk cycle when it moves.
 While talking, a posed character uses `<pose>_talk_r` frames if it has them (e.g. `dim_talk_r`),
 otherwise it holds the pose; an unposed one uses `talk_r`.
+
+**Staging** (`motion.ts`, `reach.ts`, `stage.ts`). A pose is a drawing; a motion moves it. An anim
+may carry `"motion": "lunge"` (played whenever `g.anim` plays it; the standing drawing shows for the
+wind-up and recovery), and `"hand": [forward, up]` (px from the feet at scale 1, as drawn). `g.reach`
+picks among the poses with a `hand` the one nearest the target's height, then closes the gap with a
+tiptoe or hop and a small slide; `"no_reach": true` keeps a pose that holds a prop out of that choice.
+Low poses never hop. Targets may set `"reach_at"` (where the hand goes), `"reach_by"` (a companion
+reaches for it, hurrying up to it first) and `"reach_pose"` (when the picture misleads: something drawn
+high because it's far away). **Don't hard-code `g.anim("hero", "pickup")` for a pickup; use `g.reach`.**
+Put state changes in `onContact`, so the thing vanishes in the hand, not after it.
+Motions: `hop tiptoe stretch dip lunge strain shake nod sway chuckle rattle`; they start and end at
+rest. New ones go in `MOTIONS`, with the moment of contact.
+
+**Layers.** Everything is sorted by baseline, so a prop an actor can be *inside* is two layers: the back
+in the background (or an object), the front as an `fg` with an `id` and a baseline (the crib:
+`fg_crib.png`, its rails cut from the background). `g.move` and `g.motion` work on objects, patches and
+fg layers alike, and a moved object's depth goes with it.
 
 ### items.json
 ```json
@@ -342,7 +362,13 @@ Right-clicking an item runs its handler here if there is one, otherwise it plays
 | `walkTo(targetId \| [x,y])`, `face(dir)` | move or turn the hero |
 | `point(name)` | a named position from the scene's `points` |
 | `actorWalk(id, [x,y] \| targetId, "walk" \| "run")`, `actorFace(id, dir)`, `place(id, [x,y])` (teleport, e.g. in `enter`), `actorSay` is just `say` with that speaker's line | NPCs |
-| `anim(actorId, name)` | play an anim once from its first frame, hold the last, resolve after `hold_ms` or frames/fps |
+| `anim(actorId, name, {onContact, motion, amp, ms, contact}?)` | play an anim once from its first frame, hold the last, resolve after `hold_ms` or frames/fps (and after what `onContact` returned) |
+| `reach(target \| [x,y], {by, pose, onContact, ms}?)` | reach for something: pose, hop/tiptoe, facing and slide come from the geometry |
+| `motion(id, name \| null, {ms, amp, loop, times}?)` | move a drawing in place; a `loop` runs until replaced or stopped with `null` |
+| `move(id, [x,y], {ms, from, via, arc, spin, scale, fade, ease, pose, keepFacing}?)` | move an actor (feet), object, patch or fg (bottom centre) without walking. Not saved: end it with a flag that shows the thing in its new place, then `restore(id)` |
+| `jump(actorId, [x,y], opts?)` | `move` in an arc with a crouch and a landing. `scale` is the actor's fixed scale there; `scale: null` goes back to the scene's |
+| `restore(id)` | undo moves and fades |
+| `toss(item, to)` | throw an inventory item at a target; `give(item, from?)` makes it fly to its slot |
 | `wait(ms)` | pause (skippable) |
 | `flag(name)`, `set(name, v=true)`, `unset(name)`, `visited(scene)` | state |
 | `has(item)`, `give(item)`, `take(item)` (pick up from scene), `drop(item)` | inventory |
@@ -370,6 +396,9 @@ Right-clicking an item runs its handler here if there is one, otherwise it plays
     `look(id)`, `useItem(item, id)`, `lookItem(item)`, `choose(n)` (dialogue option),
     `goto(scene, spawn)`, `give(item)`, `set(flag)`, `idle()` (a promise that
     resolves when no script or walk is running), and `log` (the event log).
+  - `film(action, {frames, every, from, box: [x,y,w,h], cols})` steps the game by hand and lays the
+    frames out over the page, so movement can be judged from one screenshot (set `game.fast = false`
+    first). Lines are timed, not voiced, while it runs.
 - Console: every line logs `[say] <line_id> <speaker>: <text>`, and every action
   logs `[act] …`. Playtesting reads these.
 
@@ -402,6 +431,9 @@ script entries, so do them in JSON and TS.
 - every target ID in `scene.ts` exists in `scene.json`;
 - every item ID used exists in `items.json`; every speaker exists in
   `characters.json` (or is `narrator`);
+- every anim, pose and motion named in a script exists (a wrong name used to show idle, silently);
+- every pickup and scripted `g.reach` can put a hand on its target: a miss over 20% of the
+  character's height is a warning, usually fixed by moving the thing or its `walk_to`;
 - missing art and VO files are **warnings**, not errors (greyboxing is allowed);
 - each hotspot without a look line, and without a `look` handler, is a warning.
 

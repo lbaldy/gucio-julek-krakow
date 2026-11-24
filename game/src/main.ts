@@ -92,7 +92,7 @@ async function boot() {
   const canvas = document.getElementById("game") as HTMLCanvasElement;
   const renderer = new Renderer(canvas, game, images);
   bindInput(canvas, game, renderer, audio);
-  exposeDevApi(game);
+  exposeDevApi(game, renderer);
   document.title = content.config.title;
 
   // Only the title screen waits; each scene loads its own art when entered (Adapters.prepare).
@@ -112,9 +112,11 @@ async function boot() {
   const frame = (now: number) => {
     const dt = Math.min(50, now - last);
     last = now;
-    game.update(dt);
-    renderer.draw(dt);
-    editor?.draw();
+    if (!game.manual) {
+      game.update(dt);
+      renderer.draw(dt);
+      editor?.draw();
+    }
     requestAnimationFrame(frame);
   };
   requestAnimationFrame(frame);

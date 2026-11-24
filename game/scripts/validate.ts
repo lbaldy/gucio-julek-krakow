@@ -4,6 +4,9 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import type { Combos, DialogueDef, Globals, ItemLooks, SceneScript } from "../src/engine/api";
+import { MOTIONS } from "../src/engine/motion";
+import { planReach } from "../src/engine/reach";
+import { reachPoint, scaleAt } from "../src/engine/world";
 import type { CharacterData, GameConfig, ItemData, LineData, SceneData } from "../src/engine/types";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -100,6 +103,7 @@ for (const s of Object.values(scenes))
 for (const [id, ch] of Object.entries(chars)) {
   const from = new Set([id, ...(folders.get(id) ?? [])]);
   for (const [anim, a] of Object.entries(ch.anims)) {
+    if (a.motion && !MOTIONS[a.motion]) err(`character ${id}: ${anim}: unknown motion ${a.motion}`);
     for (let f = 0; f < a.frames; f++) {
       const file = `${anim}/${String(f).padStart(2, "0")}.png`;
       if (![...from].some((d) => asset(`chars/${d}/${file}`))) warn(`character ${id}: frame chars/${id}/${file} missing`);
@@ -146,6 +150,48 @@ for (const s of Object.values(scenes)) {
   }
 }
 
+// ── reaching: every pickup and scripted g.reach must put a hand on its target ─
+
+function pngSize(p: string): { w: number; h: number } | null {
+  if (!asset(p)) return null;
+  const b = readFileSync(join(PUBLIC, p));
+  return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+}
+
+/** How far a hand may stay from its target, as a share of the character's height. */
+const REACH_TOLERANCE = 0.2;
+
+for (const s of Object.values(scenes)) {
+  const reached = new Map<string, { by?: string; pose?: string }>();
+  for (const o of s.objects ?? []) if (o.pickup || o.reach_by) reached.set(o.id, {});
+  for (const [, id, opts] of (scripts[s.id]?.src ?? "").matchAll(/\.reach\(\s*"([^"]+)"(?:\s*,\s*\{([^}]*))?/g))
+    reached.set(id, { by: /\bby:\s*"(\w+)"/.exec(opts ?? "")?.[1], pose: /\bpose:\s*"(\w+)"/.exec(opts ?? "")?.[1] });
+  for (const [id, o] of reached) {
+    const obj = (s.objects ?? []).find((x) => x.id === id);
+    const t = obj ?? (s.hotspots ?? []).find((x) => x.id === id);
+    if (!t) {
+      err(`${s.id}/scene.ts: reach: no target ${id}`);
+      continue;
+    }
+    const who = o.by ?? t.reach_by ?? config.hero;
+    const pose = o.pose ?? t.reach_pose;
+    const ch = chars[who];
+    if (!ch) err(`scene ${s.id}: ${id}: reach_by ${who} not in characters.json`);
+    else if (pose && !ch.anims[`${pose}_r`]?.hand) err(`scene ${s.id}: ${id}: ${who} has no pose ${pose} with a hand`);
+    if (!ch || !t.walk_to || pose) continue; // a named pose is a deliberate choice
+    const size = obj ? (pngSize(obj.sprite) ?? { w: obj.w ?? 70, h: obj.h ?? 50 }) : { w: 0, h: 0 };
+    const poly = t.polygon ?? (obj ? [[obj.x, obj.y], [obj.x + size.w, obj.y + size.h]] : []);
+    const k = scaleAt(t.walk_to[1], s.scale);
+    const at = reachPoint({ kind: obj ? "object" : "hotspot", poly: poly as [number, number][], reach_at: t.reach_at }, t.walk_to, ch.height_px * k);
+    const p = planReach(ch, t.walk_to, k, ch.height_px, at, "right");
+    // A companion walks up by itself, so only its height counts.
+    const miss = who === config.hero ? p.miss : Math.abs(p.hand[1] - at[1]);
+    const share = miss / (ch.height_px * k);
+    if (share > REACH_TOLERANCE)
+      warn(`scene ${s.id}: ${who}'s hand stays ${Math.round(share * 100)}% of their height from ${id} (${p.anim}, ${p.motion}): move it or its walk_to, or set reach_at/reach_pose`);
+  }
+}
+
 // ── script sources: line IDs and references ──────────────────────────────
 
 const linePrefixes = new Set([...Object.keys(scenes), "_", "item", "combo"]);
@@ -172,6 +218,14 @@ function checkSource(file: string, src: string) {
   }
   for (const m of src.matchAll(/\.dialogue\(\s*"([^"]+)"/g)) if (!dialogues[m[1]]) err(`${file}: unknown dialogue ${m[1]}`);
   for (const m of src.matchAll(/\.minigame\(\s*"([^"]+)"/g)) if (!minigames.has(m[1])) err(`${file}: unknown minigame ${m[1]}`);
+  for (const m of src.matchAll(/\.(anim|pose)\(\s*"(\w+)"\s*,\s*"(\w+)"/g)) {
+    if (!chars[m[2]]) err(`${file}: ${m[1]}: unknown character ${m[2]}`);
+    else if (!chars[m[2]].anims[`${m[3]}_r`]) err(`${file}: ${m[2]} has no anim ${m[3]}`);
+  }
+  for (const m of src.matchAll(/\.motion\(\s*[^,()]+,\s*"(\w+)"|\bmotion:\s*"(\w+)"/g))
+    if (!MOTIONS[m[1] ?? m[2]]) err(`${file}: unknown motion ${m[1] ?? m[2]}`);
+  for (const m of src.matchAll(/\.(?:move|jump)\(\s*"(\w+)"[^;\n]*?\bpose:\s*"(\w+)"/g))
+    if (!chars[m[1]]?.anims[`${m[2]}_r`]) err(`${file}: ${m[1]} has no anim ${m[2]}`);
   for (const m of src.matchAll(/\.sfx\(\s*"([^"]+)"/g)) if (!asset(`audio/sfx/${m[1]}.mp3`)) warn(`${file}: sfx ${m[1]} missing`);
 }
 

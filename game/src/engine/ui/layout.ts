@@ -1,6 +1,6 @@
 // Screen layout shared by input handling and rendering (pure, no DOM).
 
-import type { Pt } from "../types";
+import type { GameConfig, Pt } from "../types";
 
 export const W = 1920;
 export const H = 1080;
@@ -27,6 +27,19 @@ export function invSlots(n: number): Rect[] {
 export function choiceRects(n: number): Rect[] {
   const h = 56;
   return Array.from({ length: n }, (_, i) => ({ x: 80, y: H - 40 - (n - i) * h, w: W - 160, h: h - 4 }));
+}
+
+/** The collectible counter: where its pips start, and its icon's middle (an arriving find flies there). */
+export function counterLayout(cfg: GameConfig): { x0: number; y0: number; pip: number; gap: number; perRow: number; pipsW: number } {
+  const perRow = Math.ceil((cfg.counter?.total ?? 0) / 2);
+  const [pip, gap] = [14, 8];
+  const pipsW = perRow * (pip + gap) - gap;
+  return { x0: (cfg.clock ? W - 160 : W - 30) - pipsW, y0: 40, pip, gap, perRow, pipsW };
+}
+
+export function counterIcon(cfg: GameConfig): Pt {
+  const { x0, y0 } = counterLayout(cfg);
+  return [x0 - 52, y0 + 21];
 }
 
 /** The "skip" hint in a skip_hint scene's corner. */

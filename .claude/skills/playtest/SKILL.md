@@ -53,9 +53,11 @@ wrong targets) and expects the fail lines and no state change.
    - subtitles are readable and don't run off the screen;
    - the inventory icon appears on pickup, and the world sprite disappears;
    - exits lead where they should, arriving at the right spawn.
-7. Without `fast=1`, play one scene at normal speed and judge pacing: walk speed,
+7. Film every scripted action (`__game.film`, engine skill): the hand meets the thing, it vanishes in
+   the hand, feet leave the ground in a jump, nobody is hidden behind anybody.
+8. Without `fast=1`, play one scene at normal speed and judge pacing: walk speed,
    line timing, and fades.
-8. Stop the dev server when finished.
+9. Stop the dev server when finished.
 
 ## Reporting
 

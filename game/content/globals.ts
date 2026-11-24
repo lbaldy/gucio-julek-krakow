@@ -40,13 +40,11 @@ export function woolTargets(...ids: Wool[]) {
       look: (g) => g.say(low ? "_.wool.low" : "_.wool.look"),
       use: async (g) => {
         if (low) return g.say("_.wool.low");
-        await g.anim("gucio", "pickup");
-        await collectWool(g, id, false);
+        await g.reach(`wool_${id}`, { onContact: () => collectWool(g, id, false) });
       },
       items: {
         julek: async (g) => {
-          await g.anim("julek", "crawl");
-          await collectWool(g, id, true);
+          await g.reach(`wool_${id}`, { by: "julek", onContact: () => collectWool(g, id, true) });
         },
       },
     };
